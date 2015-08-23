@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D4E79D2B-5272-803E-57D8-ECAA7FAFAB23" name="SYSTEM">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:29:47 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SYSTEM" id="0BC4C016-3B53-5550-C1D5-C63C965EAA73">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:30:12 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TWITTER_CONSUMER_KEY" id="3A7E8D9A-66EA-C055-F7D6-4098164645F0">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:32:10 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TWITTER_CONSUMER_SECRET" id="B5FBDCA0-64DA-59E1-64DE-1B99DE34CA25">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:32:33 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TWITTER_API_BEARER" id="5B4F8FF7-7BCF-495E-FFA8-01EDC0E562E9">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:33:38 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TWITTER_SSL_WALLET_PATH" id="4D678251-7C53-9372-C330-7F1FDB02C548">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:35:15 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TWITTER_SSL_WALLET_PWD" id="E66DC187-C05D-3DD1-48FA-DE3D0231F09B">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-15 14:28:31 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_FROM" id="5C75EA7A-23A1-12A0-3FD6-4116A48E117A">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 21:40:02 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_REGISTER_SUBJECT" id="A4626F07-CCC0-EAE0-989B-837397B1D486">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:37:16 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_REGISTER_TEXT" id="6A122579-7585-6310-A961-D7D8DCAD338C">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:37:59 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_USRPWD_SUBJECT" id="0D17BE0B-F9E9-6444-9CA5-87DB85D27BA8">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:44:56 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL_USRPWD_TEXT" id="C2D0F504-36FD-1203-FE56-B84FC32B43D7">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:45:20 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7DD87D88-EA6D-532D-62E7-6037708D2F2A" name="PK_SYSTEM">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:30:12 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BC4C016-3B53-5550-C1D5-C63C965EAA73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB1DAC3C-FE1F-A58A-D0F1-AF1C1C9479C7" name="TRIUMPH">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:41:23 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TRIUMPH" id="9A1D7864-849B-79AA-B48B-E2DBAFEB677A">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:42:10 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SCORE" id="2FE5FF39-1B8D-7279-8189-F86C9CEE8CEA">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:42:30 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HEADLINE" id="66B86E6A-5454-0CBA-04DE-D7D6A6DEFB67">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:44:11 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPTION" id="B8E5C9D1-FA67-430D-BD39-F9C4BDC6598F">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:44:29 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEDIA_URL" id="0D73AE38-0DBD-8BDE-980A-D6400F68ED97">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:45:29 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C8F9CA6-92CC-BCE6-6C77-FF8EF2DDF6DE" name="PK_TRIUMPH">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:42:10 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A1D7864-849B-79AA-B48B-E2DBAFEB677A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FC469CE5-E7BB-A1D8-C590-631E86D59A24" name="I_TRIUMPH_SCORE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:45:48 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FE5FF39-1B8D-7279-8189-F86C9CEE8CEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

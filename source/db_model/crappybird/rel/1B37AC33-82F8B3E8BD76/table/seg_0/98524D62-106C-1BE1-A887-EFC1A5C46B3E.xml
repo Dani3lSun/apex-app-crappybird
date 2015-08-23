@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="98524D62-106C-1BE1-A887-EFC1A5C46B3E" name="USR_PIC">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:11:58 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_USR_PIC" id="5A975EE3-DEFE-7C0A-68F4-FEA65EC7E775">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:12:24 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR" id="184E68E2-0D5B-3A8F-D822-1A89059513C2">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:12:36 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF2AC338-A677-B788-15B1-AE6923778B15" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
+</Column>
+<Column name="FILENAME" id="1BD6C705-79EA-FD36-C9BD-009A1F2FB216">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:12:52 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MIMETYPE" id="988F4C92-BC88-89CF-CD1B-3D9C301B1A68">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:13:24 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="5266F9CD-1D9E-B570-3631-BC29E28B4279">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:13:43 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="68B4B246-F23F-7687-E9E9-405CD7CA48F0" name="PK_USR_PIC">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:12:24 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A975EE3-DEFE-7C0A-68F4-FEA65EC7E775"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1D8FE1A-D6CC-21CA-CE95-4D7F67B1E71E" name="I_USR_PIC_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:58:43 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="184E68E2-0D5B-3A8F-D822-1A89059513C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9FFB8C5-2662-E97C-E34A-55F5363D9F95" name="FK_USR_PIC_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 07:58:28 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="184E68E2-0D5B-3A8F-D822-1A89059513C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

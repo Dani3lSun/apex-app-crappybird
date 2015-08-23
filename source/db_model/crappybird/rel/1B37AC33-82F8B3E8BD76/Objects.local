@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="1BA5BE66-335A-32D6-2AC8-991BD557F8F8" name="ERR_LOG" seqName="seg_0"/>
+   <object objectType="Table" objectID="D4E79D2B-5272-803E-57D8-ECAA7FAFAB23" name="SYSTEM" seqName="seg_0"/>
+   <object objectType="Table" objectID="AB1DAC3C-FE1F-A58A-D0F1-AF1C1C9479C7" name="TRIUMPH" seqName="seg_0"/>
+   <object objectType="Table" objectID="5B2352FA-6E6F-D85A-C024-242ED44DE545" name="USR" seqName="seg_0"/>
+   <object objectType="Table" objectID="E3F7187A-52CC-6ED5-BD79-EDAC22148813" name="USR_BATTLE" seqName="seg_0"/>
+   <object objectType="Table" objectID="AF097670-8F6A-A68E-0C7D-3724985541E1" name="USR_LOCATION" seqName="seg_0"/>
+   <object objectType="Table" objectID="98524D62-106C-1BE1-A887-EFC1A5C46B3E" name="USR_PIC" seqName="seg_0"/>
+   <object objectType="Table" objectID="F13C5440-CF76-7CA5-FABA-434D18F594BC" name="USR_PREFS" seqName="seg_0"/>
+   <object objectType="Table" objectID="2D2EF2F9-4BE2-B459-6ACD-FC22F9BDDC91" name="USR_R_TRIUMPH" seqName="seg_0"/>
+   <object objectType="Table" objectID="F1F5954B-A451-C55F-9148-09FBE784DBA4" name="USR_TOKEN" seqName="seg_0"/>
+   <object objectType="Table" objectID="254E2544-E367-3226-58C2-52F2F6C8FC8B" name="USR_TW_FRIENDS" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="17220F74-848F-2073-2877-83CE5DFD2CB5" name="FK_USR_LOCATION_ID_USR" seqName="seg_0" containerID="AF097670-8F6A-A68E-0C7D-3724985541E1" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="CF2AC338-A677-B788-15B1-AE6923778B15" name="FK_USR_PIC_ID_USR" seqName="seg_0" containerID="98524D62-106C-1BE1-A887-EFC1A5C46B3E" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="A8532848-8850-DEDF-F7D2-063CDBD585CA" name="FK_USR_PREFS_ID_USR" seqName="seg_0" containerID="F13C5440-CF76-7CA5-FABA-434D18F594BC" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="ECD9DE57-CA83-BC33-D634-DF5CC4735C96" name="FK_USR_R_TRIUMPH_ID_TRIUMPH" seqName="seg_0" containerID="2D2EF2F9-4BE2-B459-6ACD-FC22F9BDDC91" refContainerID="AB1DAC3C-FE1F-A58A-D0F1-AF1C1C9479C7"/>
+   <object objectType="FKIndexAssociation" objectID="91BA5FEE-8870-AD1E-43FF-1920B438C771" name="FK_USR_R_TRIUMPH_ID_USR" seqName="seg_0" containerID="2D2EF2F9-4BE2-B459-6ACD-FC22F9BDDC91" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="A9250A9F-D129-15A6-0C73-85F2D7B8F5C1" name="FK_USR_TOKEN_ID_USR" seqName="seg_0" containerID="F1F5954B-A451-C55F-9148-09FBE784DBA4" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="19A44818-AE0D-2CC7-414E-27F68F823DBA" name="FK_USR_TW_FRIENDS_ID_USR" seqName="seg_0" containerID="254E2544-E367-3226-58C2-52F2F6C8FC8B" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

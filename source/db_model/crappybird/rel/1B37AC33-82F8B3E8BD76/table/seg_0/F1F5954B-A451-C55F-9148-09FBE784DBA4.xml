@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F1F5954B-A451-C55F-9148-09FBE784DBA4" name="USR_TOKEN">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:33:10 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_USR_TOKEN" id="8733EF37-459E-68DD-715B-3D3D5AB2FBF9">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:33:31 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR" id="09CD43C9-CA9B-C68C-7483-03EE20CD807C">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:33:43 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9250A9F-D129-15A6-0C73-85F2D7B8F5C1" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
+</Column>
+<Column name="TOKEN" id="31B16CE1-82E3-EFD9-AD9A-BCA992372D21">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:33:59 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOKEN_DATE" id="FF4C579B-1FD1-6DF1-FCC4-FBD1E64D720A">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:34:11 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8ECE2EA7-46EE-A97A-9691-5AC22F1AC7F9" name="PK_USR_TOKEN">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:33:31 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8733EF37-459E-68DD-715B-3D3D5AB2FBF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="99A739A7-6277-36A3-02AE-33083DA4789E" name="I_USR_TOKEN_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:34:53 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09CD43C9-CA9B-C68C-7483-03EE20CD807C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A456071-0C2D-5615-D26F-389C1C1635C7" name="I_USR_TOKEN_TOKEN_DATE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:35:08 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF4C579B-1FD1-6DF1-FCC4-FBD1E64D720A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4006C887-3F44-1AF5-CDEC-5AF7739B3CF1" name="FK_USR_TOKEN_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-14 14:34:36 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09CD43C9-CA9B-C68C-7483-03EE20CD807C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

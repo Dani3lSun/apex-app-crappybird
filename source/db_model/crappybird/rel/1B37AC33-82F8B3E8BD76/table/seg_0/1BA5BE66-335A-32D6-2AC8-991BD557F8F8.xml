@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1BA5BE66-335A-32D6-2AC8-991BD557F8F8" name="ERR_LOG">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:03:01 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ERR_LOG" id="966AA7BE-6A4D-BE32-1A83-9B622CD071CF">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:03:19 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERR_LOG_FUNCTION" id="850A40A6-FBA7-D7D8-C901-AED4ED5433A3">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:04:01 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERR_LOG_TEXT" id="4431B3B8-6C9F-05DE-BC7F-63258CE2568A">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:04:36 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERR_LOG_DATE" id="EB24AA65-9310-932E-48C8-781F14D306E9">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:04:54 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR" id="A17F2086-2BAC-75D5-1ED0-6E05BDE3D71D">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:05:58 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APP_ID" id="4406319B-0C0A-AB21-CEF4-957BD3121982">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:05:05 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APP_PAGE_ID" id="F5C3CD4E-F680-E116-81BE-5436BA744B22">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:05:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C8C7897-164A-3768-F73B-D1C2C604B585" name="PK_ERR_LOG">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:03:19 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="966AA7BE-6A4D-BE32-1A83-9B622CD071CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="04579568-57B1-A1F0-9AE0-380A5CBDE2AE" name="I_ERR_LOG_ERR_LOG_DATE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:06:32 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB24AA65-9310-932E-48C8-781F14D306E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E521FEB3-85F3-EFC8-98D6-A39A6DEC38D0" name="I_ERR_LOG_APP_ID">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 09:06:58 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4406319B-0C0A-AB21-CEF4-957BD3121982"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

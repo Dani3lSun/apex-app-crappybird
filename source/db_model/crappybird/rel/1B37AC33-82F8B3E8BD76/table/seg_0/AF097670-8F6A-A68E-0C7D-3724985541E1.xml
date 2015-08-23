@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF097670-8F6A-A68E-0C7D-3724985541E1" name="USR_LOCATION">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:31:47 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_USR_LOCATION" id="317EEC54-5066-6C8D-A6EF-B451E09266DA">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:32:13 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR" id="E67DFB89-4DB9-3F70-5A7A-278553FD222C">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:32:24 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17220F74-848F-2073-2877-83CE5DFD2CB5" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
+</Column>
+<Column name="GEO_LATITUDE" id="1F492483-6667-CE6A-12D8-8418EBE3B098">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:33:30 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GEO_LONGITUDE" id="DFE14FFD-9C37-A73D-5E0C-D2508B0538D4">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:33:49 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="354381FF-EEEC-E67A-24B4-0AD03A46B341" name="PK_USR_LOCATION">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:32:13 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="317EEC54-5066-6C8D-A6EF-B451E09266DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="028D41E7-F83C-B367-0ECD-7B19EC930888" name="I_USR_LOCATION_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:38:42 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E67DFB89-4DB9-3F70-5A7A-278553FD222C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A0A28AA7-6634-22B9-3142-1D396BFBFE2A" name="I_USR_LOCATION_LATITUDE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:39:08 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F492483-6667-CE6A-12D8-8418EBE3B098"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="883616F5-B8F6-9E0A-6D77-8CC6F505FB12" name="I_USR_LOCATION_LONGITUDE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:39:32 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFE14FFD-9C37-A73D-5E0C-D2508B0538D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E85A0254-921A-3EC9-33A3-E5D60765D911" name="FK_USR_LOCATION_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-17 17:38:21 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E67DFB89-4DB9-3F70-5A7A-278553FD222C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

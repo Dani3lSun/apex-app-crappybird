@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3F7187A-52CC-6ED5-BD79-EDAC22148813" name="USR_BATTLE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:19:55 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_USR_BATTLE" id="6FAEC2B4-AE74-6C46-3E4C-B02B3A7E2240">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:20:18 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR_CHALLENGER" id="C90BC75B-E89B-9225-AA4F-568FDD60F47E">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:21:32 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR_RECEIVER" id="3BCB9C04-87F3-F418-FFAE-978F636C8CED">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:23:30 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIGHSCORE_CHALLENGER" id="5FAD4438-70E2-903D-CFB1-800DD209B234">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:22:04 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIGHSCORE_RECEIVER" id="7A07E320-BDBD-C95B-3E9F-BBEE810CBD9C">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:23:48 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6D3DC283-09CB-395F-B94C-F0573135D49D" name="PK_USR_BATTLE">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:20:18 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FAEC2B4-AE74-6C46-3E4C-B02B3A7E2240"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="409C7B6E-C8EF-A3BB-FD27-2EC457F01910" name="I_USR_BATTLE_ID_USR_CHALL">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:24:29 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C90BC75B-E89B-9225-AA4F-568FDD60F47E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="595E6B79-4647-FB73-9EF5-710105B7F3D3" name="I_USR_BATTLE_ID_USR_REC">
+<createdBy>daniel</createdBy>
+<createdTime>2015-08-13 08:24:50 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BCB9C04-87F3-F418-FFAE-978F636C8CED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
