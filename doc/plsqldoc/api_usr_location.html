@@ -1,0 +1,681 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_usr_location</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_usr_location">
+ <META name="description" content="API-Package for table usr_location">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_usr_location</P>
+API-Package for table usr_location<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_location">ins_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Inserts dataset in usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_location">upd_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Updates datset of table usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_location">del_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Deletes dataset of table usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_location">get_rec_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get record of table usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_location">get_md5_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Generates md5 checksum for usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_location">do_check_md5_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Compares (Before/After) md5 checksum for usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_location">get_id_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_location of usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr of usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_geo_latitude">get_geo_latitude</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get geo_latitude of usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_geo_longitude">get_geo_longitude</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get geo_longitude of usr_location
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_all_usr_location">del_all_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+DELETES all entries from specified user
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#insert_geo_coords">insert_geo_coords</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Insert new Geo Coordninates for specified user
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_distance_between_usr">get_distance_between_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get the distance in specified unit between 2 Users
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_gps_enabled">check_usr_gps_enabled</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Check if user has gps coords saved (gps enabled)
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Types"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Types
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pub_rec_usr_location_type">pub_rec_usr_location_type</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record for usr_location
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pub_rec_usr_location_type"></A>
+<P CLASS="TYPE_TITLE">
+pub_rec_usr_location_type
+</P>
+<PRE CLASS="DECL_TEXT">
+TYPE pub_rec_usr_location_type IS RECORD(
+  id_usr_location usr_location.id_usr_location%TYPE,
+  id_usr          usr_location.id_usr%TYPE,
+  geo_latitude    usr_location.geo_latitude%TYPE,
+  geo_longitude   usr_location.geo_longitude%TYPE);
+</PRE>
+<P CLASS="DESC_TEXT">
+Record for usr_location<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION ins_usr_location(i_rec_usr_location IN <A HREF=#pub_rec_usr_location_type>pub_rec_usr_location_type</A>)
+  RETURN usr_location.id_usr_location%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Inserts dataset in usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID (PK of dataset)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="upd_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE upd_usr_location(i_rec_usr_location IN <A HREF=#pub_rec_usr_location_type>pub_rec_usr_location_type</A>,
+                           i_checksum         IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Updates datset of table usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of usr_location<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Checksumme md5 before<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_usr_location(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Deletes dataset of table usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+PK-ID of usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_rec_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_rec_usr_location(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN <A HREF=#pub_rec_usr_location_type>pub_rec_usr_location_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get record of table usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID aus usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type for usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_md5_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_md5_usr_location(i_rec_usr_location IN <A HREF=#pub_rec_usr_location_type>pub_rec_usr_location_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Generates md5 checksum for usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+md5 Checksum in Varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_check_md5_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_check_md5_usr_location(i_checksum         IN VARCHAR2,
+                                   i_rec_usr_location IN <A HREF=#pub_rec_usr_location_type>pub_rec_usr_location_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Compares (Before/After) md5 checksum for usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+checksum before<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Boolean value<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_location(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.id_usr_location%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_location of usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_location aus usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr of usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr aus usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_geo_latitude"></A>
+<P CLASS="TYPE_TITLE">
+get_geo_latitude
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_geo_latitude(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.geo_latitude%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get geo_latitude of usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+geo_latitude aus usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_geo_longitude"></A>
+<P CLASS="TYPE_TITLE">
+get_geo_longitude
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_geo_longitude(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.geo_longitude%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get geo_longitude of usr_location<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_location&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+geo_longitude aus usr_location<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_all_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+del_all_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_all_usr_location(i_id_usr IN usr_location.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+DELETES all entries from specified user<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="insert_geo_coords"></A>
+<P CLASS="TYPE_TITLE">
+insert_geo_coords
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE insert_geo_coords(i_id_usr        IN usr_location.id_usr%TYPE,
+                            i_geo_latitude  IN usr_location.geo_latitude%TYPE,
+                            i_geo_longitude IN usr_location.geo_longitude%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Insert new Geo Coordninates for specified user<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_geo_latitude&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_geo_longitude&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_distance_between_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_distance_between_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_distance_between_usr(i_id_usr1 IN usr_location.id_usr%TYPE,
+                                  i_id_usr2 IN usr_location.id_usr%TYPE,
+                                  i_unit    IN VARCHAR2) RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get the distance in specified unit between 2 Users<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr1&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr2&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_unit&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+(KM/Mile) valid UNIT_OF_MEAS_NAME from SDO_UNITS_OF_MEASURE table return distance in specified unit - default: mile<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="check_usr_gps_enabled"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_gps_enabled
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION check_usr_gps_enabled(i_id_usr IN usr_location.id_usr%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Check if user has gps coords saved (gps enabled)<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+BOOLEAN<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

@@ -1,0 +1,543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_usr_tw_friends</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_usr_tw_friends">
+ <META name="description" content="API-Package for table usr_tw_friends">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_usr_tw_friends</P>
+API-Package for table usr_tw_friends<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_tw_friends">ins_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Inserts dataset in usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_tw_friends">upd_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Updates datset of table usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_tw_friends">del_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Deletes dataset of table usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_tw_friends_per_usr">del_usr_tw_friends_per_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+DELETES all rows from table usr_tw_friends per user
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_tw_friends">get_rec_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get record of table usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_tw_friends">get_md5_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Generates md5 checksum for usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_tw_friends">do_check_md5_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Compares (Before/After) md5 checksum for usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_tw_friends">get_id_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_tw_friends of usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr of usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_friend">get_id_usr_friend</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_friend of usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_friend_twitter_id">get_usr_friend_twitter_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get usr_friend_twitter_id of usr_tw_friends
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Types"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Types
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record for usr_tw_friends
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pub_rec_usr_tw_friends_type"></A>
+<P CLASS="TYPE_TITLE">
+pub_rec_usr_tw_friends_type
+</P>
+<PRE CLASS="DECL_TEXT">
+TYPE pub_rec_usr_tw_friends_type IS RECORD(
+  id_usr_tw_friends     usr_tw_friends.id_usr_tw_friends%TYPE,
+  id_usr                usr_tw_friends.id_usr%TYPE,
+  id_usr_friend         usr_tw_friends.id_usr_friend%TYPE,
+  usr_friend_twitter_id usr_tw_friends.usr_friend_twitter_id%TYPE);
+</PRE>
+<P CLASS="DESC_TEXT">
+Record for usr_tw_friends<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION ins_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
+  RETURN usr_tw_friends.id_usr_tw_friends%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Inserts dataset in usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID (PK of dataset)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="upd_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE upd_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>,
+                             i_checksum           IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Updates datset of table usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of usr_tw_friends<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Checksumme md5 before<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Deletes dataset of table usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+PK-ID of usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_usr_tw_friends_per_usr"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_tw_friends_per_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_usr_tw_friends_per_usr(i_id_usr IN usr_tw_friends.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+DELETES all rows from table usr_tw_friends per user<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_rec_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_rec_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get record of table usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID aus usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type for usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_md5_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_md5_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Generates md5 checksum for usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+md5 Checksum in Varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_check_md5_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_check_md5_usr_tw_friends(i_checksum           IN VARCHAR2,
+                                     i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Compares (Before/After) md5 checksum for usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+checksum before<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Boolean value<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr_tw_friends%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_tw_friends of usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_tw_friends aus usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr of usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr aus usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_friend"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_friend
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_friend(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr_friend%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_friend of usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_friend aus usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_usr_friend_twitter_id"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_friend_twitter_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_usr_friend_twitter_id(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.usr_friend_twitter_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get usr_friend_twitter_id of usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_tw_friends&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+usr_friend_twitter_id aus usr_tw_friends<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_usr_location</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_usr_location">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_usr_location</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_location">ins_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; INSERTS dataset into usr_location and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_location">upd_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; UPDATES dataset of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_location">del_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES dataset of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_location">get_rec_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get Record of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_location">get_md5_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Generates md5 checksum for usr_location using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_location">do_check_md5_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_location">get_id_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_location.id_usr_location of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_location.id_usr of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_geo_latitude">get_geo_latitude</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_location.geo_latitude of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_geo_longitude">get_geo_longitude</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_location.geo_longitude of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_all_usr_location">del_all_usr_location</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES all entries from specified user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#insert_geo_coords">insert_geo_coords</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Insert new Geo Coordninates for specified user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_distance_between_usr">get_distance_between_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get the distance in specified unit between 2 Users Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_gps_enabled">check_usr_gps_enabled</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user has gps coords saved (gps enabled) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_usr_prefs.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr_location';
+</PRE>
+
+<HR>
+<A NAME="ins_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#ins_usr_location">ins_usr_location</A>(i_rec_usr_location IN <A HREF="api_usr_location.html#pub_rec_usr_location_type">pub_rec_usr_location_type</A>)
+  RETURN usr_location.id_usr_location%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; INSERTS dataset into usr_location and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="upd_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_location.html#upd_usr_location">upd_usr_location</A>(i_rec_usr_location IN <A HREF="api_usr_location.html#pub_rec_usr_location_type">pub_rec_usr_location_type</A>,
+                           i_checksum         IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; UPDATES dataset of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_location.html#del_usr_location">del_usr_location</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES dataset of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_rec_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_rec_usr_location">get_rec_usr_location</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN <A HREF="api_usr_location.html#pub_rec_usr_location_type">pub_rec_usr_location_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get Record of table usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_md5_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_md5_usr_location">get_md5_usr_location</A>(i_rec_usr_location IN <A HREF="api_usr_location.html#pub_rec_usr_location_type">pub_rec_usr_location_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Generates md5 checksum for usr_location using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_check_md5_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#do_check_md5_usr_location">do_check_md5_usr_location</A>(i_checksum         IN VARCHAR2,
+                                   i_rec_usr_location IN <A HREF="api_usr_location.html#pub_rec_usr_location_type">pub_rec_usr_location_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_id_usr_location">get_id_usr_location</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.id_usr_location%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_location.id_usr_location of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_location.id_usr of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_geo_latitude"></A>
+<P CLASS="TYPE_TITLE">
+get_geo_latitude
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_geo_latitude">get_geo_latitude</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.geo_latitude%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_location.geo_latitude of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_geo_longitude"></A>
+<P CLASS="TYPE_TITLE">
+get_geo_longitude
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_geo_longitude">get_geo_longitude</A>(i_id_usr_location IN usr_location.id_usr_location%TYPE)
+  RETURN usr_location.geo_longitude%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_location.geo_longitude of usr_location Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_all_usr_location"></A>
+<P CLASS="TYPE_TITLE">
+del_all_usr_location
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_location.html#del_all_usr_location">del_all_usr_location</A>(i_id_usr IN usr_location.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES all entries from specified user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="insert_geo_coords"></A>
+<P CLASS="TYPE_TITLE">
+insert_geo_coords
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_location.html#insert_geo_coords">insert_geo_coords</A>(i_id_usr        IN usr_location.id_usr%TYPE,
+                            i_geo_latitude  IN usr_location.geo_latitude%TYPE,
+                            i_geo_longitude IN usr_location.geo_longitude%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Insert new Geo Coordninates for specified user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_distance_between_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_distance_between_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#get_distance_between_usr">get_distance_between_usr</A>(i_id_usr1 IN usr_location.id_usr%TYPE,
+                                  i_id_usr2 IN usr_location.id_usr%TYPE,
+                                  i_unit    IN VARCHAR2) RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get the distance in specified unit between 2 Users Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 17.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_gps_enabled"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_gps_enabled
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_location.html#check_usr_gps_enabled">check_usr_gps_enabled</A>(i_id_usr IN usr_location.id_usr%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user has gps coords saved (gps enabled) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

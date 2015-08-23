@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_auth</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_auth">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_auth</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_auth">do_auth</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; User Auth, sets USR_ID Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_login">do_login</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Apex Login Function Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_err_log.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_auth';
+</PRE>
+
+<HR>
+<A NAME="do_auth"></A>
+<P CLASS="TYPE_TITLE">
+do_auth
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_auth.html#do_auth">do_auth</A>(i_usr_email IN usr.usr_email%TYPE,
+                 i_usr_pwd   IN usr.usr_pwd%TYPE,
+                 o_id_usr    OUT usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; User Auth, sets USR_ID Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_login"></A>
+<P CLASS="TYPE_TITLE">
+do_login
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_auth.html#do_login">do_login</A>(p_username IN VARCHAR2,
+                  p_password IN VARCHAR2) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Apex Login Function Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

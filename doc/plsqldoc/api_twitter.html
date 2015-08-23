@@ -1,0 +1,678 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_twitter</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_twitter">
+ <META name="description" content="API-Package for Twitter Public API (Application Only Auth)">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_twitter</P>
+API-Package for Twitter Public API (Application Only Auth)<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_error_http_status">check_error_http_status</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Check if Response HTTP Status is successful (2XX Status codes)
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#encode_key_secret_base64">encode_key_secret_base64</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Encode consumer key and secret for twitter authentication request
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_bearer_token">get_twitter_bearer_token</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get Twitter bearer (auth token) for future authentication
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#invalidate_bearer_token">invalidate_bearer_token</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Invalidate Twitter bearer (auth token) + remove from system table
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#set_http_headers">set_http_headers</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Set HTTP Headers for Twitter REST Calls
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_api_test_url_result">get_api_test_url_result</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Function to test the different API calls from Twitter
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_rate_limit_status">get_twitter_rate_limit_status</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get Twitter limits of api calls, max value and current used
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_twitter_api_limits">check_twitter_api_limits</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Check if Twitter API Calls are possible, or if limit is reached
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_followers">get_twitter_followers</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_friends">get_twitter_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get all Twitter friend IDs(People you follow) per twitter user id
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_twitter_friends">ins_twitter_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get all Twitter friend IDs(People you follow) per id_usr from usr table + insert all ids found in table usr_tw_friends
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_id">get_twitter_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Find the Twitter User ID for an twitter name
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_name">get_twitter_name</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Find the Twitter User name for an twitter ID
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Find the Twitter Profile Pic URL for an twitter ID
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_search_results">get_search_results</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get all Tweets as search result with specified search string
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pubc_errcode_http_status_code">pubc_errcode_http_status_code</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Exceptions for Twitter
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pubc_errcode_http_status_code"></A>
+<P CLASS="TYPE_TITLE">
+pubc_errcode_http_status_code
+</P>
+<PRE CLASS="DECL_TEXT">
+pubc_errcode_http_status_code CONSTANT NUMBER := -20001;
+</PRE>
+<P CLASS="DESC_TEXT">
+Exceptions for Twitter<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_error_http_status"></A>
+<P CLASS="TYPE_TITLE">
+check_error_http_status
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE check_error_http_status
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Check if Response HTTP Status is successful (2XX Status codes)<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="encode_key_secret_base64"></A>
+<P CLASS="TYPE_TITLE">
+encode_key_secret_base64
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION encode_key_secret_base64(i_consumer_key    IN system.twitter_consumer_key%TYPE,
+                                  i_consumer_secret IN system.twitter_consumer_secret%TYPE)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Encode consumer key and secret for twitter authentication request<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_consumer_key&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_consumer_secret&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+base64 string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_bearer_token"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_bearer_token
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_bearer_token(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE := NULL,
+                                  i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE := NULL)
+  RETURN system.twitter_api_bearer%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get Twitter bearer (auth token) for future authentication<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_consumer_key&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_consumer_secret&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="invalidate_bearer_token"></A>
+<P CLASS="TYPE_TITLE">
+invalidate_bearer_token
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE invalidate_bearer_token
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Invalidate Twitter bearer (auth token) + remove from system table<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="set_http_headers"></A>
+<P CLASS="TYPE_TITLE">
+set_http_headers
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE set_http_headers(i_bearer_token IN system.twitter_api_bearer%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Set HTTP Headers for Twitter REST Calls<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_bearer_token&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_api_test_url_result"></A>
+<P CLASS="TYPE_TITLE">
+get_api_test_url_result
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_api_test_url_result(i_url IN VARCHAR2) RETURN CLOB
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Function to test the different API calls from Twitter<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_url&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+clob json string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_rate_limit_status"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_rate_limit_status
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_rate_limit_status(o_users_lookup_limit      OUT NUMBER,
+                                       o_users_lookup_remaining  OUT NUMBER,
+                                       o_friends_ids_limit       OUT NUMBER,
+                                       o_friends_ids_remaining   OUT NUMBER,
+                                       o_followers_ids_limit     OUT NUMBER,
+                                       o_followers_ids_remaining OUT NUMBER,
+                                       o_search_tweets_limit     OUT NUMBER,
+                                       o_search_tweets_remaining OUT NUMBER)
+  RETURN CLOB
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get Twitter limits of api calls, max value and current used<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_users_lookup_limit&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_users_lookup_remaining&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_friends_ids_limit&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_friends_ids_remaining&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_followers_ids_limit&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_followers_ids_remaining&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_search_tweets_limit&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_search_tweets_remaining&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+clob json string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="check_twitter_api_limits"></A>
+<P CLASS="TYPE_TITLE">
+check_twitter_api_limits
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION check_twitter_api_limits(i_api_type IN VARCHAR2) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Check if Twitter API Calls are possible, or if limit is reached<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_api_type&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+(users/friends/followers/search)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_followers"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_followers
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_followers(i_twitter_id IN usr.twitter_id%TYPE)
+  RETURN CLOB
+
+</PRE>
+
+<HR>
+<A NAME="get_twitter_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_friends(i_twitter_id IN usr.twitter_id%TYPE)
+  RETURN CLOB
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get all Twitter friend IDs(People you follow) per twitter user id<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_id&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+clob json string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="ins_twitter_friends"></A>
+<P CLASS="TYPE_TITLE">
+ins_twitter_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE ins_twitter_friends(i_id_usr IN usr.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get all Twitter friend IDs(People you follow) per id_usr from usr table + insert all ids found in table usr_tw_friends<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_id"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_id(i_twitter_name IN usr.twitter_name%TYPE)
+  RETURN usr.twitter_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Find the Twitter User ID for an twitter name<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_name&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+twitter_id<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_name"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_name
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_name(i_twitter_id IN usr.twitter_id%TYPE)
+  RETURN usr.twitter_name%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Find the Twitter User name for an twitter ID<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_id&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+twitter_name<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_twitter_profile_pic_url"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_profile_pic_url
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_twitter_profile_pic_url(i_twitter_id IN usr.twitter_id%TYPE,
+                                     i_ssl        IN NUMBER := 1)
+  RETURN usr.twitter_profile_pic_url%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Find the Twitter Profile Pic URL for an twitter ID<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_id&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_ssl&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+(1 = https / 0 = http)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+profile-pic url<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_search_results"></A>
+<P CLASS="TYPE_TITLE">
+get_search_results
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_search_results(i_search_string IN VARCHAR2,
+                            i_count         IN NUMBER := 20) RETURN CLOB
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get all Tweets as search result with specified search string<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_search_string&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_count&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+(&lt;=100)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+clob json string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

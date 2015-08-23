@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_utils</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_utils">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_utils</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_key">get_key</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Default encryption-key Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_encrypt">do_encrypt</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Encrypt a string Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Ge&#228;ndert:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_decrypt">do_decrypt</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Decrypt a string Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 06.05.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_pwd_template">get_pwd_template</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DEFAULT-TEMPLATE for password generator Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_token_template">get_token_template</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DEFAULT-TEMPLATE for token generator (Template without specials chars) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pwd_gen">pwd_gen</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose: Password Generator Author:&nbsp; Daniel Hochleitner Created: 13.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_email">do_check_email</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check Email if correctly formatted Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#zip_add_file">zip_add_file</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Wrapper for APEX_ZIP.ADD_FILE Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_auth.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_utils';
+</PRE>
+
+<HR>
+<A NAME="get_key"></A>
+<P CLASS="TYPE_TITLE">
+get_key
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#get_key">get_key</A> RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Default encryption-key Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_encrypt"></A>
+<P CLASS="TYPE_TITLE">
+do_encrypt
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#do_encrypt">do_encrypt</A>(i_string VARCHAR2) RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Encrypt a string Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Ge&#228;ndert:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_decrypt"></A>
+<P CLASS="TYPE_TITLE">
+do_decrypt
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#do_decrypt">do_decrypt</A>(i_string VARCHAR2) RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Decrypt a string Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 06.05.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_pwd_template"></A>
+<P CLASS="TYPE_TITLE">
+get_pwd_template
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#get_pwd_template">get_pwd_template</A> RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DEFAULT-TEMPLATE for password generator Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_token_template"></A>
+<P CLASS="TYPE_TITLE">
+get_token_template
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#get_token_template">get_token_template</A> RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DEFAULT-TEMPLATE for token generator (Template without specials chars) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="pwd_gen"></A>
+<P CLASS="TYPE_TITLE">
+pwd_gen
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#pwd_gen">pwd_gen</A>(i_template IN VARCHAR2) RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose: Password Generator Author:&nbsp; Daniel Hochleitner Created: 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_check_email"></A>
+<P CLASS="TYPE_TITLE">
+do_check_email
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_utils.html#do_check_email">do_check_email</A>(i_email_adr IN VARCHAR2) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check Email if correctly formatted Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="zip_add_file"></A>
+<P CLASS="TYPE_TITLE">
+zip_add_file
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_utils.html#zip_add_file">zip_add_file</A>(p_zipped_blob IN OUT NOCOPY BLOB,
+                       p_name        IN VARCHAR2,
+                       p_content     CLOB)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Wrapper for APEX_ZIP.ADD_FILE Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

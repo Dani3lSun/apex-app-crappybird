@@ -1,0 +1,895 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_usr_battle</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_usr_battle">
+ <META name="description" content="API-Package for table usr_battle">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_usr_battle</P>
+API-Package for table usr_battle<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_battle">ins_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Inserts dataset in usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_battle">upd_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Updates datset of table usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_battle">del_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Deletes dataset of table usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_battle">get_rec_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get record of table usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_battle">get_md5_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Generates md5 checksum for usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_battle">do_check_md5_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Compares (Before/After) md5 checksum for usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_battle">get_id_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_battle of usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_challenger">get_id_usr_challenger</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_challenger of usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_receiver">get_id_usr_receiver</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_receiver of usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_highscore_challenger">get_highscore_challenger</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get highscore_challenger of usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_highscore_receiver">get_highscore_receiver</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get highscore_receiver of usr_battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_battle_users">get_id_usr_battle_users</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get usr_battle.id_usr_battle from both id_usr
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_insert_usr_battle">do_insert_usr_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Insert User IDs when Battle not present (Battle Game Page)
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_challenger_receiver">check_challenger_receiver</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Check if ID_USR is challenger or receiver of battle
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_open_battle">check_open_battle</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Check if open incoming Battles are present
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_set_usr_highscore">do_set_usr_highscore</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Set Highscore of user battle per user
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_fill_battle_details">do_fill_battle_details</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Fill items on battle details page
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Types"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Types
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pub_rec_usr_battle_type">pub_rec_usr_battle_type</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record for usr_battle
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pub_rec_usr_battle_type"></A>
+<P CLASS="TYPE_TITLE">
+pub_rec_usr_battle_type
+</P>
+<PRE CLASS="DECL_TEXT">
+TYPE pub_rec_usr_battle_type IS RECORD(
+  id_usr_battle        usr_battle.id_usr_battle%TYPE,
+  id_usr_challenger    usr_battle.id_usr_challenger%TYPE,
+  id_usr_receiver      usr_battle.id_usr_receiver%TYPE,
+  highscore_challenger usr_battle.highscore_challenger%TYPE,
+  highscore_receiver   usr_battle.highscore_receiver%TYPE);
+</PRE>
+<P CLASS="DESC_TEXT">
+Record for usr_battle<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION ins_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
+  RETURN usr_battle.id_usr_battle%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Inserts dataset in usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID (PK of dataset)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="upd_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE upd_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>,
+                         i_checksum       IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Updates datset of table usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of usr_battle<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Checksumme md5 before<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Deletes dataset of table usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+PK-ID of usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_rec_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_rec_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get record of table usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type for usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_md5_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_md5_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Generates md5 checksum for usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+md5 Checksum in Varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_check_md5_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_check_md5_usr_battle(i_checksum       IN VARCHAR2,
+                                 i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Compares (Before/After) md5 checksum for usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+checksum before<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Boolean value<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN usr_battle.id_usr_battle%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_battle of usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_battle aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_challenger"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_challenger
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_challenger(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN usr_battle.id_usr_challenger%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_challenger of usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_challenger aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_receiver"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_receiver
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_receiver(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN usr_battle.id_usr_receiver%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_receiver of usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_receiver aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_highscore_challenger"></A>
+<P CLASS="TYPE_TITLE">
+get_highscore_challenger
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_highscore_challenger(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN usr_battle.highscore_challenger%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get highscore_challenger of usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+highscore_challenger aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_highscore_receiver"></A>
+<P CLASS="TYPE_TITLE">
+get_highscore_receiver
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_highscore_receiver(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN usr_battle.highscore_receiver%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get highscore_receiver of usr_battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+highscore_receiver aus usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_battle_users"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_battle_users
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_battle_users(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+                                 i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE)
+  RETURN usr_battle.id_usr_battle%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get usr_battle.id_usr_battle from both id_usr<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_challenger&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_receiver&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_insert_usr_battle"></A>
+<P CLASS="TYPE_TITLE">
+do_insert_usr_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_insert_usr_battle(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+                              i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE)
+  RETURN usr_battle.id_usr_battle%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Insert User IDs when Battle not present (Battle Game Page)<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_challenger&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_receiver&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_battle<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="check_challenger_receiver"></A>
+<P CLASS="TYPE_TITLE">
+check_challenger_receiver
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION check_challenger_receiver(i_id_usr        IN NUMBER,
+                                   i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Check if ID_USR is challenger or receiver of battle<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+return VARCHAR2 (C = challenger / R = receiver)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="check_open_battle"></A>
+<P CLASS="TYPE_TITLE">
+check_open_battle
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION check_open_battle(i_id_usr IN NUMBER) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Check if open incoming Battles are present<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+BOOLEAN<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_set_usr_highscore"></A>
+<P CLASS="TYPE_TITLE">
+do_set_usr_highscore
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN NUMBER,
+                               i_id_usr_battle IN usr_battle.id_usr_battle%TYPE,
+                               i_highscore     IN NUMBER)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Set Highscore of user battle per user<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_highscore&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_fill_battle_details"></A>
+<P CLASS="TYPE_TITLE">
+do_fill_battle_details
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE do_fill_battle_details(i_id_usr_battle         IN usr_battle.id_usr_battle%TYPE,
+                                 o_id_usr_challenger     OUT usr_battle.id_usr_challenger%TYPE,
+                                 o_id_usr_receiver       OUT usr_battle.id_usr_receiver%TYPE,
+                                 o_name_chall            OUT VARCHAR2,
+                                 o_name_rec              OUT VARCHAR2,
+                                 o_twitter_name_chall    OUT usr.twitter_name%TYPE,
+                                 o_twitter_name_rec      OUT usr.twitter_name%TYPE,
+                                 o_profile_pic_url_chall OUT usr.twitter_profile_pic_url%TYPE,
+                                 o_profile_pic_url_rec   OUT usr.twitter_profile_pic_url%TYPE,
+                                 o_highscore_challenger  OUT usr_battle.highscore_challenger%TYPE,
+                                 o_highscore_receiver    OUT usr_battle.highscore_receiver%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Fill items on battle details page<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_battle&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_id_usr_challenger&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_id_usr_receiver&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_name_chall&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_name_rec&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_twitter_name_chall&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_twitter_name_rec&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_profile_pic_url_chall&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_profile_pic_url_rec&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_highscore_challenger&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_highscore_receiver&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

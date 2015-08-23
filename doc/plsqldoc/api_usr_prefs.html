@@ -1,0 +1,922 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_usr_prefs</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_usr_prefs">
+ <META name="description" content="API-Package for table usr_prefs">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_usr_prefs</P>
+API-Package for table usr_prefs<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_prefs">ins_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Inserts dataset in usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_prefs">upd_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Updates datset of table usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_prefs">del_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Deletes dataset of table usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_prefs">get_rec_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get record of table usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_prefs">get_md5_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Generates md5 checksum for usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_prefs">do_check_md5_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Compares (Before/After) md5 checksum for usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_prefs">get_id_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr_prefs of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_daymode">get_game_daymode</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_daymode of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_bird_color">get_game_bird_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_bird_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_treetop_color">get_game_treetop_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_treetop_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_treetrunk_color">get_game_treetrunk_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_treetrunk_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_bottom_color">get_game_bottom_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_bottom_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_grass_color">get_game_grass_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_grass_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_game_bar_color">get_game_bar_color</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get game_bar_color of usr_prefs
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_fill_usr_prefs">do_fill_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Fills page items on user prefs (customize) page
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_merge_usr_prefs">do_merge_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Merge Insert/Update Functions to save values
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Types"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Types
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pub_rec_usr_prefs_type">pub_rec_usr_prefs_type</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record for usr_prefs
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pub_rec_usr_prefs_type"></A>
+<P CLASS="TYPE_TITLE">
+pub_rec_usr_prefs_type
+</P>
+<PRE CLASS="DECL_TEXT">
+TYPE pub_rec_usr_prefs_type IS RECORD(
+  id_usr_prefs         usr_prefs.id_usr_prefs%TYPE,
+  id_usr               usr_prefs.id_usr%TYPE,
+  game_daymode         usr_prefs.game_daymode%TYPE,
+  game_bird_color      usr_prefs.game_bird_color%TYPE,
+  game_treetop_color   usr_prefs.game_treetop_color%TYPE,
+  game_treetrunk_color usr_prefs.game_treetrunk_color%TYPE,
+  game_bottom_color    usr_prefs.game_bottom_color%TYPE,
+  game_grass_color     usr_prefs.game_grass_color%TYPE,
+  game_bar_color       usr_prefs.game_bar_color%TYPE);
+</PRE>
+<P CLASS="DESC_TEXT">
+Record for usr_prefs<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION ins_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+  RETURN usr_prefs.id_usr_prefs%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Inserts dataset in usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID (PK of dataset)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="upd_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE upd_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>,
+                        i_checksum      IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Updates datset of table usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of usr_prefs<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Checksumme md5 before<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Deletes dataset of table usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+PK-ID of usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_rec_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_rec_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get record of table usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type for usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_md5_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_md5_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Generates md5 checksum for usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+md5 Checksum in Varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_check_md5_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_check_md5_usr_prefs(i_checksum      IN VARCHAR2,
+                                i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Compares (Before/After) md5 checksum for usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+checksum before<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Boolean value<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.id_usr_prefs%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr_prefs of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr_prefs aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_daymode"></A>
+<P CLASS="TYPE_TITLE">
+get_game_daymode
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_daymode(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_daymode%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_daymode of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_daymode aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_bird_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_bird_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_bird_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_bird_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_bird_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_bird_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_treetop_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_treetop_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_treetop_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_treetop_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_treetop_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_treetop_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_treetrunk_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_treetrunk_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_treetrunk_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_treetrunk_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_treetrunk_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_treetrunk_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_bottom_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_bottom_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_bottom_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_bottom_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_bottom_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_bottom_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_grass_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_grass_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_grass_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_grass_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_grass_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_grass_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_game_bar_color"></A>
+<P CLASS="TYPE_TITLE">
+get_game_bar_color
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_game_bar_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+  RETURN usr_prefs.game_bar_color%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get game_bar_color of usr_prefs<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+game_bar_color aus usr_prefs<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_fill_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+do_fill_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE do_fill_usr_prefs(i_id_usr               IN usr_prefs.id_usr%TYPE,
+                            o_id_usr_prefs         OUT usr_prefs.id_usr_prefs%TYPE,
+                            o_game_daymode         OUT usr_prefs.game_daymode%TYPE,
+                            o_game_bird_color      OUT usr_prefs.game_bird_color%TYPE,
+                            o_game_treetop_color   OUT usr_prefs.game_treetop_color%TYPE,
+                            o_game_treetrunk_color OUT usr_prefs.game_treetrunk_color%TYPE,
+                            o_game_bottom_color    OUT usr_prefs.game_bottom_color%TYPE,
+                            o_game_grass_color     OUT usr_prefs.game_grass_color%TYPE,
+                            o_game_bar_color       OUT usr_prefs.game_bar_color%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Fills page items on user prefs (customize) page<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_daymode&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_bird_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_treetop_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_treetrunk_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_bottom_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_grass_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+o_game_bar_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_merge_usr_prefs"></A>
+<P CLASS="TYPE_TITLE">
+do_merge_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE do_merge_usr_prefs(i_id_usr               IN usr_prefs.id_usr%TYPE,
+                             i_id_usr_prefs         IN usr_prefs.id_usr_prefs%TYPE,
+                             i_game_daymode         IN usr_prefs.game_daymode%TYPE,
+                             i_game_bird_color      IN usr_prefs.game_bird_color%TYPE,
+                             i_game_treetop_color   IN usr_prefs.game_treetop_color%TYPE,
+                             i_game_treetrunk_color IN usr_prefs.game_treetrunk_color%TYPE,
+                             i_game_bottom_color    IN usr_prefs.game_bottom_color%TYPE,
+                             i_game_grass_color     IN usr_prefs.game_grass_color%TYPE,
+                             i_game_bar_color       IN usr_prefs.game_bar_color%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Merge Insert/Update Functions to save values<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr_prefs&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_daymode&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_bird_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_treetop_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_treetrunk_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_bottom_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_grass_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_game_bar_color&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

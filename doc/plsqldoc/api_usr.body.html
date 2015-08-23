@@ -1,0 +1,897 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_usr</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_usr">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_usr</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#getc_admin_pk">getc_admin_pk</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Functions for constants
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr">ins_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; INSERTS dataset into usr and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr">upd_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; UPDATES dataset of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr">del_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES dataset of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr">get_rec_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get Record of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr">get_md5_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Generates md5 checksum for usr using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr">do_check_md5_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.id_usr of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr2">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.id_usr of usr from twitter_id Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr3">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.id_usr of usr from email address Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_email">get_usr_email</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.usr_email of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_pwd">get_usr_pwd</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.usr_pwd of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_firstname">get_usr_firstname</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.usr_firstname of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_lastname">get_usr_lastname</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.usr_lastname of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_name">get_twitter_name</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.twitter_name of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_id">get_twitter_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.twitter_id of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.twitter_profile_pic_url of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_show_acc_public">get_show_acc_public</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.show_acc_public of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_acc_active">get_acc_active</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.acc_active of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_highscore">get_usr_highscore</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr.usr_highscore of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_register_usr">do_register_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Register User with (generated pwd/active=0) + send email with link Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_finish_register_usr">do_finish_register_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Finishes registration of user (set account akctive + new pwd) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_send_pwd_lost_mail">do_send_pwd_lost_mail</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Send email when User lost his password with token-link Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_finish_password_lost">do_finish_password_lost</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Finishes password lost function of user (set new pwd) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_gen_new_reg_email">do_gen_new_reg_email</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Generates new registration email Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_email_unique">check_usr_email_unique</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user email is unique Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_pwd_correct">check_usr_pwd_correct</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if current user pwd is correct Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_twitter_name_unique">check_usr_twitter_name_unique</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user twitter name is unique Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_fill_usr_profile">do_fill_usr_profile</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Fills the items on User profile pages Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_fill_usr_edit_profile">do_fill_usr_edit_profile</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Fills the items on User profile edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_update_usr_edit_profile">do_update_usr_edit_profile</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Updates USR Table from profile edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_update_usr_pwd">do_update_usr_pwd</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Changes the User password Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_set_usr_highscore">do_set_usr_highscore</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Sets the Game Highscore for User Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_admin">check_usr_admin</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user is admin user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_public">check_usr_public</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user has a public account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_twitter">check_usr_twitter</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user has a twitter account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_active">check_usr_active</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user has a active account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_usr_inactive">check_usr_inactive</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if user has a inactive account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_change_usr_acc_status">do_change_usr_acc_status</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Changes the User status (active/inactive) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#set_username_localstorage">set_username_localstorage</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Sets the username in Brwoser LocalStorage (For Fullscreen WebApps) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_username_localstorage">get_username_localstorage</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get username from Brwoser LocalStorage and sets Page item with value Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_insert_admin_setup">do_insert_admin_setup</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Creates admin user for setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_usr_battle.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr';
+</PRE>
+
+<HR>
+<A NAME="getc_admin_pk"></A>
+<P CLASS="TYPE_TITLE">
+getc_admin_pk
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#getc_admin_pk">getc_admin_pk</A> RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Functions for constants<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_usr"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#ins_usr">ins_usr</A>(i_rec_usr IN <A HREF="api_usr.html#pub_rec_usr_type">pub_rec_usr_type</A>) RETURN usr.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; INSERTS dataset into usr and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="upd_usr"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#upd_usr">upd_usr</A>(i_rec_usr  IN <A HREF="api_usr.html#pub_rec_usr_type">pub_rec_usr_type</A>,
+                  i_checksum IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; UPDATES dataset of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_usr"></A>
+<P CLASS="TYPE_TITLE">
+del_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#del_usr">del_usr</A>(i_id_usr IN usr.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES dataset of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_rec_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_rec_usr">get_rec_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN <A HREF="api_usr.html#pub_rec_usr_type">pub_rec_usr_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get Record of table usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_md5_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_md5_usr">get_md5_usr</A>(i_rec_usr IN <A HREF="api_usr.html#pub_rec_usr_type">pub_rec_usr_type</A>) RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Generates md5 checksum for usr using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_check_md5_usr"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#do_check_md5_usr">do_check_md5_usr</A>(i_checksum IN VARCHAR2,
+                          i_rec_usr  IN <A HREF="api_usr.html#pub_rec_usr_type">pub_rec_usr_type</A>) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.id_usr of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr2"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_twitter_id IN usr.twitter_id%TYPE)
+  RETURN usr.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.id_usr of usr from twitter_id Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr3"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_usr_email IN usr.usr_email%TYPE)
+  RETURN usr.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.id_usr of usr from email address Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_email"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_email
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_usr_email">get_usr_email</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.usr_email%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.usr_email of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_pwd"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_pwd
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_usr_pwd">get_usr_pwd</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.usr_pwd%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.usr_pwd of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_firstname"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_firstname
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_usr_firstname">get_usr_firstname</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.usr_firstname%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.usr_firstname of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_lastname"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_lastname
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_usr_lastname">get_usr_lastname</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.usr_lastname%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.usr_lastname of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_name"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_name
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_twitter.html#get_twitter_name">get_twitter_name</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.twitter_name%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.twitter_name of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_id"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_twitter.html#get_twitter_id">get_twitter_id</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.twitter_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.twitter_id of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_profile_pic_url"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_profile_pic_url
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_twitter.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.twitter_profile_pic_url%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.twitter_profile_pic_url of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_show_acc_public"></A>
+<P CLASS="TYPE_TITLE">
+get_show_acc_public
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_show_acc_public">get_show_acc_public</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.show_acc_public%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.show_acc_public of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_acc_active"></A>
+<P CLASS="TYPE_TITLE">
+get_acc_active
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_acc_active">get_acc_active</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.acc_active%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.acc_active of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_highscore"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_highscore
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#get_usr_highscore">get_usr_highscore</A>(i_id_usr IN usr.id_usr%TYPE)
+  RETURN usr.usr_highscore%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr.usr_highscore of usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_register_usr"></A>
+<P CLASS="TYPE_TITLE">
+do_register_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_register_usr">do_register_usr</A>(i_usr_firstname IN usr.usr_firstname%TYPE,
+                          i_usr_lastname  IN usr.usr_lastname%TYPE,
+                          i_usr_email     IN usr.usr_email%TYPE,
+                          i_software_url  IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Register User with (generated pwd/active=0) + send email with link Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_finish_register_usr"></A>
+<P CLASS="TYPE_TITLE">
+do_finish_register_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_finish_register_usr">do_finish_register_usr</A>(i_id_usr_crypt IN VARCHAR2,
+                                 i_token        IN usr_token.token%TYPE,
+                                 i_usr_pwd      IN usr.usr_pwd%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Finishes registration of user (set account akctive + new pwd) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_send_pwd_lost_mail"></A>
+<P CLASS="TYPE_TITLE">
+do_send_pwd_lost_mail
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_send_pwd_lost_mail">do_send_pwd_lost_mail</A>(i_usr_email    IN usr.usr_email%TYPE,
+                                i_software_url IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Send email when User lost his password with token-link Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_finish_password_lost"></A>
+<P CLASS="TYPE_TITLE">
+do_finish_password_lost
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_finish_password_lost">do_finish_password_lost</A>(i_id_usr_crypt IN VARCHAR2,
+                                  i_token        IN usr_token.token%TYPE,
+                                  i_usr_pwd      IN usr.usr_pwd%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Finishes password lost function of user (set new pwd) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_gen_new_reg_email"></A>
+<P CLASS="TYPE_TITLE">
+do_gen_new_reg_email
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_gen_new_reg_email">do_gen_new_reg_email</A>(i_id_usr_crypt IN VARCHAR2,
+                               i_software_url IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Generates new registration email Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_email_unique"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_email_unique
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_email_unique">check_usr_email_unique</A>(i_usr_email IN usr.usr_email%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user email is unique Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_pwd_correct"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_pwd_correct
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_pwd_correct">check_usr_pwd_correct</A>(i_id_usr  IN usr.id_usr%TYPE,
+                               i_usr_pwd IN usr.usr_pwd%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if current user pwd is correct Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_twitter_name_unique"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_twitter_name_unique
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_twitter_name_unique">check_usr_twitter_name_unique</A>(i_twitter_name IN usr.twitter_name%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user twitter name is unique Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_fill_usr_profile"></A>
+<P CLASS="TYPE_TITLE">
+do_fill_usr_profile
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_fill_usr_profile">do_fill_usr_profile</A>(i_id_usr                  IN usr.id_usr%TYPE,
+                              o_usr_email               OUT usr.usr_email%TYPE,
+                              o_usr_name                OUT VARCHAR2,
+                              o_twitter_name            OUT usr.twitter_name%TYPE,
+                              o_usr_highscore           OUT usr.usr_highscore%TYPE,
+                              o_twitter_profile_pic_url OUT usr.twitter_profile_pic_url%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Fills the items on User profile pages Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_fill_usr_edit_profile"></A>
+<P CLASS="TYPE_TITLE">
+do_fill_usr_edit_profile
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_fill_usr_edit_profile">do_fill_usr_edit_profile</A>(i_id_usr          IN usr.id_usr%TYPE,
+                                   o_usr_email       OUT usr.usr_email%TYPE,
+                                   o_usr_firstname   OUT usr.usr_firstname%TYPE,
+                                   o_usr_lastname    OUT usr.usr_lastname%TYPE,
+                                   o_twitter_name    OUT usr.twitter_name%TYPE,
+                                   o_show_acc_public OUT usr.show_acc_public%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Fills the items on User profile edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_update_usr_edit_profile"></A>
+<P CLASS="TYPE_TITLE">
+do_update_usr_edit_profile
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_update_usr_edit_profile">do_update_usr_edit_profile</A>(i_id_usr          IN usr.id_usr%TYPE,
+                                     i_usr_email       IN usr.usr_email%TYPE,
+                                     i_usr_firstname   IN usr.usr_firstname%TYPE,
+                                     i_usr_lastname    IN usr.usr_lastname%TYPE,
+                                     i_twitter_name    IN usr.twitter_name%TYPE,
+                                     i_show_acc_public IN usr.show_acc_public%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Updates USR Table from profile edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_update_usr_pwd"></A>
+<P CLASS="TYPE_TITLE">
+do_update_usr_pwd
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_update_usr_pwd">do_update_usr_pwd</A>(i_id_usr  IN usr.id_usr%TYPE,
+                            i_usr_pwd IN usr.usr_pwd%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Changes the User password Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_set_usr_highscore"></A>
+<P CLASS="TYPE_TITLE">
+do_set_usr_highscore
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN usr.id_usr%TYPE,
+                               i_usr_highscore IN usr.usr_highscore%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Sets the Game Highscore for User Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_admin"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_admin
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_admin">check_usr_admin</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user is admin user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_public"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_public
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_public">check_usr_public</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user has a public account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_twitter"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_twitter
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_twitter">check_usr_twitter</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user has a twitter account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_active"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_active
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_active">check_usr_active</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user has a active account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_usr_inactive"></A>
+<P CLASS="TYPE_TITLE">
+check_usr_inactive
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#check_usr_inactive">check_usr_inactive</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if user has a inactive account Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_change_usr_acc_status"></A>
+<P CLASS="TYPE_TITLE">
+do_change_usr_acc_status
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_change_usr_acc_status">do_change_usr_acc_status</A>(i_id_usr     IN usr.id_usr%TYPE,
+                                   i_acc_active IN usr.acc_active%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Changes the User status (active/inactive) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 20.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="set_username_localstorage"></A>
+<P CLASS="TYPE_TITLE">
+set_username_localstorage
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#set_username_localstorage">set_username_localstorage</A>(i_user_name IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Sets the username in Brwoser LocalStorage (For Fullscreen WebApps) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_username_localstorage"></A>
+<P CLASS="TYPE_TITLE">
+get_username_localstorage
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#get_username_localstorage">get_username_localstorage</A>(i_item_name IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get username from Brwoser LocalStorage and sets Page item with value Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_insert_admin_setup"></A>
+<P CLASS="TYPE_TITLE">
+do_insert_admin_setup
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr.html#do_insert_admin_setup">do_insert_admin_setup</A>(i_usr_firstname IN usr.usr_firstname%TYPE,
+                                i_usr_lastname  IN usr.usr_lastname%TYPE,
+                                i_usr_email     IN usr.usr_email%TYPE,
+                                i_usr_pwd       IN usr.usr_pwd%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Creates admin user for setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

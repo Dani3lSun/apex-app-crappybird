@@ -1,0 +1,737 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package api_err_log</TITLE>
+ <META name="object" content="PACKAGE">
+ <META name="name" content="api_err_log">
+ <META name="description" content="API-Package for table err_log">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package api_err_log</P>
+API-Package for table err_log<br>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_err_log">ins_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Inserts dataset in err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_err_log">upd_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Updates datset of table err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_err_log">del_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Deletes dataset of table err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_err_log">get_rec_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get record of table err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_err_log">get_md5_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Generates md5 checksum for err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_err_log">do_check_md5_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Compares (Before/After) md5 checksum for err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_err_log">get_id_err_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_err_log of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_err_log_function">get_err_log_function</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get err_log_function of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_err_log_text">get_err_log_text</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get err_log_text of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_err_log_date">get_err_log_date</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get err_log_date of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get id_usr of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_app_id">get_app_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get app_id of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_app_page_id">get_app_page_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get app_page_id of err_log
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_log">do_log</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Do error log entries for database funtions
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_log_apex">do_log_apex</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Do error log entries for apex
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Types"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Types
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#pub_rec_err_log_type">pub_rec_err_log_type</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record for err_log
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="pub_rec_err_log_type"></A>
+<P CLASS="TYPE_TITLE">
+pub_rec_err_log_type
+</P>
+<PRE CLASS="DECL_TEXT">
+TYPE pub_rec_err_log_type IS RECORD(
+  id_err_log       err_log.id_err_log%TYPE,
+  err_log_function err_log.err_log_function%TYPE,
+  err_log_text     err_log.err_log_text%TYPE,
+  err_log_date     err_log.err_log_date%TYPE,
+  id_usr           err_log.id_usr%TYPE,
+  app_id           err_log.app_id%TYPE,
+  app_page_id      err_log.app_page_id%TYPE);
+</PRE>
+<P CLASS="DESC_TEXT">
+Record for err_log<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_err_log"></A>
+<P CLASS="TYPE_TITLE">
+ins_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION ins_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
+  RETURN err_log.id_err_log%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Inserts dataset in err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID (PK of dataset)<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="upd_err_log"></A>
+<P CLASS="TYPE_TITLE">
+upd_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE upd_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>,
+                      i_checksum    IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Updates datset of table err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of err_log<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Checksumme md5 before<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="del_err_log"></A>
+<P CLASS="TYPE_TITLE">
+del_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE del_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Deletes dataset of table err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+PK-ID of err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_rec_err_log"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_rec_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get record of table err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+ID aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type for err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_md5_err_log"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_md5_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Generates md5 checksum for err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+md5 Checksum in Varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_check_md5_err_log"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_check_md5_err_log(i_checksum    IN VARCHAR2,
+                              i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Compares (Before/After) md5 checksum for err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_checksum&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+checksum before<br>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_rec_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Record-Type of table<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Boolean value<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_err_log"></A>
+<P CLASS="TYPE_TITLE">
+get_id_err_log
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.id_err_log%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_err_log of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_err_log aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_err_log_function"></A>
+<P CLASS="TYPE_TITLE">
+get_err_log_function
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_err_log_function(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.err_log_function%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get err_log_function of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+err_log_function aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_err_log_text"></A>
+<P CLASS="TYPE_TITLE">
+get_err_log_text
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_err_log_text(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.err_log_text%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get err_log_text of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+err_log_text aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_err_log_date"></A>
+<P CLASS="TYPE_TITLE">
+get_err_log_date
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_err_log_date(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.err_log_date%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get err_log_date of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+err_log_date aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_id_usr(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get id_usr of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+id_usr aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_app_id"></A>
+<P CLASS="TYPE_TITLE">
+get_app_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_app_id(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.app_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get app_id of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+app_id aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_app_page_id"></A>
+<P CLASS="TYPE_TITLE">
+get_app_page_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_app_page_id(i_id_err_log IN err_log.id_err_log%TYPE)
+  RETURN err_log.app_page_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get app_page_id of err_log<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_err_log&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+app_page_id aus err_log<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_log"></A>
+<P CLASS="TYPE_TITLE">
+do_log
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE do_log(i_log_function IN VARCHAR2,
+                 i_log_text     IN CLOB)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Do error log entries for database funtions<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_log_function&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_log_text&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="do_log_apex"></A>
+<P CLASS="TYPE_TITLE">
+do_log_apex
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION do_log_apex(p_error IN apex_error.t_error)
+  RETURN apex_error.t_error_result
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Do error log entries for apex<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+p_error&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+apex_error.t_error<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+apex_error.t_error_result<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

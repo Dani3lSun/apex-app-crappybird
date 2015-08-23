@@ -1,0 +1,480 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_system</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_system">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_system</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#getc_system_pk">getc_system_pk</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Functions for constants
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_system">ins_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; INSERTS dataset into system and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_system">upd_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; UPDATES dataset of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_system">del_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES dataset of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_system">get_rec_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get Record of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_system">get_md5_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Generates md5 checksum for system using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_system">do_check_md5_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Compares (Before/After) md5 checksum of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_system">get_id_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.id_system of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_consumer_key">get_twitter_consumer_key</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.twitter_consumer_key of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_consumer_secret">get_twitter_consumer_secret</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.twitter_consumer_secret of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_api_bearer">get_twitter_api_bearer</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.twitter_api_bearer of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_ssl_wallet_path">get_twitter_ssl_wallet_path</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.twitter_ssl_wallet_path of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_twitter_ssl_wallet_pwd">get_twitter_ssl_wallet_pwd</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.twitter_ssl_wallet_pwd of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_email_from">get_email_from</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.email_from of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_email_register_subject">get_email_register_subject</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.email_register_subject of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_email_register_text">get_email_register_text</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.email_register_text of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_email_usrpwd_subject">get_email_usrpwd_subject</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.email_usrpwd_subject of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_email_usrpwd_text">get_email_usrpwd_text</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get system.email_usrpwd_text of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_fill_system">do_fill_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Fills the items on system admin pages Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_update_system">do_update_system</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Updates SYSTEM Table from system edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_insert_system_setup">do_insert_system_setup</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Insert System defaults in setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_twitter.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_system';
+</PRE>
+
+<HR>
+<A NAME="getc_system_pk"></A>
+<P CLASS="TYPE_TITLE">
+getc_system_pk
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#getc_system_pk">getc_system_pk</A> RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Functions for constants<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="ins_system"></A>
+<P CLASS="TYPE_TITLE">
+ins_system
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#ins_system">ins_system</A>(i_rec_system IN <A HREF="api_system.html#pub_rec_system_type">pub_rec_system_type</A>)
+  RETURN system.id_system%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; INSERTS dataset into system and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="upd_system"></A>
+<P CLASS="TYPE_TITLE">
+upd_system
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_system.html#upd_system">upd_system</A>(i_rec_system IN <A HREF="api_system.html#pub_rec_system_type">pub_rec_system_type</A>,
+                     i_checksum   IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; UPDATES dataset of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_system"></A>
+<P CLASS="TYPE_TITLE">
+del_system
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_system.html#del_system">del_system</A>(i_id_system IN system.id_system%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES dataset of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_rec_system"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_system
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_rec_system">get_rec_system</A>(i_id_system IN system.id_system%TYPE)
+  RETURN <A HREF="api_system.html#pub_rec_system_type">pub_rec_system_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get Record of table system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_md5_system"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_system
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_md5_system">get_md5_system</A>(i_rec_system IN <A HREF="api_system.html#pub_rec_system_type">pub_rec_system_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Generates md5 checksum for system using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_check_md5_system"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_system
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#do_check_md5_system">do_check_md5_system</A>(i_checksum   IN VARCHAR2,
+                             i_rec_system IN <A HREF="api_system.html#pub_rec_system_type">pub_rec_system_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Compares (Before/After) md5 checksum of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_system"></A>
+<P CLASS="TYPE_TITLE">
+get_id_system
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_id_system">get_id_system</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.id_system%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.id_system of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_consumer_key"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_consumer_key
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_twitter_consumer_key">get_twitter_consumer_key</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.twitter_consumer_key%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.twitter_consumer_key of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_consumer_secret"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_consumer_secret
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_twitter_consumer_secret">get_twitter_consumer_secret</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.twitter_consumer_secret%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.twitter_consumer_secret of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_api_bearer"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_api_bearer
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_twitter_api_bearer">get_twitter_api_bearer</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.twitter_api_bearer%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.twitter_api_bearer of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_ssl_wallet_path"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_ssl_wallet_path
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_twitter_ssl_wallet_path">get_twitter_ssl_wallet_path</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.twitter_ssl_wallet_path%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.twitter_ssl_wallet_path of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_twitter_ssl_wallet_pwd"></A>
+<P CLASS="TYPE_TITLE">
+get_twitter_ssl_wallet_pwd
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_twitter_ssl_wallet_pwd">get_twitter_ssl_wallet_pwd</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.twitter_ssl_wallet_pwd%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.twitter_ssl_wallet_pwd of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_email_from"></A>
+<P CLASS="TYPE_TITLE">
+get_email_from
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_email_from">get_email_from</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.email_from%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.email_from of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_email_register_subject"></A>
+<P CLASS="TYPE_TITLE">
+get_email_register_subject
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_email_register_subject">get_email_register_subject</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.email_register_subject%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.email_register_subject of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_email_register_text"></A>
+<P CLASS="TYPE_TITLE">
+get_email_register_text
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_email_register_text">get_email_register_text</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.email_register_text%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.email_register_text of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_email_usrpwd_subject"></A>
+<P CLASS="TYPE_TITLE">
+get_email_usrpwd_subject
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_email_usrpwd_subject">get_email_usrpwd_subject</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.email_usrpwd_subject%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.email_usrpwd_subject of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_email_usrpwd_text"></A>
+<P CLASS="TYPE_TITLE">
+get_email_usrpwd_text
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_system.html#get_email_usrpwd_text">get_email_usrpwd_text</A>(i_id_system IN system.id_system%TYPE)
+  RETURN system.email_usrpwd_text%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get system.email_usrpwd_text of system Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_fill_system"></A>
+<P CLASS="TYPE_TITLE">
+do_fill_system
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_system.html#do_fill_system">do_fill_system</A>(o_twitter_consumer_key    OUT system.twitter_consumer_key%TYPE,
+                         o_twitter_consumer_secret OUT system.twitter_consumer_secret%TYPE,
+                         o_twitter_ssl_wallet_path OUT system.twitter_ssl_wallet_path%TYPE,
+                         o_twitter_ssl_wallet_pwd  OUT system.twitter_ssl_wallet_pwd%TYPE,
+                         o_email_from              OUT system.email_from%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Fills the items on system admin pages Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_update_system"></A>
+<P CLASS="TYPE_TITLE">
+do_update_system
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_system.html#do_update_system">do_update_system</A>(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+                           i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
+                           i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
+                           i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
+                           i_email_from              IN system.email_from%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Updates SYSTEM Table from system edit page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_insert_system_setup"></A>
+<P CLASS="TYPE_TITLE">
+do_insert_system_setup
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_system.html#do_insert_system_setup">do_insert_system_setup</A>(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+                                 i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
+                                 i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
+                                 i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
+                                 i_email_from              IN system.email_from%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Insert System defaults in setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

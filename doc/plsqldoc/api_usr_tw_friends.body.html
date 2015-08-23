@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_usr_tw_friends</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_usr_tw_friends">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_usr_tw_friends</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#ins_usr_tw_friends">ins_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; INSERTS dataset into usr_tw_friends and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#upd_usr_tw_friends">upd_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; UPDATES dataset of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_tw_friends">del_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES dataset of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#del_usr_tw_friends_per_usr">del_usr_tw_friends_per_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; DELETES all rows from table usr_tw_friends per user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_rec_usr_tw_friends">get_rec_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get Record of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_md5_usr_tw_friends">get_md5_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Generates md5 checksum for usr_tw_friends using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_check_md5_usr_tw_friends">do_check_md5_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_tw_friends">get_id_usr_tw_friends</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_tw_friends.id_usr_tw_friends of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_tw_friends.id_usr of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_friend">get_id_usr_friend</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_tw_friends.id_usr_friend of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_usr_friend_twitter_id">get_usr_friend_twitter_id</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_tw_friends.usr_friend_twitter_id of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_utils.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr_tw_friends';
+</PRE>
+
+<HR>
+<A NAME="ins_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+ins_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#ins_usr_tw_friends">ins_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF="api_usr_tw_friends.html#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>)
+  RETURN usr_tw_friends.id_usr_tw_friends%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; INSERTS dataset into usr_tw_friends and returns PK Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="upd_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+upd_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_tw_friends.html#upd_usr_tw_friends">upd_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF="api_usr_tw_friends.html#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>,
+                             i_checksum           IN VARCHAR2 := NULL)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; UPDATES dataset of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_tw_friends.html#del_usr_tw_friends">del_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES dataset of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="del_usr_tw_friends_per_usr"></A>
+<P CLASS="TYPE_TITLE">
+del_usr_tw_friends_per_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_tw_friends.html#del_usr_tw_friends_per_usr">del_usr_tw_friends_per_usr</A>(i_id_usr IN usr_tw_friends.id_usr%TYPE)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; DELETES all rows from table usr_tw_friends per user Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 18.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_rec_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_rec_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#get_rec_usr_tw_friends">get_rec_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN <A HREF="api_usr_tw_friends.html#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get Record of table usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_md5_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_md5_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#get_md5_usr_tw_friends">get_md5_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF="api_usr_tw_friends.html#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>)
+  RETURN VARCHAR2
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Generates md5 checksum for usr_tw_friends using Record-type Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_check_md5_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+do_check_md5_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#do_check_md5_usr_tw_friends">do_check_md5_usr_tw_friends</A>(i_checksum           IN VARCHAR2,
+                                     i_rec_usr_tw_friends IN <A HREF="api_usr_tw_friends.html#pub_rec_usr_tw_friends_type">pub_rec_usr_tw_friends_type</A>)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Compares (Before/After) md5 checksum of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr_tw_friends"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_tw_friends
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#get_id_usr_tw_friends">get_id_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr_tw_friends%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_tw_friends.id_usr_tw_friends of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_tw_friends.id_usr of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_id_usr_friend"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_friend
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#get_id_usr_friend">get_id_usr_friend</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.id_usr_friend%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_tw_friends.id_usr_friend of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="get_usr_friend_twitter_id"></A>
+<P CLASS="TYPE_TITLE">
+get_usr_friend_twitter_id
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_tw_friends.html#get_usr_friend_twitter_id">get_usr_friend_twitter_id</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+  RETURN usr_tw_friends.usr_friend_twitter_id%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_tw_friends.usr_friend_twitter_id of usr_tw_friends Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 15.08.15 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

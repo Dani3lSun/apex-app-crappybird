@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+ <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
+ <TITLE>Package body api_mail</TITLE>
+ <META name="object" content="PACKAGE BODY">
+ <META name="name" content="api_mail">
+ <META name="description" content="">
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%"><TR>
+<TD><P ALIGN="LEFT"><STRONG><SMALL></SMALL></STRONG></TD>
+<TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
+</TR></TABLE>
+<TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
+<P CLASS="MAIN_TITLE">Package body api_mail</P>
+
+<BR>
+</TD></TR></TABLE>
+<HR>
+<A NAME="Program units"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Program units
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#send_mail">send_mail</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Send Email, wrapps APEX_MAIL.SEND Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Constants"></A>
+<TABLE CLASS="SUB_TABLE"><TR><TD CLASS="SUB_TITLE">
+Constants
+</TD></TR></TABLE>
+<TABLE CLASS="SUB_TABLE">
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#priv_package">priv_package</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="priv_package"></A>
+<P CLASS="TYPE_TITLE">
+priv_package
+</P>
+<PRE CLASS="DECL_TEXT">
+<A HREF="api_system.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_mail';
+</PRE>
+
+<HR>
+<A NAME="send_mail"></A>
+<P CLASS="TYPE_TITLE">
+send_mail
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_mail.html#send_mail">send_mail</A>(i_to        IN VARCHAR2 := NULL,
+                   i_from      IN VARCHAR2 := NULL,
+                   i_cc        IN VARCHAR2 := NULL,
+                   i_bcc       IN VARCHAR2 := NULL,
+                   i_replyto   IN VARCHAR2 := NULL,
+                   i_subject   IN VARCHAR2,
+                   i_body      IN CLOB,
+                   i_body_html IN CLOB := NULL) RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Send Email, wrapps APEX_MAIL.SEND Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 13.08.2015 Changed:<br>
+
+<BR>
+</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>
