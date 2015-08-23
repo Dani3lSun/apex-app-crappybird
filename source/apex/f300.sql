@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   19:58 Sunday August 23, 2015
+--   Date and Time:   23:00 Sunday August 23, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823195505'
+,p_last_upd_yyyymmddhh24miss=>'20150823230041'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -7462,7 +7462,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150820132107'
+,p_last_upd_yyyymmddhh24miss=>'20150823225722'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26355593358787013)
@@ -7604,9 +7604,25 @@ wwv_flow_api.create_page_validation(
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26348557315512913)
+,p_validation_name=>'P10_OLD_PWD_CORRECT'
+,p_validation_sequence=>40
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  RETURN api_usr.check_usr_pwd_correct(i_id_usr  => :f_id_usr,',
+'                                       i_usr_pwd => :p10_old_pwd);',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'#LABEL# is not correct.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26359569290787021)
+,p_associated_item=>wwv_flow_api.id(26347692426512904)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(26348344230512911)
 ,p_validation_name=>'P10_NEW_PWD_1_LENGTH'
-,p_validation_sequence=>40
+,p_validation_sequence=>50
 ,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 'BEGIN',
 '  IF length(:p10_new_pwd_1) < 8 THEN',
@@ -7625,7 +7641,7 @@ wwv_flow_api.create_page_validation(
 wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(26348483594512912)
 ,p_validation_name=>'PASSWORD_REPEAT_EQUAL'
-,p_validation_sequence=>50
+,p_validation_sequence=>60
 ,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 'BEGIN',
 '  IF :p10_new_pwd_1 = :p10_new_pwd_2 THEN',
@@ -7639,22 +7655,6 @@ wwv_flow_api.create_page_validation(
 ,p_always_execute=>'N'
 ,p_when_button_pressed=>wwv_flow_api.id(26359569290787021)
 ,p_associated_item=>wwv_flow_api.id(26347814987512906)
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-);
-wwv_flow_api.create_page_validation(
- p_id=>wwv_flow_api.id(26348557315512913)
-,p_validation_name=>'P10_OLD_PWD_CORRECT'
-,p_validation_sequence=>60
-,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'BEGIN',
-'  RETURN api_usr.check_usr_pwd_correct(i_id_usr  => :f_id_usr,',
-'                                       i_usr_pwd => :p10_new_pwd_1);',
-'END;'))
-,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
-,p_error_message=>'#LABEL# is not correct.'
-,p_always_execute=>'N'
-,p_when_button_pressed=>wwv_flow_api.id(26359569290787021)
-,p_associated_item=>wwv_flow_api.id(26347692426512904)
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 wwv_flow_api.create_page_da_event(
@@ -10368,9 +10368,9 @@ begin
 wwv_flow_api.create_page(
  p_id=>103
 ,p_user_interface_id=>wwv_flow_api.id(77408808842098354)
-,p_name=>'New Password'
+,p_name=>'Restore Password'
 ,p_page_mode=>'NORMAL'
-,p_step_title=>'New Password'
+,p_step_title=>'Restore Password'
 ,p_step_sub_title=>'New Password'
 ,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
 ,p_first_item=>'NO_FIRST_ITEM'
@@ -10383,7 +10383,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823194636'
+,p_last_upd_yyyymmddhh24miss=>'20150823225602'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26641454467233096)
