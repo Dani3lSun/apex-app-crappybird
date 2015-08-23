@@ -176,6 +176,9 @@ The following points describe the different components of the source I developed
 - Description: Table that is used for error logging functions.
 
 ###Packages
+
+plsqldoc for all package units can be found under [../doc/plsqldoc/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/doc/plsqldoc).
+
 - Name: API_AUTH
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_auth.spc / api_auth.bdy
 - Description: Package for user / apex authentication
