@@ -4,7 +4,7 @@
 	- [Description](#description)
 	- [Demo](#demo)
 	- [Changelog](#changelog)
-	- [Install](#install)
+	- [Installation](#installation)
 		- [Preparations](#preparations)
 			- [Twitter API](#twitter-api)
 			- [Oracle SSL Wallet](#oracle-ssl-wallet)
@@ -53,7 +53,7 @@ Create a login and the fun can begin.
 ##Changelog
 ####0.8 - Beta Testing
 
-##Install
+##Installation
 ###Preparations
 ####Twitter API
 The game uses the [Twitter REST API (Application-only Authentication)](https://dev.twitter.com/rest/public) to display info from twitter. Because of that, you must create a twitter developer account.
