@@ -748,6 +748,14 @@ CREATE OR REPLACE PACKAGE BODY api_system IS
                                            chr(10);
     -- insert
     l_id_system := api_system.ins_system(i_rec_system => l_rec_system);
+    COMMIT;
+    -- get twitter bearer
+    l_rec_system                    := NULL;
+    l_rec_system                    := api_system.get_rec_system(i_id_system => api_system.pubc_system_pk);
+    l_rec_system.twitter_api_bearer := api_twitter.get_twitter_bearer_token;
+    -- update
+    api_system.upd_system(i_rec_system => l_rec_system);
+    COMMIT;
     --
   EXCEPTION
     WHEN OTHERS THEN
