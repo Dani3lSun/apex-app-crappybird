@@ -179,6 +179,18 @@ CREATE OR REPLACE PACKAGE api_system IS
                              i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
                              i_email_from              IN system.email_from%TYPE);
   --
+  -- Insert System defaults in setup script
+  -- #param i_twitter_consumer_key
+  -- #param i_twitter_consumer_secret
+  -- #param i_twitter_ssl_wallet_path
+  -- #param i_twitter_ssl_wallet_pwd
+  -- #param i_email_from
+  PROCEDURE do_insert_system_setup(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+                                   i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
+                                   i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
+                                   i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
+                                   i_email_from              IN system.email_from%TYPE);
+  --
 
 END api_system;
 /

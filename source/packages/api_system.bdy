@@ -712,5 +712,50 @@ CREATE OR REPLACE PACKAGE BODY api_system IS
       RAISE;
   END do_update_system;
   --
+  /****************************************************************************
+  * Purpose:  Insert System defaults in setup script
+  * Author:   Daniel Hochleitner
+  * Created:  23.08.15
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE do_insert_system_setup(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+                                   i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
+                                   i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
+                                   i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
+                                   i_email_from              IN system.email_from%TYPE) IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'do_insert_system_setup';
+    --
+    l_rec_system api_system.pub_rec_system_type;
+    l_id_system  system.id_system%TYPE;
+    --
+  BEGIN
+    -- set values
+    l_rec_system.id_system               := api_system.pubc_system_pk;
+    l_rec_system.twitter_consumer_key    := TRIM(i_twitter_consumer_key);
+    l_rec_system.twitter_consumer_secret := TRIM(i_twitter_consumer_secret);
+    l_rec_system.twitter_ssl_wallet_path := TRIM(i_twitter_ssl_wallet_path);
+    l_rec_system.twitter_ssl_wallet_pwd  := api_utils.do_encrypt(i_string => TRIM(i_twitter_ssl_wallet_pwd));
+    l_rec_system.email_from              := TRIM(lower(i_email_from));
+    -- texts
+    l_rec_system.email_register_subject := 'Registration CrappyBird';
+    l_rec_system.email_register_text    := 'To complete registration click the following link:' ||
+                                           chr(10);
+    l_rec_system.email_usrpwd_subject   := 'New Password for CrappyBird';
+    l_rec_system.email_usrpwd_text      := 'This email is sent to you because it seems you have forgotten your password to sign in.' ||
+                                           chr(10) ||
+                                           'Please click the following link to set a new password:' ||
+                                           chr(10);
+    -- insert
+    l_id_system := api_system.ins_system(i_rec_system => l_rec_system);
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END do_insert_system_setup;
+  --
 END api_system;
 /
