@@ -16,6 +16,7 @@
 		- [Oracle Apex App Settings](#oracle-apex-app-settings)
 	- [Source Description](#source-description)
 		- [Application](#application)
+		- [Pages](#pages)
 		- [Plugins](#plugins)
 		- [Tables](#tables)
 		- [Packages](#packages)
@@ -129,6 +130,132 @@ The following points describe the different components of the source I developed
 - Name: CrappyBird
 - Files: [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) f300.sql
 - Description: The complete Oracle Apex Application for the game
+
+###Pages
+- Page Group: Not assigned
+- Page ID: 0
+- Name: Global Page
+- Description: Page for some regions that display on all pages / functions for getting GPS coordinates.
+
+---
+- Page Group: LOGIN
+- Page ID: 101
+- Name: Login Page
+- Description: Login page of app, with login, registering and password reset functions
+
+---
+- Page Group: LOGIN
+- Page ID: 102
+- Name: Finish Registration
+- Description: page for finishing registration after received email
+
+---
+- Page Group: LOGIN
+- Page ID: 103
+- Name: Restore Password
+- Description: page for restoring password (password lost) after received email
+
+---
+- Page Group: USER
+- Page ID: 1
+- Name: My Profile
+- Description: profile page of logged in person
+
+---
+- Page Group: USER
+- Page ID: 2
+- Name: Edit Profile
+- Description: edit profile page information of logged in person
+
+---
+- Page Group: USER
+- Page ID: 10
+- Name: New Password
+- Description: set new password of logged in person
+
+---
+- Page Group: PEOPLE
+- Page ID: 3
+- Name: Public Users
+- Description: Shows a list of all public users with search
+
+---
+- Page Group: PEOPLE
+- Page ID: 4
+- Name: Twitter Friends
+- Description: Shows a list of users which logged in person is following on twitter with search
+
+---
+- Page Group: PEOPLE
+- Page ID: 5
+- Name: Nearby Users
+- Description: Shows a list of users which are in the local area of logged in person with search
+
+---
+- Page Group: PEOPLE
+- Page ID: 11
+- Name: Global Ranking
+- Description: Shows a list of users ordered by the games highscore with search
+
+---
+- Page Group: PEOPLE
+- Page ID: 6
+- Name: User Profile
+- Description: Profile page of the selected user
+
+---
+- Page Group: PEOPLE
+- Page ID: 12
+- Name: Battles
+- Description: Shows a list of users which had a battle game with the logged in user
+
+---
+- Page Group: PEOPLE
+- Page ID: 13
+- Name: Battle Details
+- Description: Detail/Summery page of a selected battle game
+
+---
+- Page Group: GAME
+- Page ID: 7
+- Name: Customize Game
+- Description: Customization page of the game for the logged in user. Colors/Modes etc.
+
+---
+- Page Group: GAME
+- Page ID: 8
+- Name: Free Game
+- Description: CrappyBird game page for free play
+
+---
+- Page Group: GAME
+- Page ID: 9
+- Name: Battle Game
+- Description: CrappyBird game page for battle play between users
+
+---
+- Page Group: ADMIN
+- Page ID: 15
+- Name: System
+- Description: Admin page to configure system settings
+
+---
+- Page Group: ADMIN
+- Page ID: 16
+- Name: Error Log
+- Description: Admin page to show error logs
+
+---
+- Page Group: ADMIN
+- Page ID: 17
+- Name: Users
+- Description: Admin page to show a complete list of all registered users
+
+---
+- Page Group: ADMIN
+- Page ID: 18
+- Name: User Profile (Admin)
+- Description: Admin page to show info about selected user with user specific functions
 
 ###Plugins
 - Name: Add2Home
