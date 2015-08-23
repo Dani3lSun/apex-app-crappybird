@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   00:11 Monday August 24, 2015
+--   Date and Time:   00:24 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824001141'
+,p_last_upd_yyyymmddhh24miss=>'20150824002404'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -9459,7 +9459,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823194425'
+,p_last_upd_yyyymmddhh24miss=>'20150824002058'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -9563,6 +9563,7 @@ wwv_flow_api.create_page_plug(
 '<p>Play standalone or compete with the crowd. Play against people around the world, your twitter friends or people in your local area! Compare your performance with others and challenge them. You can even customize your playground.</p>',
 '<p>Customization + Social + CrappyBird = CrappyBird on steroids!</p>',
 '<p>Fly the bird as far as you can...</p>',
+'<p><strong>The game runs best on mobile devices especially on iOS. Just bookmark the page to your homescreen!</strong></p>',
 '<p>This game was designed and built to be part of the <a href="http://competition.odtug.com/pls/apex/f?p=AGC2015" target="_blank">ODTUG Apex Gaming Competition 2015</a>.</p>',
 '<img src="&CRAPPY_HOME.img/ODTUG-logo.png" alt="ODTUG Logo" style="max-width:250px;" />'))
 ,p_plug_query_row_template=>1
