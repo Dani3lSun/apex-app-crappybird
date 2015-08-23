@@ -133,30 +133,37 @@ The following points describe the different components of the source I developed
 - Name: USR
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr.sql
 - Description: Table that holds user information, like email/password etc.
+
 ---
 - Name: USR_PREFS
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_prefs.sql
 - Description: Table that holds user preferences, like preferred colors of the game.
+
 ---
 - Name: USR_LOCATION
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_location.sql
 - Description: Table that holds gps coordinates of the user to display friends nearby.
+
 ---
 - Name: USR_TOKEN
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_token.sql
 - Description: Table that holds user token. Used for registering and password lost function.
+
 ---
 - Name: USR_TW_FRIENDS
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_tw_friends.sql
 - Description: Table that holds information about the twitter friends of a user.
+
 ---
 - Name: USR_BATTLE
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_battle.sql
 - Description: Table that holds information about game battles between users
+
 ---
 - Name: SYSTEM
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) system.sql
 - Description: Table that holds system / app relevant information, like twitter token, email sender address etc.
+
 ---
 - Name: ERR_LOG
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) err_log.sql
@@ -166,50 +173,62 @@ The following points describe the different components of the source I developed
 - Name: API_AUTH
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_auth.spc / api_auth.bdy
 - Description: Package for user / apex authentication
+
 ---
 - Name: API_ERR_LOG
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_err_log.spc / api_err_log.bdy
 - Description: Package for error logging
+
 ---
 - Name: API_GAME
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_game.spc / api_game.bdy
 - Description: Package for the crappybird game (rendering/highscore/etc.)
+
 ---
 - Name: API_MAIL
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_mail.spc / api_mail.bdy
 - Description: Package for sending emails
+
 ---
 - Name: API_SYSTEM
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_system.spc / api_system.bdy
 - Description: Package for system table and functions/parameters
+
 ---
 - Name: API_TWITTER
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_twitter.spc / api_twitter.bdy
 - Description: Package for using the Twitter REST API
+
 ---
 - Name: API_USR
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr.spc / api_usr.bdy
 - Description: Package for user table and functions
+
 ---
 - Name: API_USR_BATTLE
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr_battle.spc / api_usr_battle.bdy
 - Description: Package for user game battle table and functions
+
 ---
 - Name: API_USR_LOCATION
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr_location.spc / api_usr_location.bdy
 - Description: Package for user location table and functions
+
 ---
 - Name: API_USR_PREFS
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr_prefs.spc / api_usr_prefs.bdy
 - Description: Package for user preferences table and functions
+
 ---
 - Name: API_USR_TOKEN
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr_token.spc / api_usr_token.bdy
 - Description: Package for user token table and functions
+
 ---
 - Name: API_USR_TW_FRIENDS
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_usr_tw_friends.spc / api_usr_tw_friends.bdy
 - Description: Package for users twitter friends table and functions
+
 ---
 - Name: API_UTILS
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_utils.spc / api_utils.bdy
@@ -239,6 +258,7 @@ Several parts of the application uses 3party code that is listed here:
 - License: MIT
 - Files: [../server/theme/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/theme)
 - Modifications: Some Template changes/ CSS changes
+
 ---
 - Part: CrappyBird Game
 - Name: CrappyBird
@@ -247,6 +267,7 @@ Several parts of the application uses 3party code that is listed here:
 - License: MIT
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_game.spc / api_game.bdy
 - Modifications: Some CSS changes / changed canvas object / JS changes to write highscore in apex item / theming engine from DB / added images
+
 ---
 - Part: Color Picker
 - Name: Spectrum
@@ -255,6 +276,7 @@ Several parts of the application uses 3party code that is listed here:
 - License: Own Open Source License
 - Files: [../server/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) in css and js subfolders
 - Modifications: None
+
 ---
 - Part: Plugin
 - Name: Add2Home
