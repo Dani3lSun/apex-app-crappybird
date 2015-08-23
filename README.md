@@ -1,6 +1,6 @@
 **Table of Contents**
 
-- [CrappyBird](#app-name)
+- [CrappyBird](#crappybird)
 	- [Description](#description)
 	- [Demo](#demo)
 	- [Changelog](#changelog)
@@ -10,10 +10,10 @@
 			- [Oracle SSL Wallet](#oracle-ssl-wallet)
 			- [Oracle Apex](#oracle-apex)
 		- [Database](#database)
-			- [User with sysdba permissions](#user-sysdba)
-			- [APP_SCHEMA user](#user-appschema)
+			- [User with sysdba permissions](#user-with-sysdba-permissions)
+			- [APP_SCHEMA user](#app_schema-user)
 		- [Webserver](#webserver)
-		- [Oracle Apex App Settings](#apex-app-settings)
+		- [Oracle Apex App Settings](#oracle-apex-app-settings)
 	- [Source Description](#source-description)
 		- [Application](#application)
 		- [Plugins](#plugins)
