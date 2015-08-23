@@ -321,6 +321,38 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
       RAISE;
   END get_id_usr;
   --
+  /****************************************************************************
+  * Purpose:  Get usr.id_usr of usr from email address
+  * Author:   Daniel Hochleitner
+  * Created:  23.08.15
+  * Changed:
+  ****************************************************************************/
+  FUNCTION get_id_usr(i_usr_email IN usr.usr_email%TYPE)
+    RETURN usr.id_usr%TYPE IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'get_id_usr';
+    --
+    l_retval usr.id_usr%TYPE;
+    CURSOR l_cur_usr IS
+      SELECT usr.id_usr
+        FROM usr
+       WHERE upper(usr.usr_email) = TRIM(upper(i_usr_email));
+  BEGIN
+    --
+    OPEN l_cur_usr;
+    FETCH l_cur_usr
+      INTO l_retval;
+    CLOSE l_cur_usr;
+    --
+    RETURN l_retval;
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END get_id_usr;
+  --
 
   /****************************************************************************
   * Purpose:  Get usr.usr_email of usr
@@ -764,6 +796,114 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
                          i_log_text     => SQLERRM);
       RAISE;
   END do_finish_register_usr;
+  --
+  /****************************************************************************
+  * Purpose:  Send email when User lost his password with token-link
+  * Author:   Daniel Hochleitner
+  * Created:  23.08.15
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE do_send_pwd_lost_mail(i_usr_email    IN usr.usr_email%TYPE,
+                                  i_software_url IN VARCHAR2) IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'do_send_pwd_lost_mail';
+    --
+    l_id_usr       usr.id_usr%TYPE;
+    l_id_usr_crypt VARCHAR2(200);
+    --
+    l_rec_usr_token api_usr_token.pub_rec_usr_token_type;
+    l_id_usr_token  usr_token.id_usr_token%TYPE;
+    l_token         usr_token.token%TYPE;
+    --
+    l_id_mail NUMBER;
+    --
+  BEGIN
+    --
+    -- get id_usr from email
+    l_id_usr := api_usr.get_id_usr(i_usr_email => i_usr_email);
+    --
+    -- go on only if ID found
+    IF l_id_usr IS NOT NULL THEN
+      --
+      -- user token (default 60 mins valid)
+      l_rec_usr_token.id_usr     := l_id_usr;
+      l_rec_usr_token.token_date := SYSDATE;
+      -- generate token
+      l_token               := api_utils.pwd_gen(i_template => api_utils.get_token_template);
+      l_rec_usr_token.token := l_token;
+      -- insert
+      l_id_usr_token := api_usr_token.ins_usr_token(i_rec_usr_token => l_rec_usr_token);
+      --
+      -- send email with link to end new password page
+      -- encrypt user-id for link
+      l_id_usr_crypt := api_utils.do_encrypt(i_string => l_id_usr);
+      --
+      l_id_mail := api_mail.send_mail(i_from    => api_system.get_email_from(i_id_system => api_system.pubc_system_pk),
+                                      i_to      => TRIM(i_usr_email),
+                                      i_subject => api_system.get_email_usrpwd_subject(i_id_system => api_system.pubc_system_pk),
+                                      i_body    => api_system.get_email_usrpwd_text(i_id_system => api_system.pubc_system_pk) ||
+                                                   chr(10) || i_software_url ||
+                                                   ':103:::NO:103:P103_ID_USR_CRYPT,P103_TOKEN:' ||
+                                                   l_id_usr_crypt || ',' ||
+                                                   l_token);
+    END IF;
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END do_send_pwd_lost_mail;
+  --
+  /****************************************************************************
+  * Purpose:  Finishes password lost function of user (set new pwd)
+  * Author:   Daniel Hochleitner
+  * Created:  23.08.15
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE do_finish_password_lost(i_id_usr_crypt IN VARCHAR2,
+                                    i_token        IN usr_token.token%TYPE,
+                                    i_usr_pwd      IN usr.usr_pwd%TYPE) IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'do_finish_password_lost';
+    --
+    l_rec_usr     api_usr.pub_rec_usr_type;
+    l_id_usr      usr.id_usr%TYPE;
+    l_pwd         usr.usr_pwd%TYPE;
+    l_check_token BOOLEAN;
+    --
+    --
+  BEGIN
+    -- decrypt id_usr
+    l_id_usr := to_number(api_utils.do_decrypt(i_string => i_id_usr_crypt));
+    --
+    -- check if token valid
+    l_check_token := api_usr_token.check_token_valid(i_id_usr => l_id_usr,
+                                                     i_token  => TRIM(i_token));
+    --
+    -- only when true
+    IF l_check_token THEN
+      --
+      -- update usr
+      l_rec_usr := api_usr.get_rec_usr(i_id_usr => l_id_usr);
+      l_pwd     := api_utils.do_encrypt(i_string => i_usr_pwd);
+      --
+      l_rec_usr.usr_pwd := l_pwd;
+      -- update
+      api_usr.upd_usr(i_rec_usr => l_rec_usr);
+      --
+      -- remove all token from user
+      api_usr_token.del_token_per_usr(i_id_usr => l_id_usr);
+    END IF;
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END do_finish_password_lost;
   --
   /****************************************************************************
   * Purpose:  Generates new registration email

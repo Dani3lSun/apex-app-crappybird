@@ -77,7 +77,11 @@ CREATE OR REPLACE PACKAGE api_usr IS
   FUNCTION get_id_usr(i_twitter_id IN usr.twitter_id%TYPE)
     RETURN usr.id_usr%TYPE;
   --
-
+  -- Get usr.id_usr of usr from email address
+  -- #param i_usr_email
+  -- #return id_usr aus usr
+  FUNCTION get_id_usr(i_usr_email IN usr.usr_email%TYPE)
+    RETURN usr.id_usr%TYPE;
   --
   -- Get usr_email of usr
   -- #param i_id_usr Id der usr
@@ -165,6 +169,20 @@ CREATE OR REPLACE PACKAGE api_usr IS
   PROCEDURE do_finish_register_usr(i_id_usr_crypt IN VARCHAR2,
                                    i_token        IN usr_token.token%TYPE,
                                    i_usr_pwd      IN usr.usr_pwd%TYPE);
+  --
+  -- Send email when User lost his password with token-link
+  -- #param i_usr_email
+  -- #param i_software_url
+  PROCEDURE do_send_pwd_lost_mail(i_usr_email    IN usr.usr_email%TYPE,
+                                  i_software_url IN VARCHAR2);
+  --
+  -- Finishes password lost function of user (set new pwd)
+  -- #param i_id_usr_crypt
+  -- #param i_token
+  -- #param i_usr_pwd
+  PROCEDURE do_finish_password_lost(i_id_usr_crypt IN VARCHAR2,
+                                    i_token        IN usr_token.token%TYPE,
+                                    i_usr_pwd      IN usr.usr_pwd%TYPE);
   --
   -- Generates new registration email
   -- #param i_id_usr_crypt
