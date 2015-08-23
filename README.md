@@ -114,9 +114,9 @@ END;
 - Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your Apex Webserver.
 
 ###Oracle Apex App Settings
-- Import the 300.sql file located in [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) into your newly created Workspace.
-- Under App Settings / Substitution Strings: Change the string CRAPPY_HOME to the actual location of the server folder on your webserver.
-- Under App Settings / Substitution Strings: Change the string SOFTWARE_URL to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
+- Import the **300.sql** file located in [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) into your newly created Workspace.
+- Under App Settings / Substitution Strings: Change the string **CRAPPY_HOME** to the actual location of the server folder on your webserver.
+- Under App Settings / Substitution Strings: Change the string **SOFTWARE_URL** to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
 
 Now you are ready to go, and people can use the game and can register on first page!
 
