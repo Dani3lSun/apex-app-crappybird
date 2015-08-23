@@ -23,7 +23,7 @@
 		- [Sequences](#sequences)
 		- [Data Model](#data-model)
 		- [SSL Wallet](#ssl-wallet)
-		- [3Party Libs](#3party-libs)
+		- [3Party Components](#3party-components)
 	- [License](#license)
 	- [Preview](#preview)
 	
@@ -385,7 +385,7 @@ plsqldoc for all package units can be found under [../doc/plsqldoc/](https://git
 - Files: [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets) twitter_wallet.zip
 - Description: Oracle SSL Wallet that contains the 2 CA certificates of api.twitter.com / Password: Twitter2015
 
-###3Party Libs
+###3Party Components
 Several parts of the application uses 3party code that is listed here:
 - Part: Theme
 - Name: material-apex
@@ -393,7 +393,7 @@ Several parts of the application uses 3party code that is listed here:
 - Link: https://github.com/vincentmorneau/material-apex
 - License: MIT
 - Files: [../server/theme/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/theme)
-- Modifications: Some Template changes/ CSS changes
+- Modifications: Some Template changes/ CSS changes / WebApp capabilities added
 
 ---
 - Part: CrappyBird Game
