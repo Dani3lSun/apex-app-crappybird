@@ -521,13 +521,13 @@ CREATE OR REPLACE PACKAGE BODY api_usr_battle IS
     OPEN l_cur_usr_battle;
     FETCH l_cur_usr_battle
       INTO l_highscore;
-    CLOSE l_cur_usr_battle;
     -- Check if open battles are present
-    IF l_highscore IS NULL THEN
+    IF l_cur_usr_battle%FOUND THEN
       l_retval := TRUE;
     ELSE
       l_retval := FALSE;
     END IF;
+    CLOSE l_cur_usr_battle;
     --
     RETURN l_retval;
     --
