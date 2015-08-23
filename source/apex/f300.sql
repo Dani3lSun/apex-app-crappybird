@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   16:35 Sunday August 23, 2015
+--   Date and Time:   19:58 Sunday August 23, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,13 +36,13 @@ prompt APPLICATION 300 - CrappyBird
 --
 
 -- Application Statistics:
---   Pages:                     20
---     Items:                   91
---     Validations:             20
---     Processes:               36
---     Regions:                 57
---     Buttons:                 31
---     Dynamic Actions:         38
+--   Pages:                     21
+--     Items:                   97
+--     Validations:             26
+--     Processes:               39
+--     Regions:                 60
+--     Buttons:                 34
+--     Dynamic Actions:         39
 --   Shared Components:
 --     Logic:
 --       Items:                  1
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823163510'
+,p_last_upd_yyyymmddhh24miss=>'20150823195505'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -7935,14 +7935,13 @@ wwv_flow_api.create_page(
 ,p_group_id=>wwv_flow_api.id(26372131622012720)
 ,p_step_template=>wwv_flow_api.id(77382002662098345)
 ,p_page_template_options=>'#DEFAULT#'
-,p_required_role=>wwv_flow_api.id(26559138998757238)
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823012829'
+,p_last_upd_yyyymmddhh24miss=>'20150823195505'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26580435253913223)
@@ -9460,7 +9459,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823012719'
+,p_last_upd_yyyymmddhh24miss=>'20150823194425'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -9474,6 +9473,19 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(26555456770516336)
+,p_plug_name=>'Password lost?'
+,p_region_name=>'bottom-sheet-password'
+,p_region_template_options=>'#DEFAULT#:bottom-sheet'
+,p_plug_template=>wwv_flow_api.id(77383982196098345)
+,p_plug_display_sequence=>40
+,p_include_in_reg_disp_sel_yn=>'N'
+,p_plug_display_point=>'REGION_POSITION_06'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(77409286195098358)
@@ -9592,6 +9604,17 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_03=>'Y'
 );
 wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(26555822924516340)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(26555456770516336)
+,p_button_name=>'P101_SEND_PWD_MAIL'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Send restore link'
+,p_button_position=>'BELOW_BOX'
+);
+wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(77413862975131284)
 ,p_button_sequence=>20
 ,p_button_plug_id=>wwv_flow_api.id(26536706084302302)
@@ -9606,8 +9629,8 @@ wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26536620410302301)
 ,p_button_sequence=>30
 ,p_button_plug_id=>wwv_flow_api.id(26536706084302302)
-,p_button_name=>'P100_NEW_PWD'
-,p_button_action=>'SUBMIT'
+,p_button_name=>'P100_SHOW_NEW_PWD'
+,p_button_action=>'DEFINED_BY_DA'
 ,p_button_template_options=>'#DEFAULT#:waves-effect:icon-float-left:red-text:btn-flat:waves-light'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Password lost?'
@@ -9661,6 +9684,24 @@ wwv_flow_api.create_page_button(
 ,p_button_redirect_url=>'javascript:var x=window.open(''https://twitter.com/home?status=Play%20CrappyBird!%20&SOFTWARE_URL.%20%23orclapex'',''_blank'');'
 ,p_button_execute_validations=>'N'
 ,p_icon_css_classes=>'share'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26555781138516339)
+,p_name=>'P101_EMAIL_PWD'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(26555456770516336)
+,p_prompt=>'Email'
+,p_pre_element_text=>'<i class="material-icons prefix">mail</i>'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_item_template_options=>'#DEFAULT#'
+,p_protection_level=>'S'
+,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'EMAIL'
+,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(77409375775098358)
@@ -9816,13 +9857,13 @@ wwv_flow_api.create_page_validation(
 wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(77477293205036094)
 ,p_validation_name=>'P101_EMAIL_VALID_ADDRESS'
-,p_validation_sequence=>60
+,p_validation_sequence=>70
 ,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 'BEGIN',
 '  RETURN api_utils.do_check_email(i_email_adr => :p101_email);',
 'END;'))
 ,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
-,p_error_message=>'#Label# is not a valid email address.'
+,p_error_message=>'#LABEL# is not a valid email address.'
 ,p_always_execute=>'N'
 ,p_when_button_pressed=>wwv_flow_api.id(77476696277036088)
 ,p_associated_item=>wwv_flow_api.id(77477215529036093)
@@ -9831,7 +9872,7 @@ wwv_flow_api.create_page_validation(
 wwv_flow_api.create_page_validation(
  p_id=>wwv_flow_api.id(51407237019316655)
 ,p_validation_name=>'P101_EMAIL_UNIQUE'
-,p_validation_sequence=>70
+,p_validation_sequence=>100
 ,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 'BEGIN',
 '  RETURN api_usr.check_usr_email_unique(i_usr_email => :p101_email);',
@@ -9841,6 +9882,33 @@ wwv_flow_api.create_page_validation(
 ,p_always_execute=>'N'
 ,p_when_button_pressed=>wwv_flow_api.id(77476696277036088)
 ,p_associated_item=>wwv_flow_api.id(77477215529036093)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26556056499516342)
+,p_validation_name=>'P101_EMAIL_PWD_NOT_NULL'
+,p_validation_sequence=>110
+,p_validation=>'P101_EMAIL_PWD'
+,p_validation_type=>'ITEM_NOT_NULL'
+,p_error_message=>'#LABEL# must have a value.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26555822924516340)
+,p_associated_item=>wwv_flow_api.id(26555781138516339)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26555933591516341)
+,p_validation_name=>'P101_EMAIL_PWD_VALID_ADDRESS'
+,p_validation_sequence=>120
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  RETURN api_utils.do_check_email(i_email_adr => :p101_email_pwd);',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'#LABEL# is not a valid email address.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26555822924516340)
+,p_associated_item=>wwv_flow_api.id(26555781138516339)
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 wwv_flow_api.create_page_da_event(
@@ -9886,9 +9954,29 @@ wwv_flow_api.create_page_da_action(
 ,p_stop_execution_on_error=>'Y'
 );
 wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(26556261166516344)
+,p_name=>'OPEN_MODAL_PASSWORD'
+,p_event_sequence=>30
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(26536620410302301)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(26556397341516345)
+,p_event_id=>wwv_flow_api.id(26556261166516344)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(77409286195098358)
+,p_attribute_01=>'$(''#bottom-sheet-password'').openModal();'
+);
+wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(26269607005712701)
 ,p_name=>'ADD2HOME'
-,p_event_sequence=>30
+,p_event_sequence=>40
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
 );
@@ -9957,8 +10045,26 @@ wwv_flow_api.create_page_process(
 ,p_process_success_message=>'Successfully registered. To complete registration follow the email link. '
 );
 wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(77410015397098359)
+ p_id=>wwv_flow_api.id(26556131236516343)
 ,p_process_sequence=>60
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'DO_SEND_MAIL_NEW_PWD'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  api_usr.do_send_pwd_lost_mail(i_usr_email    => :p101_email_pwd,',
+'                                i_software_url => :software_url);',
+'END;'))
+,p_process_error_message=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'Error sending password email.',
+'#SQLERRM#'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(26555822924516340)
+,p_process_success_message=>'To complete restoring your password follow the email link. '
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(77410015397098359)
+,p_process_sequence=>70
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_SESSION_STATE'
 ,p_process_name=>'Clear Page(s) Cache'
@@ -10251,6 +10357,254 @@ wwv_flow_api.create_page_process(
 '    :p102_token_valid := 1;',
 '  ELSE',
 '    :p102_token_valid := 0;',
+'  END IF;',
+'END;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+end;
+/
+prompt --application/pages/page_00103
+begin
+wwv_flow_api.create_page(
+ p_id=>103
+,p_user_interface_id=>wwv_flow_api.id(77408808842098354)
+,p_name=>'New Password'
+,p_page_mode=>'NORMAL'
+,p_step_title=>'New Password'
+,p_step_sub_title=>'New Password'
+,p_step_sub_title_type=>'TEXT_WITH_SUBSTITUTIONS'
+,p_first_item=>'NO_FIRST_ITEM'
+,p_autocomplete_on_off=>'OFF'
+,p_group_id=>wwv_flow_api.id(26371657845008979)
+,p_step_template=>wwv_flow_api.id(77382002662098345)
+,p_page_template_options=>'#DEFAULT#'
+,p_overwrite_navigation_list=>'N'
+,p_page_is_public_y_n=>'Y'
+,p_cache_mode=>'NOCACHE'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'DH'
+,p_last_upd_yyyymmddhh24miss=>'20150823194636'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(26641454467233096)
+,p_plug_name=>'Restore password'
+,p_region_template_options=>'#DEFAULT#:h2'
+,p_plug_template=>wwv_flow_api.id(77384709376098346)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_query_row_template=>1
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_plug_display_when_condition=>'P103_TOKEN_VALID'
+,p_plug_display_when_cond2=>'1'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(26644258335233097)
+,p_plug_name=>'Your link has expired.'
+,p_region_template_options=>'#DEFAULT#:h2'
+,p_plug_template=>wwv_flow_api.id(77384709376098346)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_query_row_template=>1
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_plug_display_when_condition=>'P103_TOKEN_VALID'
+,p_plug_display_when_cond2=>'0'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(26644674467233097)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(26644258335233097)
+,p_button_name=>'P103_BACK_LOGIN'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Back to login'
+,p_button_position=>'BODY'
+,p_button_redirect_url=>'f?p=&APP_ID.:101:&SESSION.::&DEBUG.:RP,101::'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(26641802464233096)
+,p_button_sequence=>60
+,p_button_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_button_name=>'P103_SAVE_PWD'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Set new password'
+,p_button_position=>'BODY'
+,p_grid_new_row=>'Y'
+);
+wwv_flow_api.create_page_branch(
+ p_id=>wwv_flow_api.id(26647907997233098)
+,p_branch_name=>'GOTO_LOGIN'
+,p_branch_action=>'f?p=&APP_ID.:101:&SESSION.::&DEBUG.:RP,101::&success_msg=#SUCCESS_MSG#'
+,p_branch_point=>'AFTER_PROCESSING'
+,p_branch_type=>'REDIRECT_URL'
+,p_branch_sequence=>10
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26642294283233097)
+,p_name=>'P103_TOKEN_VALID'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26642600395233097)
+,p_name=>'P103_ID_USR_CRYPT'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26643009174233097)
+,p_name=>'P103_TOKEN'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26643474584233097)
+,p_name=>'P103_PASSWORD'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_prompt=>'Password'
+,p_display_as=>'NATIVE_PASSWORD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_item_template_options=>'#DEFAULT#'
+,p_protection_level=>'S'
+,p_attribute_01=>'N'
+,p_attribute_02=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26643834997233097)
+,p_name=>'P103_PASSWORD_REPEAT'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
+,p_prompt=>'Repeat Password'
+,p_display_as=>'NATIVE_PASSWORD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_item_template_options=>'#DEFAULT#'
+,p_protection_level=>'S'
+,p_attribute_01=>'N'
+,p_attribute_02=>'Y'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26645104692233098)
+,p_validation_name=>'P103_PASSWORD_NOT_NULL'
+,p_validation_sequence=>5
+,p_validation=>'P103_PASSWORD'
+,p_validation_type=>'ITEM_NOT_NULL'
+,p_error_message=>'#LABEL# must have a value.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26641802464233096)
+,p_associated_item=>wwv_flow_api.id(26643474584233097)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26645549681233098)
+,p_validation_name=>'P103_PASSWORD_LENGTH'
+,p_validation_sequence=>10
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  IF length(:p103_password) < 8 THEN',
+'    RETURN FALSE;',
+'  ELSE',
+'    RETURN TRUE;',
+'  END IF;',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'#LABEL# is to short. Enter min. 8 characters.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26641802464233096)
+,p_associated_item=>wwv_flow_api.id(26643474584233097)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26645951461233098)
+,p_validation_name=>'P103_PASSWORD_REPEAT_NOT_NULL'
+,p_validation_sequence=>15
+,p_validation=>'P103_PASSWORD_REPEAT'
+,p_validation_type=>'ITEM_NOT_NULL'
+,p_error_message=>'#LABEL# must have a value.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26641802464233096)
+,p_associated_item=>wwv_flow_api.id(26643834997233097)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26646341465233098)
+,p_validation_name=>'PASSWORD_REPEAT_THE_SAME'
+,p_validation_sequence=>20
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  IF :p103_password = :p103_password_repeat THEN',
+'    RETURN TRUE;',
+'  ELSE',
+'    RETURN FALSE;',
+'  END IF;',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'Passwords entered are different.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26641802464233096)
+,p_associated_item=>wwv_flow_api.id(26643834997233097)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(26646676982233098)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'DO_SET_NEW_PASSWORD'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  api_usr.do_finish_password_lost(i_id_usr_crypt => :p103_id_usr_crypt,',
+'                                  i_token        => :p103_token,',
+'                                  i_usr_pwd      => :p103_password);',
+'END;',
+''))
+,p_process_error_message=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'Error during password change.',
+'#SQLERRM#'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(26641802464233096)
+,p_process_success_message=>'Successfully changed your password. Use form below to login.'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(26647490554233098)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'CHECK_TOKEN_VALID'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'DECLARE',
+'  l_id_usr usr.id_usr%TYPE;',
+'BEGIN',
+'  -- decrypt id_usr',
+'  IF :p103_id_usr_crypt IS NOT NULL THEN',
+'    l_id_usr := api_utils.do_decrypt(i_string => :p103_id_usr_crypt);',
+'  END IF;',
+'  -- check if valid (60mins)',
+'  IF api_usr_token.check_token_valid(i_id_usr => l_id_usr,',
+'                                     i_token  => :p103_token) THEN',
+'    :p103_token_valid := 1;',
+'  ELSE',
+'    :p103_token_valid := 0;',
 '  END IF;',
 'END;'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
