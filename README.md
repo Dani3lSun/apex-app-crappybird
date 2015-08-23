@@ -40,6 +40,8 @@ For example you can:
 - Mess your results in ranking lists
 The game runs best in WebKit browsers like Safari or Google Chrome. It is mobile optimized and best results can be achieved with iOS Safari, because the game runs in complete fullscreen mode (WebApp). Just bookmark the page to your homescreen.
 
+This game was designed and built to be part of the [ODTUG Apex Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
+
 ##Demo
 A demo application is available under
 https://apex.danielh.de/ords/f?p=CB
@@ -51,7 +53,7 @@ Create a login and the fun can begin.
 ##Install
 ###Preparations
 ####Twitter API
-The game uses the Twitter REST API [(Application-only Authentication)](https://dev.twitter.com/rest/public) to display info from twitter. Because of that, you must create a twitter developer account.
+The game uses the [Twitter REST API (Application-only Authentication)](https://dev.twitter.com/rest/public) to display info from twitter. Because of that, you must create a twitter developer account.
 Also you must create a Twitter App under [https://apps.twitter.com/](https://apps.twitter.com/) to get the authentication tokens.
 Create a readonly App named for example "CrappyBird Apex" and note down the 2 tokens (Consumer Key / Consumer Secret). These keys are needed later.
 
