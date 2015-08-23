@@ -253,7 +253,7 @@ The following points describe the different components of the source I developed
 Several parts of the application uses 3party code that is listed here:
 - Part: Theme
 - Name: material-apex
-- From: Vincent Morneau
+- Author: Vincent Morneau
 - Link: https://github.com/vincentmorneau/material-apex
 - License: MIT
 - Files: [../server/theme/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/theme)
@@ -262,7 +262,7 @@ Several parts of the application uses 3party code that is listed here:
 ---
 - Part: CrappyBird Game
 - Name: CrappyBird
-- From: Varun Pant
+- Author: Varun Pant
 - Link: https://github.com/varunpant/CrappyBird
 - License: MIT
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_game.spc / api_game.bdy
@@ -271,7 +271,7 @@ Several parts of the application uses 3party code that is listed here:
 ---
 - Part: Color Picker
 - Name: Spectrum
-- From: Brian Grinstead
+- Author: Brian Grinstead
 - Link: https://github.com/bgrins/spectrum
 - License: Own Open Source License
 - Files: [../server/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) in css and js subfolders
@@ -280,11 +280,13 @@ Several parts of the application uses 3party code that is listed here:
 ---
 - Part: Plugin
 - Name: Add2Home
-- From: Roel Hartman
+- Author: Roel Hartman
 - Link: http://www.apex-plugin.com/oracle-apex-plugins/dynamic-action-plugin/add2homescreen_272.html
 - License: Own Open Source License
 - Files: [../source/apex/plugins](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex/plugins) dynamic_action_plugin_com_apex-evangelists_add2home.sql
 - Modifications: None
+
+Thanks to all of you to make such amazing code public!
 
 ##License
 This software is under MIT License.
