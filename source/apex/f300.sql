@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   23:00 Sunday August 23, 2015
+--   Date and Time:   00:11 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -37,7 +37,7 @@ prompt APPLICATION 300 - CrappyBird
 
 -- Application Statistics:
 --   Pages:                     21
---     Items:                   97
+--     Items:                   98
 --     Validations:             26
 --     Processes:               39
 --     Regions:                 60
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823230041'
+,p_last_upd_yyyymmddhh24miss=>'20150824001141'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -10113,7 +10113,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150820105547'
+,p_last_upd_yyyymmddhh24miss=>'20150823234936'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(52187307686545960)
@@ -10157,12 +10157,14 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Send new registration email'
 ,p_button_position=>'BODY'
-,p_grid_new_grid=>false
+,p_button_condition=>'P102_USR_IS_REGISTERED'
+,p_button_condition2=>'0'
+,p_button_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(52187680880545960)
-,p_button_sequence=>60
+,p_button_sequence=>70
 ,p_button_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_button_name=>'P102_FINISH'
 ,p_button_action=>'SUBMIT'
@@ -10170,7 +10172,6 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Finish'
 ,p_button_position=>'BODY'
-,p_grid_new_grid=>false
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_api.create_page_branch(
@@ -10180,6 +10181,15 @@ wwv_flow_api.create_page_branch(
 ,p_branch_point=>'AFTER_PROCESSING'
 ,p_branch_type=>'REDIRECT_URL'
 ,p_branch_sequence=>10
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(26556468674516346)
+,p_name=>'P102_USR_IS_REGISTERED'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(52188099462545961)
@@ -10193,7 +10203,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(52188435655545962)
 ,p_name=>'P102_ID_USR_CRYPT'
-,p_item_sequence=>20
+,p_item_sequence=>30
 ,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
@@ -10201,7 +10211,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(52188859240545962)
 ,p_name=>'P102_TOKEN'
-,p_item_sequence=>30
+,p_item_sequence=>40
 ,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
@@ -10209,7 +10219,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(52189289061545962)
 ,p_name=>'P102_PASSWORD'
-,p_item_sequence=>40
+,p_item_sequence=>50
 ,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_prompt=>'Password'
 ,p_display_as=>'NATIVE_PASSWORD'
@@ -10223,7 +10233,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(52189662781545962)
 ,p_name=>'P102_PASSWORD_REPEAT'
-,p_item_sequence=>50
+,p_item_sequence=>60
 ,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_prompt=>'Repeat Password'
 ,p_display_as=>'NATIVE_PASSWORD'
@@ -10358,6 +10368,8 @@ wwv_flow_api.create_page_process(
 '  ELSE',
 '    :p102_token_valid := 0;',
 '  END IF;',
+'  -- check if user is already registered',
+'  :p102_usr_is_registered := api_usr.get_acc_active(i_id_usr => l_id_usr);',
 'END;'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
