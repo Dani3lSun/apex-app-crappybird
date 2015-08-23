@@ -41,7 +41,7 @@ For example you can:
 - Play against people in your local area
 - Mess your results in ranking lists
 
-The game runs best in WebKit browsers like Safari or Google Chrome. It is mobile optimized and best results can be achieved with iOS Safari, because the game runs in complete fullscreen mode (WebApp). Just bookmark the page to your homescreen.
+The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobile optimized and best results can be achieved with iOS Safari, because the game runs in complete fullscreen mode (WebApp). Just bookmark the page to your homescreen.**
 
 This game was designed and built to be part of the [ODTUG Apex Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
 
