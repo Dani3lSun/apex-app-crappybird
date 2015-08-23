@@ -280,5 +280,15 @@ CREATE OR REPLACE PACKAGE api_usr IS
   -- #param i_item_name
   PROCEDURE get_username_localstorage(i_item_name IN VARCHAR2);
   --
+  -- Creates admin user for setup script
+  -- #param i_usr_firstname
+  -- #param i_usr_lastname
+  -- #param i_usr_email
+  -- #param i_usr_pwd
+  PROCEDURE do_insert_admin_setup(i_usr_firstname IN usr.usr_firstname%TYPE,
+                                  i_usr_lastname  IN usr.usr_lastname%TYPE,
+                                  i_usr_email     IN usr.usr_email%TYPE,
+                                  i_usr_pwd       IN usr.usr_pwd%TYPE);
+  --
 END api_usr;
 /

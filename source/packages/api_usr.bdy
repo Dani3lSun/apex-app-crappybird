@@ -679,7 +679,7 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
     l_rec_usr.usr_firstname := i_usr_firstname;
     l_rec_usr.usr_lastname  := i_usr_lastname;
     l_rec_usr.acc_active    := 0; -- account inactive for now
-    -- generate pwd and decrypt
+    -- generate pwd and encrypt
     l_pwd             := api_utils.do_encrypt(i_string => api_utils.pwd_gen(i_template => api_utils.get_pwd_template));
     l_rec_usr.usr_pwd := l_pwd;
     -- insert
@@ -1392,6 +1392,46 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
                          i_log_text     => SQLERRM);
       RAISE;
   END get_username_localstorage;
+  --
+  /****************************************************************************
+  * Purpose:  Creates admin user for setup script
+  * Author:   Daniel Hochleitner
+  * Created:  23.08.15
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE do_insert_admin_setup(i_usr_firstname IN usr.usr_firstname%TYPE,
+                                  i_usr_lastname  IN usr.usr_lastname%TYPE,
+                                  i_usr_email     IN usr.usr_email%TYPE,
+                                  i_usr_pwd       IN usr.usr_pwd%TYPE) IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'do_insert_admin_setup';
+    --
+    l_rec_usr api_usr.pub_rec_usr_type;
+    l_id_usr  usr.id_usr%TYPE;
+    l_pwd     usr.usr_pwd%TYPE;
+    --
+  BEGIN
+    --
+    -- create admin user
+    l_rec_usr.id_usr          := api_usr.pubc_admin_pk; -- admin user ID
+    l_rec_usr.usr_email       := TRIM(lower(i_usr_email));
+    l_rec_usr.usr_firstname   := i_usr_firstname;
+    l_rec_usr.usr_lastname    := i_usr_lastname;
+    l_rec_usr.acc_active      := 1;
+    l_rec_usr.show_acc_public := 0;
+    -- encrypt pwd
+    l_pwd             := api_utils.do_encrypt(i_string => i_usr_pwd);
+    l_rec_usr.usr_pwd := l_pwd;
+    -- insert
+    l_id_usr := api_usr.ins_usr(i_rec_usr => l_rec_usr);
+    --  
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END do_insert_admin_setup;
   --
 END api_usr;
 /
