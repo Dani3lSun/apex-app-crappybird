@@ -10,8 +10,8 @@
 			- [Oracle SSL Wallet](#oracle-ssl-wallet)
 			- [Oracle Apex](#oracle-apex)
 		- [Database](#database)
-			- [As user with sysdba permissions](#user-sysdba)
-			- [As APP_SCHEMA user](#user-appschema)
+			- [User with sysdba permissions](#user-sysdba)
+			- [APP_SCHEMA user](#user-appschema)
 		- [Webserver](#webserver)
 		- [Oracle Apex App Settings](#apex-app-settings)
 	- [Source Description](#source-description)
@@ -30,6 +30,7 @@
 ##Description
 CrappyBird is a game made with Oracle Apex. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant.
 The game was extended to fit in the Oracle Apex environment and for better customization. Also a complete social component was added, so you can play against people or friends. Therefore a login with your email is needed.
+
 For example you can:
 - Choose the bird color
 - Choose the Daymode
@@ -38,6 +39,7 @@ For example you can:
 - Play against your twitter friends
 - Play against people in your local area
 - Mess your results in ranking lists
+
 The game runs best in WebKit browsers like Safari or Google Chrome. It is mobile optimized and best results can be achieved with iOS Safari, because the game runs in complete fullscreen mode (WebApp). Just bookmark the page to your homescreen.
 
 This game was designed and built to be part of the [ODTUG Apex Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
@@ -67,7 +69,7 @@ The password of the wallet is "Twitter2015".
 - In Apex Administration add valid email settings. APEX_MAIL is used to send emails.
 
 ###Database
-####As user with sysdba permissions
+####User with sysdba permissions
 Some features require sysdba rights. Please run following commands before running the setup!
 
 - Grant to dbms_crypto (needed for password encryption/decryption of the app)
@@ -101,12 +103,12 @@ END;
 /
 ```
 
-####As APP_SCHEMA user
+####APP_SCHEMA user
 - Connect with SQLPlus as the APP_SCHEMA User
-- Run setup.sql file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). This will install all the database objects needed to run CrappyBird App.
+- Run **setup.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). This will install all the database objects needed to run CrappyBird App.
 - Check for invalid objects! If so recompile them!
-- Run admin.sql file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for a email address and password. This will create the admin user to login within the app.
-- Run system.sql file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for both Twitter API Keys from Preparations step before, the standard email sender address of the app and location/password of the Oracle SSL Wallet. This step is important, as it is needed!
+- Run **admin.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for a email address and password. This will create the admin user to login within the app.
+- Run **system.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for both Twitter API Keys from Preparations step before, the standard email sender address of the app and location/password of the Oracle SSL Wallet. This step is important, as it is needed!
 
 ###Webserver
 - Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your Apex Webserver.
@@ -116,11 +118,13 @@ END;
 - Under App Settings / Substitution Strings: Change the string CRAPPY_HOME to the actual location of the server folder on your webserver.
 - Under App Settings / Substitution Strings: Change the string SOFTWARE_URL to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
 
-Now your are ready to go, and people can use the game and can register on first page!
+Now you are ready to go, and people can use the game and can register on first page!
 
 
 ##Source Description
+
 The following points describe the different components of the source I developed.
+
 ###Application
 - Name: CrappyBird
 - Files: [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) f300.sql
@@ -288,10 +292,11 @@ Several parts of the application uses 3party code that is listed here:
 - Files: [../source/apex/plugins](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex/plugins) dynamic_action_plugin_com_apex-evangelists_add2home.sql
 - Modifications: None
 
-Thanks to all of you to make such amazing code public!
+**Thanks to all of you to make such amazing code public!**
 
 ##License
-This software is under MIT License.
+This software is under **MIT License**.
+
 [LICENSE](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/LICENSE)
 
 ##Preview
