@@ -634,7 +634,8 @@ Purpose:&nbsp; Generates new registration email Author:&nbsp;&nbsp; Daniel Hochl
 check_usr_email_unique
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr.html#check_usr_email_unique">check_usr_email_unique</A>(i_usr_email IN usr.usr_email%TYPE)
+FUNCTION <A HREF="api_usr.html#check_usr_email_unique">check_usr_email_unique</A>(i_usr_email IN usr.usr_email%TYPE,
+                                i_id_usr    IN usr.id_usr%TYPE := NULL)
   RETURN BOOLEAN
 
 </PRE>
@@ -665,7 +666,8 @@ Purpose:&nbsp; Check if current user pwd is correct Author:&nbsp;&nbsp; Daniel H
 check_usr_twitter_name_unique
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr.html#check_usr_twitter_name_unique">check_usr_twitter_name_unique</A>(i_twitter_name IN usr.twitter_name%TYPE)
+FUNCTION <A HREF="api_usr.html#check_usr_twitter_name_unique">check_usr_twitter_name_unique</A>(i_twitter_name IN usr.twitter_name%TYPE,
+                                       i_id_usr       IN usr.id_usr%TYPE := NULL)
   RETURN BOOLEAN
 
 </PRE>
