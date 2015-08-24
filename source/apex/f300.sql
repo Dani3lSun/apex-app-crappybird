@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   14:00 Monday August 24, 2015
+--   Date and Time:   16:51 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -40,7 +40,7 @@ prompt APPLICATION 300 - CrappyBird
 --     Items:                   98
 --     Validations:             26
 --     Processes:               39
---     Regions:                 60
+--     Regions:                 61
 --     Buttons:                 34
 --     Dynamic Actions:         39
 --   Shared Components:
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824140050'
+,p_last_upd_yyyymmddhh24miss=>'20150824165100'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -9462,7 +9462,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824135931'
+,p_last_upd_yyyymmddhh24miss=>'20150824164126'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -9489,6 +9489,22 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_02=>'TEXT'
 ,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(26714965903570768)
+,p_plug_name=>'WebApp Info'
+,p_region_template_options=>'#DEFAULT#:center-align:amber:red-text'
+,p_plug_template=>wwv_flow_api.id(77383167968098345)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_new_grid_row=>false
+,p_plug_new_grid_column=>false
+,p_plug_display_point=>'BODY'
+,p_plug_source=>'CrappyBird is mobile optimized! Especially for iOS. Just bookmark the page to your homescreen!'
+,p_plug_query_row_template=>1
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(77409286195098358)
@@ -9529,7 +9545,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'Buttons'
 ,p_region_template_options=>'#DEFAULT#:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>60
+,p_plug_display_sequence=>50
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_row_template=>1
@@ -9545,7 +9561,9 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'BODY'
-,p_plug_source=>'<img src="#IMAGE_PREFIX#crappybird/img/bg1.jpg">'
+,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'<img src="#IMAGE_PREFIX#crappybird/img/bg1.jpg"',
+'width="600px">'))
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
@@ -9553,8 +9571,8 @@ wwv_flow_api.create_page_plug(
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(77413303876131279)
-,p_plug_name=>'<i class="material-icons">star_border</i> <strong>Welcome to CrappyBird</strong> <i class="material-icons">star_border</i>'
-,p_region_template_options=>'#DEFAULT#:container:flow-text-region:center-align:h2'
+,p_plug_name=>'Welcome text'
+,p_region_template_options=>'#DEFAULT#:container:flow-text-region:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
@@ -9562,14 +9580,15 @@ wwv_flow_api.create_page_plug(
 ,p_plug_new_grid_column=>false
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'<p>Play CrappyBird online and for free. Just register with your email and the fun begins!</p>',
+'<p>Register with your email below and the fun begins!</p>',
 '<p><strong>The keyfeatures are:</strong></p>',
-'<p> - <strong>mobile optimized! Especially on iOS. Just bookmark the page to your homescreen!</strong></p>',
-'<p> - Play standalone</p>',
-'<p> - Play against people around the world</p>',
-'<p> - Play against your twitter friends</p>',
-'<p> - Play against people in your local area</p>',
-'<p> - Customize your playground how you like the game</p>',
+'<p> <i class="material-icons">stay_current_portrait</i> mobile optimized</p>',
+'<p> <i class="material-icons">games</i> Play standalone</p>',
+'<p> <i class="material-icons">face</i> Play against people around the world</p>',
+'<p> <i class="material-icons">favorite</i> Play against your twitter friends</p>',
+'<p> <i class="material-icons">location_on</i> Play against people in your local area</p>',
+'<p> <i class="material-icons">build</i> Customize your playground</p>',
+'',
 '<p>Customization + Social + CrappyBird = CrappyBird on steroids!</p>',
 '<p>Fly the bird as far as you can...</p>',
 '',
@@ -9585,7 +9604,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'Share this App with your twitter friends!'
 ,p_region_template_options=>'#DEFAULT#:container:flow-text-region:center-align:h5'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>50
+,p_plug_display_sequence=>40
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_new_grid_row=>false
 ,p_plug_new_grid_column=>false
