@@ -498,6 +498,69 @@ CREATE OR REPLACE PACKAGE BODY api_usr_battle IS
   END check_challenger_receiver;
   --
   /****************************************************************************
+  * Purpose:  Check if Highscore if ID_USR is better than opposite
+  * Author:   Daniel Hochleitner
+  * Created:  24.08.15
+  * Changed:
+  ****************************************************************************/
+  FUNCTION check_better_highscore(i_id_usr        IN NUMBER,
+                                  i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+    RETURN BOOLEAN IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'check_better_highscore';
+    --
+    l_retval BOOLEAN;
+    l_type   VARCHAR2(10);
+    --
+    CURSOR l_cur_usr_battle IS
+      SELECT usr_battle.highscore_challenger,
+             usr_battle.highscore_receiver
+        FROM usr_battle
+       WHERE usr_battle.id_usr_battle = i_id_usr_battle;
+    l_rec_usr_battle l_cur_usr_battle%ROWTYPE;
+    --
+  BEGIN
+    --
+    -- get correct usr type
+    l_type := api_usr_battle.check_challenger_receiver(i_id_usr        => i_id_usr,
+                                                       i_id_usr_battle => i_id_usr_battle);
+    --
+    -- get user ids from corsor
+    OPEN l_cur_usr_battle;
+    FETCH l_cur_usr_battle
+      INTO l_rec_usr_battle;
+    CLOSE l_cur_usr_battle;
+    -- when R check if highscore of receiver is better
+    IF l_type = 'R' THEN
+      IF nvl(l_rec_usr_battle.highscore_receiver,
+             0) > nvl(l_rec_usr_battle.highscore_challenger,
+                      0) THEN
+        l_retval := TRUE;
+      ELSE
+        l_retval := FALSE;
+      END IF;
+      -- when C check if highscore of challenger is better
+    ELSIF l_type = 'C' THEN
+      IF nvl(l_rec_usr_battle.highscore_challenger,
+             0) > nvl(l_rec_usr_battle.highscore_receiver,
+                      0) THEN
+        l_retval := TRUE;
+      ELSE
+        l_retval := FALSE;
+      END IF;
+    END IF;
+    --
+    RETURN l_retval;
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END check_better_highscore;
+  --
+  /****************************************************************************
   * Purpose:  Check if open incoming Battles are present
   * Author:   Daniel Hochleitner
   * Created:  22.08.15
@@ -521,13 +584,13 @@ CREATE OR REPLACE PACKAGE BODY api_usr_battle IS
     OPEN l_cur_usr_battle;
     FETCH l_cur_usr_battle
       INTO l_highscore;
+    CLOSE l_cur_usr_battle;
     -- Check if open battles are present
-    IF l_cur_usr_battle%FOUND THEN
+    IF l_highscore IS NULL THEN
       l_retval := TRUE;
     ELSE
       l_retval := FALSE;
     END IF;
-    CLOSE l_cur_usr_battle;
     --
     RETURN l_retval;
     --

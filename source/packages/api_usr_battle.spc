@@ -117,6 +117,14 @@ CREATE OR REPLACE PACKAGE api_usr_battle IS
                                      i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
     RETURN VARCHAR2;
   --
+  -- Check if Highscore if ID_USR is better than opposite
+  -- #param i_id_usr
+  -- #param i_id_usr_battle
+  -- return BOOLEAN
+  FUNCTION check_better_highscore(i_id_usr        IN NUMBER,
+                                  i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+    RETURN BOOLEAN;
+  --
   -- Check if open incoming Battles are present
   -- #param i_id_usr
   -- #return BOOLEAN
