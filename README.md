@@ -51,6 +51,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.0 - Initial Release
 ####0.8 - Beta Testing
 
 ##Installation
@@ -70,6 +71,8 @@ The password of the wallet is "Twitter2015". The wallet must be deployed on the 
 - In Apex Administration add valid email settings. APEX_MAIL is used to send emails.
 
 ###Database
+Application should run on all versions of Oracle Database > 11gR2 (Developed on 11gR2 XE).
+
 ####User with sysdba permissions
 Some features require sysdba rights. Please run following commands before running the setup!
 
