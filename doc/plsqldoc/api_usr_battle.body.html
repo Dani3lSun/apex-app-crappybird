@@ -94,6 +94,11 @@ Purpose:&nbsp; Insert User IDs when Battle not present (Battle Game Page) Author
 Purpose:&nbsp; Check if ID_USR is challenger or receiver of battle Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#check_better_highscore">check_better_highscore</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Check if Highscore if ID_USR is better than opposite Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 24.08.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#check_open_battle">check_open_battle</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Purpose:&nbsp; Check if open incoming Battles are present Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
@@ -341,6 +346,22 @@ FUNCTION <A HREF="api_usr_battle.html#check_challenger_receiver">check_challenge
 </PRE>
 <P CLASS="DESC_TEXT">
 Purpose:&nbsp; Check if ID_USR is challenger or receiver of battle Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="check_better_highscore"></A>
+<P CLASS="TYPE_TITLE">
+check_better_highscore
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_battle.html#check_better_highscore">check_better_highscore</A>(i_id_usr        IN NUMBER,
+                                i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+  RETURN BOOLEAN
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Check if Highscore if ID_USR is better than opposite Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 24.08.15 Changed:<br>
 
 <BR>
 </P>

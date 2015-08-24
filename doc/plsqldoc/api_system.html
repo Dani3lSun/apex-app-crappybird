@@ -198,7 +198,7 @@ Record for system<br>
 getc_system_pk
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION getc_system_pk RETURN NUMBER
+FUNCTION <A HREF="api_system.body.html#getc_system_pk">getc_system_pk</A> RETURN NUMBER
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -212,7 +212,7 @@ Functions for constants<br>
 ins_system
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION ins_system(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>)
+FUNCTION <A HREF="api_system.body.html#ins_system">ins_system</A>(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>)
   RETURN system.id_system%TYPE
 
 </PRE>
@@ -253,7 +253,7 @@ ID (PK of dataset)<br>
 upd_system
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE upd_system(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>,
+PROCEDURE <A HREF="api_system.body.html#upd_system">upd_system</A>(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>,
                      i_checksum   IN VARCHAR2 := NULL)
 
 </PRE>
@@ -289,7 +289,7 @@ Checksumme md5 before<br>
 del_system
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_system(i_id_system IN system.id_system%TYPE)
+PROCEDURE <A HREF="api_system.body.html#del_system">del_system</A>(i_id_system IN system.id_system%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -317,7 +317,7 @@ PK-ID of system<br>
 get_rec_system
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_rec_system(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_rec_system">get_rec_system</A>(i_id_system IN system.id_system%TYPE)
   RETURN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>
 
 </PRE>
@@ -358,7 +358,7 @@ Record-Type for system<br>
 get_md5_system
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_md5_system(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>)
+FUNCTION <A HREF="api_system.body.html#get_md5_system">get_md5_system</A>(i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -399,7 +399,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_system
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_check_md5_system(i_checksum   IN VARCHAR2,
+FUNCTION <A HREF="api_system.body.html#do_check_md5_system">do_check_md5_system</A>(i_checksum   IN VARCHAR2,
                              i_rec_system IN <A HREF=#pub_rec_system_type>pub_rec_system_type</A>)
   RETURN BOOLEAN
 
@@ -448,7 +448,7 @@ Boolean value<br>
 get_id_system
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_id_system(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_id_system">get_id_system</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.id_system%TYPE
 
 </PRE>
@@ -489,7 +489,7 @@ id_system aus system<br>
 get_twitter_consumer_key
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_consumer_key(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_twitter_consumer_key">get_twitter_consumer_key</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.twitter_consumer_key%TYPE
 
 </PRE>
@@ -530,7 +530,7 @@ twitter_consumer_key aus system<br>
 get_twitter_consumer_secret
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_consumer_secret(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_twitter_consumer_secret">get_twitter_consumer_secret</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.twitter_consumer_secret%TYPE
 
 </PRE>
@@ -571,7 +571,7 @@ twitter_consumer_secret aus system<br>
 get_twitter_api_bearer
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_api_bearer(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_twitter_api_bearer">get_twitter_api_bearer</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.twitter_api_bearer%TYPE
 
 </PRE>
@@ -612,7 +612,7 @@ twitter_api_bearer aus system<br>
 get_twitter_ssl_wallet_path
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_ssl_wallet_path(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_twitter_ssl_wallet_path">get_twitter_ssl_wallet_path</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.twitter_ssl_wallet_path%TYPE
 
 </PRE>
@@ -653,7 +653,7 @@ twitter_ssl_wallet_path aus system<br>
 get_twitter_ssl_wallet_pwd
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_ssl_wallet_pwd(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_twitter_ssl_wallet_pwd">get_twitter_ssl_wallet_pwd</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.twitter_ssl_wallet_pwd%TYPE
 
 </PRE>
@@ -694,7 +694,7 @@ twitter_ssl_wallet_pwd aus system<br>
 get_email_from
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_email_from(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_email_from">get_email_from</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.email_from%TYPE
 
 </PRE>
@@ -735,7 +735,7 @@ email_from aus system<br>
 get_email_register_subject
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_email_register_subject(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_email_register_subject">get_email_register_subject</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.email_register_subject%TYPE
 
 </PRE>
@@ -776,7 +776,7 @@ email_register_subject aus system<br>
 get_email_register_text
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_email_register_text(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_email_register_text">get_email_register_text</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.email_register_text%TYPE
 
 </PRE>
@@ -817,7 +817,7 @@ email_register_text aus system<br>
 get_email_usrpwd_subject
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_email_usrpwd_subject(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_email_usrpwd_subject">get_email_usrpwd_subject</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.email_usrpwd_subject%TYPE
 
 </PRE>
@@ -858,7 +858,7 @@ email_usrpwd_subject aus system<br>
 get_email_usrpwd_text
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_email_usrpwd_text(i_id_system IN system.id_system%TYPE)
+FUNCTION <A HREF="api_system.body.html#get_email_usrpwd_text">get_email_usrpwd_text</A>(i_id_system IN system.id_system%TYPE)
   RETURN system.email_usrpwd_text%TYPE
 
 </PRE>
@@ -899,7 +899,7 @@ email_usrpwd_text aus system<br>
 do_fill_system
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_fill_system(o_twitter_consumer_key    OUT system.twitter_consumer_key%TYPE,
+PROCEDURE <A HREF="api_system.body.html#do_fill_system">do_fill_system</A>(o_twitter_consumer_key    OUT system.twitter_consumer_key%TYPE,
                          o_twitter_consumer_secret OUT system.twitter_consumer_secret%TYPE,
                          o_twitter_ssl_wallet_path OUT system.twitter_ssl_wallet_path%TYPE,
                          o_twitter_ssl_wallet_pwd  OUT system.twitter_ssl_wallet_pwd%TYPE,
@@ -954,7 +954,7 @@ o_email_from&nbsp;&nbsp;
 do_update_system
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_update_system(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+PROCEDURE <A HREF="api_system.body.html#do_update_system">do_update_system</A>(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
                            i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
                            i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
                            i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,
@@ -1009,7 +1009,7 @@ i_email_from&nbsp;&nbsp;
 do_insert_system_setup
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_insert_system_setup(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
+PROCEDURE <A HREF="api_system.body.html#do_insert_system_setup">do_insert_system_setup</A>(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE,
                                  i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE,
                                  i_twitter_ssl_wallet_path IN system.twitter_ssl_wallet_path%TYPE,
                                  i_twitter_ssl_wallet_pwd  IN system.twitter_ssl_wallet_pwd%TYPE,

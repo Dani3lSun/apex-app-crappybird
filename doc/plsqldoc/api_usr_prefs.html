@@ -151,7 +151,7 @@ Record for usr_prefs<br>
 ins_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION ins_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+FUNCTION <A HREF="api_usr_prefs.body.html#ins_usr_prefs">ins_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
   RETURN usr_prefs.id_usr_prefs%TYPE
 
 </PRE>
@@ -192,7 +192,7 @@ ID (PK of dataset)<br>
 upd_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE upd_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>,
+PROCEDURE <A HREF="api_usr_prefs.body.html#upd_usr_prefs">upd_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>,
                         i_checksum      IN VARCHAR2 := NULL)
 
 </PRE>
@@ -228,7 +228,7 @@ Checksumme md5 before<br>
 del_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+PROCEDURE <A HREF="api_usr_prefs.body.html#del_usr_prefs">del_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -256,7 +256,7 @@ PK-ID of usr_prefs<br>
 get_rec_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_rec_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_rec_usr_prefs">get_rec_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>
 
 </PRE>
@@ -297,7 +297,7 @@ Record-Type for usr_prefs<br>
 get_md5_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_md5_usr_prefs(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_md5_usr_prefs">get_md5_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -338,7 +338,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_check_md5_usr_prefs(i_checksum      IN VARCHAR2,
+FUNCTION <A HREF="api_usr_prefs.body.html#do_check_md5_usr_prefs">do_check_md5_usr_prefs</A>(i_checksum      IN VARCHAR2,
                                 i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
   RETURN BOOLEAN
 
@@ -387,7 +387,7 @@ Boolean value<br>
 get_id_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_id_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_id_usr_prefs">get_id_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.id_usr_prefs%TYPE
 
 </PRE>
@@ -428,7 +428,7 @@ id_usr_prefs aus usr_prefs<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_token.html#get_id_usr">get_id_usr</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.id_usr%TYPE
 
 </PRE>
@@ -469,7 +469,7 @@ id_usr aus usr_prefs<br>
 get_game_daymode
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_daymode(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_daymode">get_game_daymode</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_daymode%TYPE
 
 </PRE>
@@ -510,7 +510,7 @@ game_daymode aus usr_prefs<br>
 get_game_bird_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_bird_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bird_color">get_game_bird_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bird_color%TYPE
 
 </PRE>
@@ -551,7 +551,7 @@ game_bird_color aus usr_prefs<br>
 get_game_treetop_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_treetop_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_treetop_color">get_game_treetop_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_treetop_color%TYPE
 
 </PRE>
@@ -592,7 +592,7 @@ game_treetop_color aus usr_prefs<br>
 get_game_treetrunk_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_treetrunk_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_treetrunk_color">get_game_treetrunk_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_treetrunk_color%TYPE
 
 </PRE>
@@ -633,7 +633,7 @@ game_treetrunk_color aus usr_prefs<br>
 get_game_bottom_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_bottom_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bottom_color">get_game_bottom_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bottom_color%TYPE
 
 </PRE>
@@ -674,7 +674,7 @@ game_bottom_color aus usr_prefs<br>
 get_game_grass_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_grass_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_grass_color">get_game_grass_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_grass_color%TYPE
 
 </PRE>
@@ -715,7 +715,7 @@ game_grass_color aus usr_prefs<br>
 get_game_bar_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_game_bar_color(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bar_color">get_game_bar_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bar_color%TYPE
 
 </PRE>
@@ -756,7 +756,7 @@ game_bar_color aus usr_prefs<br>
 do_fill_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_fill_usr_prefs(i_id_usr               IN usr_prefs.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr_prefs.body.html#do_fill_usr_prefs">do_fill_usr_prefs</A>(i_id_usr               IN usr_prefs.id_usr%TYPE,
                             o_id_usr_prefs         OUT usr_prefs.id_usr_prefs%TYPE,
                             o_game_daymode         OUT usr_prefs.game_daymode%TYPE,
                             o_game_bird_color      OUT usr_prefs.game_bird_color%TYPE,
@@ -839,7 +839,7 @@ o_game_bar_color&nbsp;&nbsp;
 do_merge_usr_prefs
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_merge_usr_prefs(i_id_usr               IN usr_prefs.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr_prefs.body.html#do_merge_usr_prefs">do_merge_usr_prefs</A>(i_id_usr               IN usr_prefs.id_usr%TYPE,
                              i_id_usr_prefs         IN usr_prefs.id_usr_prefs%TYPE,
                              i_game_daymode         IN usr_prefs.game_daymode%TYPE,
                              i_game_bird_color      IN usr_prefs.game_bird_color%TYPE,

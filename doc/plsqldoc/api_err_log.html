@@ -139,7 +139,7 @@ Record for err_log<br>
 ins_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION ins_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
+FUNCTION <A HREF="api_err_log.body.html#ins_err_log">ins_err_log</A>(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
   RETURN err_log.id_err_log%TYPE
 
 </PRE>
@@ -180,7 +180,7 @@ ID (PK of dataset)<br>
 upd_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE upd_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>,
+PROCEDURE <A HREF="api_err_log.body.html#upd_err_log">upd_err_log</A>(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>,
                       i_checksum    IN VARCHAR2 := NULL)
 
 </PRE>
@@ -216,7 +216,7 @@ Checksumme md5 before<br>
 del_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+PROCEDURE <A HREF="api_err_log.body.html#del_err_log">del_err_log</A>(i_id_err_log IN err_log.id_err_log%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -244,7 +244,7 @@ PK-ID of err_log<br>
 get_rec_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_rec_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_rec_err_log">get_rec_err_log</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>
 
 </PRE>
@@ -285,7 +285,7 @@ Record-Type for err_log<br>
 get_md5_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_md5_err_log(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
+FUNCTION <A HREF="api_err_log.body.html#get_md5_err_log">get_md5_err_log</A>(i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -326,7 +326,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_check_md5_err_log(i_checksum    IN VARCHAR2,
+FUNCTION <A HREF="api_err_log.body.html#do_check_md5_err_log">do_check_md5_err_log</A>(i_checksum    IN VARCHAR2,
                               i_rec_err_log IN <A HREF=#pub_rec_err_log_type>pub_rec_err_log_type</A>)
   RETURN BOOLEAN
 
@@ -375,7 +375,7 @@ Boolean value<br>
 get_id_err_log
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_id_err_log(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_id_err_log">get_id_err_log</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.id_err_log%TYPE
 
 </PRE>
@@ -416,7 +416,7 @@ id_err_log aus err_log<br>
 get_err_log_function
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_err_log_function(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_err_log_function">get_err_log_function</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.err_log_function%TYPE
 
 </PRE>
@@ -457,7 +457,7 @@ err_log_function aus err_log<br>
 get_err_log_text
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_err_log_text(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_err_log_text">get_err_log_text</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.err_log_text%TYPE
 
 </PRE>
@@ -498,7 +498,7 @@ err_log_text aus err_log<br>
 get_err_log_date
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_err_log_date(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_err_log_date">get_err_log_date</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.err_log_date%TYPE
 
 </PRE>
@@ -539,7 +539,7 @@ err_log_date aus err_log<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_id_usr(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_usr.html#get_id_usr">get_id_usr</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.id_usr%TYPE
 
 </PRE>
@@ -580,7 +580,7 @@ id_usr aus err_log<br>
 get_app_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_app_id(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_app_id">get_app_id</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.app_id%TYPE
 
 </PRE>
@@ -621,7 +621,7 @@ app_id aus err_log<br>
 get_app_page_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_app_page_id(i_id_err_log IN err_log.id_err_log%TYPE)
+FUNCTION <A HREF="api_err_log.body.html#get_app_page_id">get_app_page_id</A>(i_id_err_log IN err_log.id_err_log%TYPE)
   RETURN err_log.app_page_id%TYPE
 
 </PRE>
@@ -662,7 +662,7 @@ app_page_id aus err_log<br>
 do_log
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_log(i_log_function IN VARCHAR2,
+PROCEDURE <A HREF="api_err_log.body.html#do_log">do_log</A>(i_log_function IN VARCHAR2,
                  i_log_text     IN CLOB)
 
 </PRE>
@@ -696,7 +696,7 @@ i_log_text&nbsp;&nbsp;
 do_log_apex
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_log_apex(p_error IN apex_error.t_error)
+FUNCTION <A HREF="api_err_log.body.html#do_log_apex">do_log_apex</A>(p_error IN apex_error.t_error)
   RETURN apex_error.t_error_result
 
 </PRE>

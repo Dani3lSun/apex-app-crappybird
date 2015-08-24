@@ -121,7 +121,7 @@ Record for usr_token<br>
 ins_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION ins_usr_token(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>)
+FUNCTION <A HREF="api_usr_token.body.html#ins_usr_token">ins_usr_token</A>(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>)
   RETURN usr_token.id_usr_token%TYPE
 
 </PRE>
@@ -162,7 +162,7 @@ ID (PK of dataset)<br>
 upd_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE upd_usr_token(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>,
+PROCEDURE <A HREF="api_usr_token.body.html#upd_usr_token">upd_usr_token</A>(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>,
                         i_checksum      IN VARCHAR2 := NULL)
 
 </PRE>
@@ -198,7 +198,7 @@ Checksumme md5 before<br>
 del_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_usr_token(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+PROCEDURE <A HREF="api_usr_token.body.html#del_usr_token">del_usr_token</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -226,7 +226,7 @@ PK-ID of usr_token<br>
 get_rec_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_rec_usr_token(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+FUNCTION <A HREF="api_usr_token.body.html#get_rec_usr_token">get_rec_usr_token</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
   RETURN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>
 
 </PRE>
@@ -267,7 +267,7 @@ Record-Type for usr_token<br>
 get_md5_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_md5_usr_token(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>)
+FUNCTION <A HREF="api_usr_token.body.html#get_md5_usr_token">get_md5_usr_token</A>(i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -308,7 +308,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_check_md5_usr_token(i_checksum      IN VARCHAR2,
+FUNCTION <A HREF="api_usr_token.body.html#do_check_md5_usr_token">do_check_md5_usr_token</A>(i_checksum      IN VARCHAR2,
                                 i_rec_usr_token IN <A HREF=#pub_rec_usr_token_type>pub_rec_usr_token_type</A>)
   RETURN BOOLEAN
 
@@ -357,7 +357,7 @@ Boolean value<br>
 get_id_usr_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_id_usr_token(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+FUNCTION <A HREF="api_usr_token.body.html#get_id_usr_token">get_id_usr_token</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
   RETURN usr_token.id_usr_token%TYPE
 
 </PRE>
@@ -398,7 +398,7 @@ id_usr_token aus usr_token<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+FUNCTION <A HREF="api_usr_tw_friends.html#get_id_usr">get_id_usr</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
   RETURN usr_token.id_usr%TYPE
 
 </PRE>
@@ -439,7 +439,7 @@ id_usr aus usr_token<br>
 get_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_token(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+FUNCTION <A HREF="api_usr_token.body.html#get_token">get_token</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
   RETURN usr_token.token%TYPE
 
 </PRE>
@@ -480,7 +480,7 @@ token aus usr_token<br>
 get_token_date
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_token_date(i_id_usr_token IN usr_token.id_usr_token%TYPE)
+FUNCTION <A HREF="api_usr_token.body.html#get_token_date">get_token_date</A>(i_id_usr_token IN usr_token.id_usr_token%TYPE)
   RETURN usr_token.token_date%TYPE
 
 </PRE>
@@ -521,7 +521,7 @@ token_date aus usr_token<br>
 check_token_valid
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_token_valid(i_id_usr      IN usr_token.id_usr%TYPE,
+FUNCTION <A HREF="api_usr_token.body.html#check_token_valid">check_token_valid</A>(i_id_usr      IN usr_token.id_usr%TYPE,
                            i_token       usr_token.token%TYPE,
                            i_default_min IN NUMBER := 60) RETURN BOOLEAN
 
@@ -574,7 +574,7 @@ BOOLEAN<br>
 del_token_per_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_token_per_usr(i_id_usr IN usr_token.id_usr%TYPE)
+PROCEDURE <A HREF="api_usr_token.body.html#del_token_per_usr">del_token_per_usr</A>(i_id_usr IN usr_token.id_usr%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
