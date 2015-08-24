@@ -63,7 +63,7 @@ Create a readonly App named for example "CrappyBird Apex" and note down the 2 to
 ####Oracle SSL Wallet
 To comunicate with the Twitter API (api.twitter.com) over HTTPS, a SSL Wallet is needed for database which contains the 2 CA certificates from api.twitter.com.
 A ready to go wallet is included in the source directory under [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets).
-The password of the wallet is "Twitter2015".
+The password of the wallet is "Twitter2015". The wallet must be deployed on the database server.
 
 ####Oracle Apex
 - Create a new empty Workspace and Schema on DB.
