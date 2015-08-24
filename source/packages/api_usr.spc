@@ -192,8 +192,10 @@ CREATE OR REPLACE PACKAGE api_usr IS
   --
   -- Check if user email is unique
   -- #param i_usr_email
+  -- #param i_id_usr
   -- #return BOOLEAN
-  FUNCTION check_usr_email_unique(i_usr_email IN usr.usr_email%TYPE)
+  FUNCTION check_usr_email_unique(i_usr_email IN usr.usr_email%TYPE,
+                                  i_id_usr    IN usr.id_usr%TYPE := NULL)
     RETURN BOOLEAN;
   --
   -- Check if current user pwd is correct
@@ -206,8 +208,10 @@ CREATE OR REPLACE PACKAGE api_usr IS
   --
   -- Check if user twitter name is unique
   -- #param i_twitter_name
+  -- #param i_id_usr
   -- #return BOOLEAN
-  FUNCTION check_usr_twitter_name_unique(i_twitter_name IN usr.twitter_name%TYPE)
+  FUNCTION check_usr_twitter_name_unique(i_twitter_name IN usr.twitter_name%TYPE,
+                                         i_id_usr       IN usr.id_usr%TYPE := NULL)
     RETURN BOOLEAN;
   --
   -- Fills the items on User profile pages

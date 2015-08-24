@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   23:16 Monday August 24, 2015
+--   Date and Time:   00:06 Tuesday August 25, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -38,7 +38,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Statistics:
 --   Pages:                     21
 --     Items:                   98
---     Validations:             26
+--     Validations:             29
 --     Processes:               39
 --     Regions:                 61
 --     Buttons:                 34
@@ -124,7 +124,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824231553'
+,p_last_upd_yyyymmddhh24miss=>'20150825000608'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -5389,7 +5389,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150822154748'
+,p_last_upd_yyyymmddhh24miss=>'20150824235326'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26154383123666018)
@@ -5595,6 +5595,53 @@ wwv_flow_api.create_page_validation(
 ,p_always_execute=>'N'
 ,p_when_button_pressed=>wwv_flow_api.id(26154973720666024)
 ,p_associated_item=>wwv_flow_api.id(26154765888666022)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26784763564220493)
+,p_validation_name=>'P2_EMAIL_VALID_ADDRESS'
+,p_validation_sequence=>40
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  RETURN api_utils.do_check_email(i_email_adr => :p2_email);',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'#LABEL# is not a valid email address.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26154973720666024)
+,p_associated_item=>wwv_flow_api.id(26154765888666022)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26785074432222309)
+,p_validation_name=>'P2_EMAIL_UNIQUE'
+,p_validation_sequence=>50
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  RETURN api_usr.check_usr_email_unique(i_usr_email => :p2_email,',
+'                                        i_id_usr    => :f_id_usr);',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'This #LABEL# is already registered. Choose another address.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26154973720666024)
+,p_associated_item=>wwv_flow_api.id(26154765888666022)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(26751934102299106)
+,p_validation_name=>'P2_TWITTER_NAME_UNIQUE'
+,p_validation_sequence=>60
+,p_validation=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  RETURN api_usr.check_usr_twitter_name_unique(i_twitter_name => :p2_twitter_name,',
+'                                               i_id_usr       => :f_id_usr);',
+'END;'))
+,p_validation_type=>'FUNC_BODY_RETURNING_BOOLEAN'
+,p_error_message=>'This #LABEL# is already registered. Choose another name.'
+,p_always_execute=>'N'
+,p_when_button_pressed=>wwv_flow_api.id(26154973720666024)
+,p_associated_item=>wwv_flow_api.id(26154835285666023)
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 wwv_flow_api.create_page_da_event(

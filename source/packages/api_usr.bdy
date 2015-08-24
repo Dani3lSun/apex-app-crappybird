@@ -962,13 +962,15 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
   * Created:  15.08.15
   * Changed:
   ****************************************************************************/
-  FUNCTION check_usr_email_unique(i_usr_email IN usr.usr_email%TYPE)
+  FUNCTION check_usr_email_unique(i_usr_email IN usr.usr_email%TYPE,
+                                  i_id_usr    IN usr.id_usr%TYPE := NULL)
     RETURN BOOLEAN IS
     --
     l_function CONSTANT VARCHAR2(30) := 'check_usr_email_unique';
     --
     l_retval BOOLEAN;
     l_id_usr usr.id_usr%TYPE;
+    l_email  usr.usr_email%TYPE;
     --
     CURSOR l_cur_usr IS
       SELECT usr.id_usr
@@ -985,6 +987,14 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
       l_retval := TRUE;
     ELSE
       l_retval := FALSE;
+    END IF;
+    --
+    -- except user own address
+    IF i_id_usr IS NOT NULL THEN
+      l_email := upper(api_usr.get_usr_email(i_id_usr => i_id_usr));
+      IF l_email = upper(TRIM(i_usr_email)) THEN
+        l_retval := TRUE;
+      END IF;
     END IF;
     --
     RETURN l_retval;
@@ -1045,13 +1055,15 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
   * Created:  16.08.15
   * Changed:
   ****************************************************************************/
-  FUNCTION check_usr_twitter_name_unique(i_twitter_name IN usr.twitter_name%TYPE)
+  FUNCTION check_usr_twitter_name_unique(i_twitter_name IN usr.twitter_name%TYPE,
+                                         i_id_usr       IN usr.id_usr%TYPE := NULL)
     RETURN BOOLEAN IS
     --
     l_function CONSTANT VARCHAR2(30) := 'check_usr_twitter_name_unique';
     --
-    l_retval BOOLEAN;
-    l_id_usr usr.id_usr%TYPE;
+    l_retval       BOOLEAN;
+    l_id_usr       usr.id_usr%TYPE;
+    l_twitter_name usr.twitter_name%TYPE;
     --
     CURSOR l_cur_usr IS
       SELECT usr.id_usr
@@ -1068,6 +1080,14 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
       l_retval := TRUE;
     ELSE
       l_retval := FALSE;
+    END IF;
+    --
+    -- except user own twitter name
+    IF i_id_usr IS NOT NULL THEN
+      l_twitter_name := upper(api_usr.get_twitter_name(i_id_usr => i_id_usr));
+      IF l_twitter_name = upper(TRIM(i_twitter_name)) THEN
+        l_retval := TRUE;
+      END IF;
     END IF;
     --
     RETURN l_retval;
