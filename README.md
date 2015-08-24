@@ -41,7 +41,7 @@ For example you can:
 - Play against people in your local area
 - Mess your results in ranking lists
 
-The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobile optimized and best results can be achieved with iOS Safari, because the game runs in complete fullscreen mode (WebApp). Just bookmark the page to your homescreen.**
+The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobile optimized and best results can be achieved with iOS Safari and newer Google Chrome versions on Android. On these devices the application runs completely in fullscreen mode (WebApp). Just bookmark the page to your homescreen.**
 
 This game was designed and built to be part of the [ODTUG Apex Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
 
@@ -108,11 +108,11 @@ END;
 - Connect with SQLPlus as the APP_SCHEMA User
 - Run **setup.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). This will install all the database objects needed to run CrappyBird App.
 - Check for invalid objects! If so recompile them!
-- Run **admin.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for a email address and password. This will create the admin user to login within the app.
+- Run **admin.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for a name, email address and password. This will create the admin user to login within the app.
 - Run **system.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for both Twitter API Keys from Preparations step before, the standard email sender address of the app and location/password of the Oracle SSL Wallet. This step is important, as it is needed!
 
 ###Webserver
-- Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your Apex Webserver.
+- Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your Apex Webserver under the image directory.
 
 ###Oracle Apex App Settings
 - Import the **300.sql** file located in [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) into your newly created Workspace.
@@ -120,6 +120,8 @@ END;
 - Under App Settings / Substitution Strings: Change the string **SOFTWARE_URL** to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
 
 Now you are ready to go, and people can use the game and can register on first page!
+
+The admin login is already activated. Use this account to manage users (set them active/inactive or delete them), edit system parameters or show the error log.
 
 
 ##Source Description
