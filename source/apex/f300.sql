@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   00:24 Monday August 24, 2015
+--   Date and Time:   13:43 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824002404'
+,p_last_upd_yyyymmddhh24miss=>'20150824134343'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -5075,7 +5075,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823005409'
+,p_last_upd_yyyymmddhh24miss=>'20150824132705'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25308899130519346)
@@ -5140,30 +5140,30 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(26128424467887551)
-,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(25308899130519346)
-,p_button_name=>'P101_EDIT_PROFILE'
-,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:fixed-action-btn:waves-effect:icon-float-left:z-depth-5:btn-large:btn-floating:waves-light'
-,p_button_template_id=>wwv_flow_api.id(77389617922098347)
-,p_button_image_alt=>'Edit'
-,p_button_position=>'REGION_TEMPLATE_CREATE2'
-,p_button_redirect_url=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:RP,2::'
-,p_icon_css_classes=>'edit'
-);
-wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26270041472712705)
 ,p_button_sequence=>10
 ,p_button_plug_id=>wwv_flow_api.id(26115463503923621)
 ,p_button_name=>'P1_NEW_FREE_PLAY'
 ,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_options=>'#DEFAULT#:green:icon-float-left:btn'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Free Play'
-,p_button_position=>'REGION_TEMPLATE_CREATE2'
+,p_button_position=>'REGION_TEMPLATE_CREATE'
 ,p_button_redirect_url=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.:RP,8:P8_PAGE_FROM:1'
 ,p_icon_css_classes=>'games'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(26128424467887551)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(25308899130519346)
+,p_button_name=>'P101_EDIT_PROFILE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#:fixed-action-btn:waves-effect:red:icon-float-left:z-depth-5:btn-large:btn-floating:waves-light'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Edit'
+,p_button_position=>'REGION_TEMPLATE_CREATE2'
+,p_button_redirect_url=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:RP,2::'
+,p_icon_css_classes=>'edit'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26156945324666044)
@@ -5243,7 +5243,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(26115463503923621)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -6454,7 +6454,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823005400'
+,p_last_upd_yyyymmddhh24miss=>'20150824133217'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26241062456625349)
@@ -6506,20 +6506,23 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26565708802254340)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(26241062456625349)
+,p_button_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_button_name=>'P1_NEW_BATTLE_PLAY'
 ,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_options=>'#DEFAULT#:green:icon-float-left:btn'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Play Battle'
-,p_button_position=>'REGION_TEMPLATE_CREATE2'
+,p_button_position=>'REGION_TEMPLATE_CREATE'
 ,p_button_redirect_url=>'f?p=&APP_ID.:9:&SESSION.::&DEBUG.:RP,9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:6,&F_ID_USR.,&P6_ID_USR.'
+,p_button_condition=>'P6_ID_USR'
+,p_button_condition2=>'&F_ID_USR.'
+,p_button_condition_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
 ,p_icon_css_classes=>'games'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26156710430666042)
 ,p_name=>'P6_ID_USR'
-,p_item_sequence=>10
+,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_protection_level=>'S'
@@ -6528,7 +6531,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26156820912666043)
 ,p_name=>'P6_PAGE_FROM'
-,p_item_sequence=>20
+,p_item_sequence=>30
 ,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_protection_level=>'S'
@@ -6561,7 +6564,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26243433711625351)
 ,p_name=>'P6_NAME'
-,p_item_sequence=>30
+,p_item_sequence=>40
 ,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_prompt=>'Name'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
@@ -6575,7 +6578,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26244292979625352)
 ,p_name=>'P6_TWITTER_NAME'
-,p_item_sequence=>40
+,p_item_sequence=>50
 ,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_prompt=>'Twitter'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
@@ -6589,11 +6592,11 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26244695002625352)
 ,p_name=>'P6_HIGHSCORE'
-,p_item_sequence=>50
+,p_item_sequence=>60
 ,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -7169,7 +7172,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150820190407'
+,p_last_upd_yyyymmddhh24miss=>'20150824133308'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26269915484712704)
@@ -7195,7 +7198,7 @@ wwv_flow_api.create_page_button(
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
-,p_button_image_alt=>'Back'
+,p_button_image_alt=>'Exit Game'
 ,p_button_position=>'BODY'
 ,p_button_redirect_url=>'f?p=&APP_ID.:&P8_PAGE_FROM.:&SESSION.::&DEBUG.:RP,&P8_PAGE_FROM.::'
 ,p_grid_new_row=>'Y'
@@ -7293,7 +7296,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823005313'
+,p_last_upd_yyyymmddhh24miss=>'20150824133320'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26395682643788579)
@@ -7320,7 +7323,7 @@ wwv_flow_api.create_page_button(
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
-,p_button_image_alt=>'Back'
+,p_button_image_alt=>'Exit Game'
 ,p_button_position=>'BODY'
 ,p_button_redirect_url=>'f?p=&APP_ID.:&P9_PAGE_FROM.:&SESSION.::&DEBUG.:RP::'
 ,p_grid_new_row=>'Y'
@@ -8192,14 +8195,14 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823012513'
+,p_last_upd_yyyymmddhh24miss=>'20150824132839'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26553989080516321)
 ,p_plug_name=>'Receiver'
 ,p_region_template_options=>'#DEFAULT#:apex-materialbox:center-align:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>20
+,p_plug_display_sequence=>21
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_new_grid_row=>false
 ,p_plug_display_column=>7
@@ -8232,7 +8235,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'(buttons)'
 ,p_region_template_options=>'#DEFAULT#:center-align:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>30
+,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -8244,7 +8247,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'Challenger'
 ,p_region_template_options=>'#DEFAULT#:apex-materialbox:center-align:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>11
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_row_template=>1
@@ -8292,7 +8295,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(26555380357516335)
 ,p_button_name=>'P1_BATTLE_PLAY'
 ,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:icon-float-left:btn'
+,p_button_template_options=>'#DEFAULT#:green:icon-float-left:btn'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Play Battle'
 ,p_button_position=>'BODY'
@@ -8359,7 +8362,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(26554353546516325)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -8391,7 +8394,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(26604345576420545)
 ,p_prompt=>'Challenger'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -8405,7 +8408,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(26553989080516321)
 ,p_prompt=>'Receiver'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -8489,7 +8492,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(26606397513420547)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
-,p_field_template=>wwv_flow_api.id(77389129397098347)
+,p_field_template=>wwv_flow_api.id(77389017413098347)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_protection_level=>'S'
 ,p_attribute_01=>'Y'
@@ -9459,7 +9462,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824002058'
+,p_last_upd_yyyymmddhh24miss=>'20150824132121'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -9526,7 +9529,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'Buttons'
 ,p_region_template_options=>'#DEFAULT#:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>80
+,p_plug_display_sequence=>60
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_row_template=>1
@@ -9560,10 +9563,16 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<p>Play CrappyBird online and for free. Just register with your email and the fun begins!</p>',
-'<p>Play standalone or compete with the crowd. Play against people around the world, your twitter friends or people in your local area! Compare your performance with others and challenge them. You can even customize your playground.</p>',
+'<p><strong>The keyfeatures are:</strong></p>',
+'<p> - <strong>mobile optimized! Especially on iOS. Just bookmark the page to your homescreen!</strong></p>',
+'<p> - Play standalone</p>',
+'<p> - Play against people around the world</p>',
+'<p> - Play against your twitter friends</p>',
+'<p> - Play against people in your local area</p>',
+'<p> - Customize your playground how you like the game</p>',
 '<p>Customization + Social + CrappyBird = CrappyBird on steroids!</p>',
 '<p>Fly the bird as far as you can...</p>',
-'<p><strong>The game runs best on mobile devices especially on iOS. Just bookmark the page to your homescreen!</strong></p>',
+'',
 '<p>This game was designed and built to be part of the <a href="http://competition.odtug.com/pls/apex/f?p=AGC2015" target="_blank">ODTUG Apex Gaming Competition 2015</a>.</p>',
 '<img src="&CRAPPY_HOME.img/ODTUG-logo.png" alt="ODTUG Logo" style="max-width:250px;" />'))
 ,p_plug_query_row_template=>1
@@ -9576,7 +9585,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_name=>'Share this App with your twitter friends!'
 ,p_region_template_options=>'#DEFAULT#:container:flow-text-region:center-align:h5'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
-,p_plug_display_sequence=>60
+,p_plug_display_sequence=>50
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_new_grid_row=>false
 ,p_plug_new_grid_column=>false
@@ -9643,7 +9652,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(77409286195098358)
 ,p_button_name=>'P100_LOGIN'
 ,p_button_action=>'REDIRECT_URL'
-,p_button_template_options=>'#DEFAULT#:waves-effect:icon-float-left:btn:waves-light'
+,p_button_template_options=>'#DEFAULT#:waves-effect:green:icon-float-left:btn:waves-light'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Login'
 ,p_button_position=>'BODY'
@@ -9666,7 +9675,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(77412842173131274)
 ,p_button_name=>'P101_SHOW_LOGIN'
 ,p_button_action=>'DEFINED_BY_DA'
-,p_button_template_options=>'#DEFAULT#:fixed-action-btn:waves-effect:icon-float-left:z-depth-5:btn-large:btn-floating:waves-light'
+,p_button_template_options=>'#DEFAULT#:fixed-action-btn:waves-effect:red:icon-float-left:z-depth-5:btn-large:btn-floating:waves-light'
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Login'
 ,p_button_position=>'REGION_TEMPLATE_CREATE2'
