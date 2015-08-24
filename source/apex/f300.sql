@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   16:51 Monday August 24, 2015
+--   Date and Time:   17:05 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824165100'
+,p_last_upd_yyyymmddhh24miss=>'20150824170544'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -5075,7 +5075,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824132705'
+,p_last_upd_yyyymmddhh24miss=>'20150824165928'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25308899130519346)
@@ -5239,8 +5239,8 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26115862791923625)
 ,p_name=>'P1_HIGHSCORE'
-,p_item_sequence=>50
-,p_item_plug_id=>wwv_flow_api.id(26115463503923621)
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(25308899130519346)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
 ,p_field_template=>wwv_flow_api.id(77389017413098347)
@@ -6454,7 +6454,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824133217'
+,p_last_upd_yyyymmddhh24miss=>'20150824170050'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26241062456625349)
@@ -6592,8 +6592,8 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26244695002625352)
 ,p_name=>'P6_HIGHSCORE'
-,p_item_sequence=>60
-,p_item_plug_id=>wwv_flow_api.id(26243070924625351)
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(26241062456625349)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
 ,p_field_template=>wwv_flow_api.id(77389017413098347)
@@ -8195,7 +8195,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824132839'
+,p_last_upd_yyyymmddhh24miss=>'20150824170212'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26553989080516321)
@@ -8359,7 +8359,7 @@ wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26554880892516330)
 ,p_name=>'P13_HIGHSCORE2'
 ,p_item_sequence=>40
-,p_item_plug_id=>wwv_flow_api.id(26554353546516325)
+,p_item_plug_id=>wwv_flow_api.id(26553989080516321)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
 ,p_field_template=>wwv_flow_api.id(77389017413098347)
@@ -8488,8 +8488,8 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26608325524420547)
 ,p_name=>'P13_HIGHSCORE1'
-,p_item_sequence=>70
-,p_item_plug_id=>wwv_flow_api.id(26606397513420547)
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(26604345576420545)
 ,p_prompt=>'Highscore'
 ,p_display_as=>'NATIVE_DISPLAY_ONLY'
 ,p_field_template=>wwv_flow_api.id(77389017413098347)
@@ -9462,7 +9462,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824164126'
+,p_last_upd_yyyymmddhh24miss=>'20150824165904'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -9572,7 +9572,7 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(77413303876131279)
 ,p_plug_name=>'Welcome text'
-,p_region_template_options=>'#DEFAULT#:container:flow-text-region:hide-title'
+,p_region_template_options=>'#DEFAULT#:container:flow-text-region:center-align:hide-title'
 ,p_plug_template=>wwv_flow_api.id(77384709376098346)
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
