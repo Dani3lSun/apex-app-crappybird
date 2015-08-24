@@ -29,7 +29,7 @@
 	
 #CrappyBird
 ##Description
-CrappyBird is a game made with Oracle Apex. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant.
+CrappyBird is a game made with Oracle Apex. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant. Aim of CrappyBird is to drive the bird through the landscape without hitting the tubes and to mess your performance with other people.
 The game was extended to fit in the Oracle Apex environment and for better customization. Also a complete social component was added, so you can play against people or friends. Therefore a login with your email is needed.
 
 For example you can:
