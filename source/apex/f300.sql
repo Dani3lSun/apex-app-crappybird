@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   13:43 Monday August 24, 2015
+--   Date and Time:   14:00 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824134343'
+,p_last_upd_yyyymmddhh24miss=>'20150824140050'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -9462,7 +9462,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824132121'
+,p_last_upd_yyyymmddhh24miss=>'20150824135931'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -10070,7 +10070,7 @@ wwv_flow_api.create_page_process(
 '#SQLERRM#'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26555822924516340)
-,p_process_success_message=>'To complete restoring your password follow the email link. '
+,p_process_success_message=>'To complete restoring your password follow the email link. Check your inbox.'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(77410015397098359)
@@ -10123,7 +10123,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823234936'
+,p_last_upd_yyyymmddhh24miss=>'20150824135909'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(52187307686545960)
@@ -10334,7 +10334,7 @@ wwv_flow_api.create_page_process(
 '#SQLERRM#'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(52187680880545960)
-,p_process_success_message=>'Successfully registered. Use form below to login.'
+,p_process_success_message=>'Successfully registered. Use form below to login or switch to your fullscreen webapp.'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(52193240808545966)
@@ -10405,7 +10405,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150823225602'
+,p_last_upd_yyyymmddhh24miss=>'20150824140016'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26641454467233096)
@@ -10605,7 +10605,7 @@ wwv_flow_api.create_page_process(
 '#SQLERRM#'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26641802464233096)
-,p_process_success_message=>'Successfully changed your password. Use form below to login.'
+,p_process_success_message=>'Successfully changed your password. Use form below to login or switch to your fullscreen webapp.'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(26647490554233098)
