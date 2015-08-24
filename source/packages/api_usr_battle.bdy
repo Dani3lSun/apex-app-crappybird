@@ -570,27 +570,28 @@ CREATE OR REPLACE PACKAGE BODY api_usr_battle IS
     --
     l_function CONSTANT VARCHAR2(30) := 'check_open_battle';
     --
-    l_highscore usr_battle.highscore_receiver%TYPE;
-    l_retval    BOOLEAN;
+    l_id_usr_battle usr_battle.id_usr_battle%TYPE;
+    l_retval        BOOLEAN;
     --
     CURSOR l_cur_usr_battle IS
-      SELECT usr_battle.highscore_receiver
+      SELECT usr_battle.id_usr_battle
         FROM usr_battle
        WHERE usr_battle.id_usr_receiver = i_id_usr
-         AND usr_battle.highscore_challenger IS NOT NULL;
+         AND usr_battle.highscore_challenger IS NOT NULL
+         AND usr_battle.highscore_receiver IS NULL;
     --
   BEGIN
     --
     OPEN l_cur_usr_battle;
     FETCH l_cur_usr_battle
-      INTO l_highscore;
-    CLOSE l_cur_usr_battle;
+      INTO l_id_usr_battle;
     -- Check if open battles are present
-    IF l_highscore IS NULL THEN
+    IF l_cur_usr_battle%FOUND THEN
       l_retval := TRUE;
     ELSE
       l_retval := FALSE;
     END IF;
+    CLOSE l_cur_usr_battle;
     --
     RETURN l_retval;
     --
