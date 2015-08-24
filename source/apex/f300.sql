@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   22:40 Monday August 24, 2015
+--   Date and Time:   22:47 Monday August 24, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -124,7 +124,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824223957'
+,p_last_upd_yyyymmddhh24miss=>'20150824224646'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -8009,14 +8009,14 @@ wwv_flow_api.create_page(
 ,p_group_id=>wwv_flow_api.id(26372131622012720)
 ,p_step_template=>wwv_flow_api.id(77382002662098345)
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
+,p_required_role=>'MUST_NOT_BE_PUBLIC_USER'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824222856'
+,p_last_upd_yyyymmddhh24miss=>'20150824224621'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26580435253913223)
