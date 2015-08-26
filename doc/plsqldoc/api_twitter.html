@@ -45,6 +45,11 @@ Get Twitter bearer (auth token) for future authentication
 Invalidate Twitter bearer (auth token) + remove from system table
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#reset_twitter_bearer_token">reset_twitter_bearer_token</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Resets twitter bearer token to a new one (invalidate + get new)
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#set_http_headers">set_http_headers</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Set HTTP Headers for Twitter REST Calls
@@ -67,7 +72,7 @@ Check if Twitter API Calls are possible, or if limit is reached
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_twitter_followers">get_twitter_followers</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
+Get all Twitter Follower IDs(Following People) per twitter user id
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_twitter_friends">get_twitter_friends</A>&nbsp;&nbsp;
@@ -233,6 +238,20 @@ PROCEDURE <A HREF="api_twitter.body.html#invalidate_bearer_token">invalidate_bea
 </PRE>
 <P CLASS="DESC_TEXT">
 Invalidate Twitter bearer (auth token) + remove from system table<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="reset_twitter_bearer_token"></A>
+<P CLASS="TYPE_TITLE">
+reset_twitter_bearer_token
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE reset_twitter_bearer_token
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Resets twitter bearer token to a new one (invalidate + get new)<br>
 
 <BR>
 </P>
@@ -429,7 +448,36 @@ FUNCTION <A HREF="api_twitter.body.html#get_twitter_followers">get_twitter_follo
   RETURN CLOB
 
 </PRE>
+<P CLASS="DESC_TEXT">
+Get all Twitter Follower IDs(Following People) per twitter user id<br>
 
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_twitter_id&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+clob json string<br>
+
+</TD></TR>
+</TABLE>
+<BR>
 <HR>
 <A NAME="get_twitter_friends"></A>
 <P CLASS="TYPE_TITLE">
