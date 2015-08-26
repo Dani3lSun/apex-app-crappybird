@@ -51,6 +51,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
 ####1.0 - Initial Release
 ####0.8 - Beta Testing
 

@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   11:24 Wednesday August 26, 2015
+--   Date and Time:   11:42 Wednesday August 26, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_logo_image=>'TEXT:CrappyBird'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=> nvl(wwv_flow_application_install.get_proxy,'')
-,p_flow_version=>'1.0'
+,p_flow_version=>'1.1'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -124,7 +124,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150826112442'
+,p_last_upd_yyyymmddhh24miss=>'20150826114223'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
