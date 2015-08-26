@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   00:06 Tuesday August 25, 2015
+--   Date and Time:   11:24 Wednesday August 26, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -39,9 +39,9 @@ prompt APPLICATION 300 - CrappyBird
 --   Pages:                     21
 --     Items:                   98
 --     Validations:             29
---     Processes:               39
+--     Processes:               40
 --     Regions:                 61
---     Buttons:                 34
+--     Buttons:                 35
 --     Dynamic Actions:         41
 --   Shared Components:
 --     Logic:
@@ -124,7 +124,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150825000608'
+,p_last_upd_yyyymmddhh24miss=>'20150826112442'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -5389,7 +5389,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824235326'
+,p_last_upd_yyyymmddhh24miss=>'20150826110419'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26154383123666018)
@@ -5456,7 +5456,7 @@ wwv_flow_api.create_page_button(
 ,p_button_image_alt=>'Delete Profile'
 ,p_button_position=>'REGION_TEMPLATE_CREATE2'
 ,p_button_redirect_url=>'javascript:apex.confirm(''Do you really want to delete your account?'',''P2_DELETE_PROFILE'');'
-,p_grid_new_grid=>false
+,p_button_execute_validations=>'N'
 );
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(26155140683666026)
@@ -7825,7 +7825,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150824223140'
+,p_last_upd_yyyymmddhh24miss=>'20150826105653'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26399576986798203)
@@ -7839,26 +7839,40 @@ wwv_flow_api.create_report_region(
 ,p_new_grid_column=>false
 ,p_display_point=>'BODY'
 ,p_source=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'SELECT usr.id_usr,',
-'       ''<img class="initialized materialboxed responsive-img" src="'' ||',
-'       nvl(usr.twitter_profile_pic_url,',
-'           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
-'       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
-'                             '':::6:P6_PAGE_FROM,P6_ID_USR:11,'' ||',
-'                             usr.id_usr) AS target,',
-'       nvl(usr.usr_highscore,',
-'           0) AS badge,',
-'       ''Y'' as new_badge',
-'  FROM usr',
-' WHERE usr.acc_active = 1',
-'   AND usr.show_acc_public = 1',
-'   AND usr.id_usr != api_usr.getc_admin_pk',
-'   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p11_search || ''%'') OR',
-'       upper(usr.usr_lastname) LIKE upper(''%'' || :p11_search || ''%''))',
-' ORDER BY nvl(usr.usr_highscore,',
-'              0) DESC,',
-'          usr.usr_lastname'))
+'SELECT iv_usr2.id_usr,',
+'       iv_usr2.display,',
+'       iv_usr2.target,',
+'       iv_usr2.badge,',
+'       iv_usr2.new_badge',
+'  FROM (SELECT iv_usr.id_usr,',
+'               ''<img class="initialized materialboxed responsive-img" src="'' ||',
+'               nvl(iv_usr.twitter_profile_pic_url,',
+'                   ''&CRAPPY_HOME.img/avatar-placeholder.png'') ||',
+'               ''"><span>&nbsp;'' || rownum || '' - '' || iv_usr.usr_firstname || '' '' ||',
+'               iv_usr.usr_lastname || ''</span>'' AS display,',
+'               apex_util.prepare_url(''f?p='' || :app_id || '':6:'' ||',
+'                                     :app_session ||',
+'                                     '':::6:P6_PAGE_FROM,P6_ID_USR:11,'' ||',
+'                                     iv_usr.id_usr) AS target,',
+'               iv_usr.usr_highscore AS badge,',
+'               ''Y'' AS new_badge,',
+'               iv_usr.usr_firstname,',
+'               iv_usr.usr_lastname',
+'          FROM (SELECT usr.id_usr,',
+'                       usr.usr_firstname,',
+'                       usr.usr_lastname,',
+'                       usr.twitter_profile_pic_url,',
+'                       nvl(usr.usr_highscore,',
+'                           0) AS usr_highscore',
+'                  FROM usr',
+'                 WHERE usr.acc_active = 1',
+'                   AND usr.show_acc_public = 1',
+'                   AND usr.id_usr != api_usr.getc_admin_pk',
+'                 ORDER BY nvl(usr.usr_highscore,',
+'                              0) DESC,',
+'                          usr.usr_lastname) iv_usr) iv_usr2',
+' WHERE (upper(iv_usr2.usr_firstname) LIKE upper(''%'' || :p11_search || ''%'') OR',
+'       upper(iv_usr2.usr_lastname) LIKE upper(''%'' || :p11_search || ''%''))'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -8771,7 +8785,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150822175241'
+,p_last_upd_yyyymmddhh24miss=>'20150826112142'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26387970341692023)
@@ -8785,6 +8799,21 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(26800075685918401)
+,p_button_sequence=>60
+,p_button_plug_id=>wwv_flow_api.id(26387970341692023)
+,p_button_name=>'P15_NEW_TWITTER_BEARER'
+,p_button_action=>'REDIRECT_URL'
+,p_button_template_options=>'#DEFAULT#:waves-effect:red:icon-float-left:btn:waves-light'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Get new Twitter Bearer Token'
+,p_button_position=>'BODY'
+,p_button_redirect_url=>'javascript:apex.confirm(''Normally you get one token for app lifetime! Only use when problems with twitter occur! Go on?'',''P15_NEW_TWITTER_BEARER'');'
+,p_button_execute_validations=>'N'
+,p_icon_css_classes=>'cached'
+,p_grid_new_row=>'Y'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26526963809359103)
@@ -8905,6 +8934,23 @@ wwv_flow_api.create_page_process(
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 ,p_process_when_button_id=>wwv_flow_api.id(26526963809359103)
 ,p_process_success_message=>'Successfully saved system settings.'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(26800111082918402)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'RESET_TWITTER_BEARER_TOKEN'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  api_twitter.reset_twitter_bearer_token;',
+'END;'))
+,p_process_error_message=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'Error during reset of twitter bearer.',
+'#SQLERRM#'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(26800075685918401)
+,p_process_success_message=>'Successfully reset twitter bearer to a new value.'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(26552229916516304)
