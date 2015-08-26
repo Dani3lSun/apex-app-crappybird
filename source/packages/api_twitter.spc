@@ -29,6 +29,9 @@ CREATE OR REPLACE PACKAGE api_twitter IS
   -- Invalidate Twitter bearer (auth token) + remove from system table
   PROCEDURE invalidate_bearer_token;
   --
+  -- Resets twitter bearer token to a new one (invalidate + get new)
+  PROCEDURE reset_twitter_bearer_token;
+  --
   -- Set HTTP Headers for Twitter REST Calls
   -- #param i_bearer_token
   PROCEDURE set_http_headers(i_bearer_token IN system.twitter_api_bearer%TYPE);
@@ -62,7 +65,9 @@ CREATE OR REPLACE PACKAGE api_twitter IS
   -- #param i_api_type (users/friends/followers/search)
   FUNCTION check_twitter_api_limits(i_api_type IN VARCHAR2) RETURN BOOLEAN;
   --
-  --
+  -- Get all Twitter Follower IDs(Following People) per twitter user id 
+  -- #param i_twitter_id
+  -- #return clob json string
   FUNCTION get_twitter_followers(i_twitter_id IN usr.twitter_id%TYPE)
     RETURN CLOB;
   --

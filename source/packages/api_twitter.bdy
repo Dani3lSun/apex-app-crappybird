@@ -262,6 +262,34 @@ CREATE OR REPLACE PACKAGE BODY api_twitter IS
                          i_log_text     => SQLERRM);
       RAISE;
   END invalidate_bearer_token;
+  --
+  /****************************************************************************
+  * Purpose:  Resets twitter bearer token to a new one (invalidate + get new)
+  * Author:   Daniel Hochleitner
+  * Created:  26.08.2015
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE reset_twitter_bearer_token IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'reset_twitter_bearer_token';
+    --
+    l_twitter_bearer system.twitter_api_bearer%TYPE;
+    --
+  BEGIN
+    -- call invalidate function
+    api_twitter.invalidate_bearer_token;
+    --
+    -- call get bearer function
+    l_twitter_bearer := api_twitter.get_twitter_bearer_token;
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END reset_twitter_bearer_token;
+  --
   /****************************************************************************
   * Purpose:  Set HTTP Headers for Twitter REST Calls
   * Author:   Daniel Hochleitner
