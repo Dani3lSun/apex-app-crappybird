@@ -512,5 +512,158 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
       RAISE;
   END check_usr_gps_enabled;
   --
+  /*************************************************************************
+  * Purpose:  Render Google Maps with Users nearby
+  * Author:   Daniel Hochleitner
+  * Created:  30.08.15
+  * Changed:
+  *************************************************************************/
+  PROCEDURE render_nearby_usr_gmaps(i_id_usr           IN usr_location.id_usr%TYPE,
+                                    i_distance         IN NUMBER,
+                                    i_crappy_home_path IN VARCHAR2) IS
+    l_function CONSTANT VARCHAR2(30) := 'render_nearby_usr_gmaps';
+    --
+    l_crappy_home_path VARCHAR2(500);
+    l_css_string       CLOB;
+    l_gmap_string      CLOB;
+    l_geo_latitude     usr_location.geo_latitude%TYPE;
+    l_geo_longitude    usr_location.geo_longitude%TYPE;
+    -- cursor for gps position of user
+    CURSOR l_cur_usr_location IS
+      SELECT usr_location.geo_latitude,
+             usr_location.geo_longitude
+        FROM usr_location
+       WHERE usr_location.id_usr = i_id_usr;
+    -- cursor for nearby users
+    CURSOR l_cur_usr_nearby IS
+      SELECT usr.id_usr,
+             usr.usr_firstname || ' ' || usr.usr_lastname AS usr_name,
+             nvl(usr.twitter_profile_pic_url,
+                 '&CRAPPY_HOME.img/avatar-placeholder.png') AS profile_pic_url,
+             apex_util.prepare_url('f?p=' || v('APP_ID') || ':6:' ||
+                                   v('APP_SESSION') ||
+                                   ':::6:P6_PAGE_FROM,P6_ID_USR:14,' ||
+                                   usr.id_usr) AS profile_url,
+             usr_location.geo_latitude,
+             usr_location.geo_longitude
+        FROM usr,
+             usr_location
+       WHERE usr.id_usr = usr_location.id_usr
+         AND usr.acc_active = 1
+         AND usr.show_acc_public = 1
+         AND usr.id_usr != i_id_usr
+         AND usr.id_usr != api_usr.getc_admin_pk
+         AND api_usr_location.get_distance_between_usr(i_id_usr1 => i_id_usr,
+                                                       i_id_usr2 => usr.id_usr,
+                                                       i_unit    => 'mile') <
+             i_distance;
+    --
+  BEGIN
+    -- Get Home of CrappyBird Files
+    l_crappy_home_path := REPLACE(i_crappy_home_path,
+                                  '#IMAGE_PREFIX#',
+                                  v('IMAGE_PREFIX'));
+    -- Build Custom CSS
+    l_css_string := '<style>' || chr(10) || ' .round_img {' || chr(10) ||
+                    '  width: 50px;' || chr(10) || '  border-radius: 50%;' ||
+                    chr(10) || '  vertical-align:middle;' || chr(10) || ' }' ||
+                    chr(10) || ' .materialboxed {' || chr(10) ||
+                    '  cursor: auto;' || chr(10) || ' }' || chr(10) ||
+                    '</style>';
+    -- write CSS to HTTP
+    htp.p(l_css_string);
+    --
+    -- Build JS Gmap String
+    -- Header
+    -- Map Div
+    l_gmap_string := '<div id="map"></div>' || chr(10);
+    -- needed JS Libs
+    l_gmap_string := l_gmap_string ||
+                     '<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '<script type="text/javascript" src="' ||
+                     l_crappy_home_path || 'js/gmaps.min.js"></script>' ||
+                     chr(10);
+    -- Device width + height
+    l_gmap_string := l_gmap_string || '<script type="text/javascript">' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '  var width = document.documentElement.clientWidth;' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '  var height = document.documentElement.clientHeight;' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '  var map_div = document.getElementById("map");' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '  map_div.style.width = width + "px";' || chr(10);
+    l_gmap_string := l_gmap_string ||
+                     '  map_div.style.height = (height - 130) + "px";' ||
+                     chr(10);
+    -- Gmap
+    OPEN l_cur_usr_location;
+    FETCH l_cur_usr_location
+      INTO l_geo_latitude,
+           l_geo_longitude;
+    CLOSE l_cur_usr_location;
+    --
+    l_gmap_string := l_gmap_string || '  var map;' || chr(10);
+    l_gmap_string := l_gmap_string || '  map = new GMaps({' || chr(10);
+    l_gmap_string := l_gmap_string || '    el: ''#map'',' || chr(10);
+    -- position of user
+    l_gmap_string := l_gmap_string || '    lat: ' || l_geo_latitude || ',' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string || '    lng: ' || l_geo_longitude || ',' ||
+                     chr(10);
+    -- conrols of map
+    l_gmap_string := l_gmap_string || '    zoomControl : true,' || chr(10);
+    l_gmap_string := l_gmap_string || '    zoomControlOpt: {' || chr(10);
+    l_gmap_string := l_gmap_string || '     style : ''SMALL'',' || chr(10);
+    l_gmap_string := l_gmap_string || '     position: ''TOP_LEFT''' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string || '    },' || chr(10);
+    l_gmap_string := l_gmap_string || '    panControl : false,' || chr(10);
+    l_gmap_string := l_gmap_string || '    streetViewControl : false,' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string || '    mapTypeControl: false,' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string || '    overviewMapControl: false' ||
+                     chr(10);
+    l_gmap_string := l_gmap_string || '  });' || chr(10);
+    -- map marker for all users in distance
+    FOR l_rec IN l_cur_usr_nearby LOOP
+      l_gmap_string := l_gmap_string || '  map.addMarker({' || chr(10);
+      l_gmap_string := l_gmap_string || '   lat: ' || l_rec.geo_latitude || ',' ||
+                       chr(10);
+      l_gmap_string := l_gmap_string || '   lng: ' || l_rec.geo_longitude || ',' ||
+                       chr(10);
+      l_gmap_string := l_gmap_string || '   title: ''' || l_rec.usr_name ||
+                       ''',' || chr(10);
+      -- info popup with user pic and name/link to profile
+      l_gmap_string := l_gmap_string || '   infoWindow: {' || chr(10);
+      l_gmap_string := l_gmap_string || '    content: ''<p><a href="' ||
+                       l_rec.profile_url ||
+                       '"><img class="initialized materialboxed responsive-img round_img" src="' ||
+                       l_rec.profile_pic_url || '"><span>&nbsp;' ||
+                       l_rec.usr_name || '</span></a></p>''' || chr(10);
+      l_gmap_string := l_gmap_string || '    }' || chr(10);
+      l_gmap_string := l_gmap_string || '   });' || chr(10);
+    END LOOP;
+    --
+    l_gmap_string := l_gmap_string || '  map.fitZoom();' || chr(10);
+    l_gmap_string := l_gmap_string || '</script>';
+    -- write JS Gmap String to HTTP
+    htp.p(l_gmap_string);
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END render_nearby_usr_gmaps;
+  --
 END api_usr_location;
 /

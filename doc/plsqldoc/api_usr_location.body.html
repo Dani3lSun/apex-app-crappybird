@@ -93,6 +93,11 @@ Purpose:&nbsp; Get the distance in specified unit between 2 Users Author:&nbsp;&
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Purpose:&nbsp; Check if user has gps coords saved (gps enabled) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:
 </TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#render_nearby_usr_gmaps">render_nearby_usr_gmaps</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Render Google Maps with Users nearby Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 30.08.15 Changed:
+</TD></TR>
 </TABLE>
 <BR>
 <A NAME="Constants"></A>
@@ -324,6 +329,22 @@ FUNCTION <A HREF="api_usr_location.html#check_usr_gps_enabled">check_usr_gps_ena
 </PRE>
 <P CLASS="DESC_TEXT">
 Purpose:&nbsp; Check if user has gps coords saved (gps enabled) Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 22.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="render_nearby_usr_gmaps"></A>
+<P CLASS="TYPE_TITLE">
+render_nearby_usr_gmaps
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_location.html#render_nearby_usr_gmaps">render_nearby_usr_gmaps</A>(i_id_usr           IN usr_location.id_usr%TYPE,
+                                  i_distance         IN NUMBER,
+                                  i_crappy_home_path IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Render Google Maps with Users nearby Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 30.08.15 Changed:<br>
 
 <BR>
 </P>

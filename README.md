@@ -51,6 +51,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.2 - Added google maps page to display users nearby / some smaller UI fixes
 ####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
 ####1.0 - Initial Release
 ####0.8 - Beta Testing
@@ -220,6 +221,12 @@ The following points describe the different components of the source I developed
 - Page ID: 13
 - Name: Battle Details
 - Description: Detail/Summery page of a selected battle game
+
+---
+- Page Group: PEOPLE
+- Page ID: 14
+- Name: Nearby Users Map
+- Description: Show nearby users in a google map with markers with links
 
 ---
 - Page Group: GAME
@@ -426,6 +433,15 @@ Several parts of the application uses 3party code that is listed here:
 - Link: http://www.apex-plugin.com/oracle-apex-plugins/dynamic-action-plugin/add2homescreen_272.html
 - License: Own Open Source License
 - Files: [../source/apex/plugins](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex/plugins) dynamic_action_plugin_com_apex-evangelists_add2home.sql
+- Modifications: None
+
+---
+- Part: Google Maps
+- Name: gmaps.js
+- Author: Gustavo Leon
+- Link: https://github.com/hpneo/gmaps
+- License: MIT
+- Files: [../server/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) in js subfolder
 - Modifications: None
 
 **Thanks to all of you to make such amazing code public!**

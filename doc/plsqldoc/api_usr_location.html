@@ -94,6 +94,11 @@ Get the distance in specified unit between 2 Users
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Check if user has gps coords saved (gps enabled)
 </TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#render_nearby_usr_gmaps">render_nearby_usr_gmaps</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Render Google Maps with Users nearby
+</TD></TR>
 </TABLE>
 <BR>
 <A NAME="Types"></A>
@@ -671,6 +676,47 @@ Returns
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 BOOLEAN<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="render_nearby_usr_gmaps"></A>
+<P CLASS="TYPE_TITLE">
+render_nearby_usr_gmaps
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE render_nearby_usr_gmaps(i_id_usr           IN usr_location.id_usr%TYPE,
+                                  i_distance         IN NUMBER,
+                                  i_crappy_home_path IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Render Google Maps with Users nearby<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_usr&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_distance&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_crappy_home_path&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 
 </TD></TR>
 </TABLE>

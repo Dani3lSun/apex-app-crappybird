@@ -111,6 +111,14 @@ CREATE OR REPLACE PACKAGE api_usr_location IS
   FUNCTION check_usr_gps_enabled(i_id_usr IN usr_location.id_usr%TYPE)
     RETURN BOOLEAN;
   --
+  -- Render Google Maps with Users nearby
+  -- #param i_id_usr
+  -- #param i_distance
+  -- #param i_crappy_home_path
+  PROCEDURE render_nearby_usr_gmaps(i_id_usr           IN usr_location.id_usr%TYPE,
+                                    i_distance         IN NUMBER,
+                                    i_crappy_home_path IN VARCHAR2);
+  --
 
 END api_usr_location;
 /
