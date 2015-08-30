@@ -524,6 +524,7 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
     l_function CONSTANT VARCHAR2(30) := 'render_nearby_usr_gmaps';
     --
     l_crappy_home_path VARCHAR2(500);
+    l_count            NUMBER := 0;
     l_css_string       CLOB;
     l_gmap_string      CLOB;
     l_geo_latitude     usr_location.geo_latitude%TYPE;
@@ -611,7 +612,7 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
     --
     l_gmap_string := l_gmap_string || '  var map;' || chr(10);
     l_gmap_string := l_gmap_string || '  map = new GMaps({' || chr(10);
-    l_gmap_string := l_gmap_string || '    el: ''#map'',' || chr(10);
+    l_gmap_string := l_gmap_string || '    div: ''#map'',' || chr(10);
     -- position of user
     l_gmap_string := l_gmap_string || '    lat: ' || l_geo_latitude || ',' ||
                      chr(10);
@@ -634,6 +635,11 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
     l_gmap_string := l_gmap_string || '  });' || chr(10);
     -- map marker for all users in distance
     FOR l_rec IN l_cur_usr_nearby LOOP
+      l_count := l_count + 1;
+      -- reset to users geo coords
+      l_geo_latitude  := l_rec.geo_latitude;
+      l_geo_longitude := l_rec.geo_longitude;
+      --
       l_gmap_string := l_gmap_string || '  map.addMarker({' || chr(10);
       l_gmap_string := l_gmap_string || '   lat: ' || l_rec.geo_latitude || ',' ||
                        chr(10);
@@ -651,8 +657,16 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
       l_gmap_string := l_gmap_string || '    }' || chr(10);
       l_gmap_string := l_gmap_string || '   });' || chr(10);
     END LOOP;
-    --
-    l_gmap_string := l_gmap_string || '  map.fitZoom();' || chr(10);
+    -- if only 1 user found set center of map to that and zoom out / else fit zoom for all markers
+    IF l_count <= 1 THEN
+      l_gmap_string := l_gmap_string || '  map.setCenter(' ||
+                       l_geo_latitude || ',' || l_geo_longitude || ');' ||
+                       chr(10);
+      l_gmap_string := l_gmap_string || '  map.setZoom(8);' || chr(10);
+    ELSE
+      l_gmap_string := l_gmap_string || '  map.fitZoom();' || chr(10);
+    END IF;
+    -- close JS
     l_gmap_string := l_gmap_string || '</script>';
     -- write JS Gmap String to HTTP
     htp.p(l_gmap_string);
