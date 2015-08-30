@@ -539,7 +539,7 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
       SELECT usr.id_usr,
              usr.usr_firstname || ' ' || usr.usr_lastname AS usr_name,
              nvl(usr.twitter_profile_pic_url,
-                 '&CRAPPY_HOME.img/avatar-placeholder.png') AS profile_pic_url,
+                 l_crappy_home_path || 'img/avatar-placeholder.png') AS profile_pic_url,
              apex_util.prepare_url('f?p=' || v('APP_ID') || ':6:' ||
                                    v('APP_SESSION') ||
                                    ':::6:P6_PAGE_FROM,P6_ID_USR:14,' ||

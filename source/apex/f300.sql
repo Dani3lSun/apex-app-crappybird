@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   20:24 Sunday August 30, 2015
+--   Date and Time:   20:48 Sunday August 30, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -124,7 +124,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150830202351'
+,p_last_upd_yyyymmddhh24miss=>'20150830204835'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -8804,7 +8804,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150830202323'
+,p_last_upd_yyyymmddhh24miss=>'20150830204736'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26857045280304046)
@@ -8831,7 +8831,7 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Exit Map'
 ,p_button_position=>'BODY'
-,p_button_redirect_url=>'f?p=&APP_ID.:&P14_PAGE_FROM.:&SESSION.::&DEBUG.:RP,&P14_PAGE_FROM.::'
+,p_button_redirect_url=>'f?p=&APP_ID.:&P14_PAGE_FROM.:&SESSION.::&DEBUG.:RP::'
 ,p_grid_new_row=>'Y'
 );
 wwv_flow_api.create_page_item(
