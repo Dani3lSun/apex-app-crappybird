@@ -65,7 +65,11 @@ CREATE OR REPLACE PACKAGE api_usr_prefs IS
   FUNCTION get_id_usr_prefs(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
     RETURN usr_prefs.id_usr_prefs%TYPE;
   --
-
+  -- Get usr_prefs.id_usr_prefs of usr_prefs from id_usr
+  -- #param i_id_usr
+  -- #return id_usr_prefs from usr_prefs
+  FUNCTION get_id_usr_prefs(i_id_usr IN usr_prefs.id_usr%TYPE)
+    RETURN usr_prefs.id_usr_prefs%TYPE;
   --
   -- Get id_usr of usr_prefs
   -- #param i_id_usr_prefs Id der usr_prefs

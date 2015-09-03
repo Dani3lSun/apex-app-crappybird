@@ -18,6 +18,7 @@ prompt Install package specs
 @@../packages/api_usr_battle.spc
 @@../packages/api_auth.spc
 @@../packages/api_game.spc
+@@../packages/api_pub_themes.spc
 @@../packages/api_twitter.spc
 
 prompt Install package bodys
@@ -34,4 +35,5 @@ prompt Install package bodys
 @@../packages/api_usr_battle.bdy
 @@../packages/api_auth.bdy
 @@../packages/api_game.bdy
+@@../packages/api_pub_themes.bdy
 @@../packages/api_twitter.bdy

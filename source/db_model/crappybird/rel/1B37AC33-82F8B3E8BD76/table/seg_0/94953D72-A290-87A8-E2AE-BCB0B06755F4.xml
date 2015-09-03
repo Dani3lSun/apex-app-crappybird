@@ -1,0 +1,178 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94953D72-A290-87A8-E2AE-BCB0B06755F4" name="PUB_THEMES">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PUB_THEMES" id="35DA289D-9D86-4C28-A9C8-B049FDBA10A9">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USR" id="E6D1327A-69F8-DB6C-3374-B4C022A849C8">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACDFCD30-99C0-4938-F24B-9EF7E78D5029" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
+</Column>
+<Column name="THEME_NAME" id="46E3C689-AD16-5D23-25E7-683FCC666D97">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:07:26 UTC</createdTime>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PREVIEW_IMG" id="F69D75F2-9136-18A3-293A-DEB0FFB6CF50">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:09:59 UTC</createdTime>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_DAYMODE" id="E9E212DB-99D7-CBAA-6B29-594B293DB173">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_BIRD_COLOR" id="BFE25CD3-6C1B-32A5-9096-9A77D9BD4875">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_TREETOP_COLOR" id="572DE472-D945-83C0-20FB-5F4B044EE7B2">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_TREETRUNK_COLOR" id="9F9B3EC9-94DA-21F8-779C-D43D3F396083">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_BOTTOM_COLOR" id="8C5DF582-844D-2932-8484-D5E2BB61AEF2">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_GRASS_COLOR" id="A83E1504-BE7A-2C96-4BD2-539E5631F147">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GAME_BAR_COLOR" id="9D1F8558-E232-C2C5-D6AA-3FB1CE315814">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2FDEF5F9-B8A8-774A-8DE8-B9FE18055E8E" name="PK_PUB_THEMES">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="35DA289D-9D86-4C28-A9C8-B049FDBA10A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B50DC59-1789-ADBD-A881-3B8D23E61FE0" name="I_PUB_THEMES_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6D1327A-69F8-DB6C-3374-B4C022A849C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC1657DD-592C-D75F-554D-ACC2005CED94" name="FK_PUB_THEMES_ID_USR">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-02 20:06:17 UTC</createdTime>
+<generatorID>Benutzergeneriert</generatorID>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6D1327A-69F8-DB6C-3374-B4C022A849C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

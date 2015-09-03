@@ -40,6 +40,7 @@ For example you can:
 - Play against your twitter friends
 - Play against people in your local area
 - Mess your results in ranking lists
+- Share your created themes
 
 The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobile optimized and best results can be achieved with iOS Safari and newer Google Chrome versions on Android. On these devices the application runs completely in fullscreen mode (WebApp). Just bookmark the page to your homescreen.**
 
@@ -51,6 +52,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
 ####1.2 - Added google maps page to display users nearby / some smaller UI fixes
 ####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
 ####1.0 - Initial Release
@@ -247,6 +249,30 @@ The following points describe the different components of the source I developed
 - Description: CrappyBird game page for battle play between users
 
 ---
+- Page Group: GAME
+- Page ID: 19
+- Name: Game Screenshot
+- Description: CrappyBird game page for taking screenshot of game (for public themes)
+
+---
+- Page Group: THEME
+- Page ID: 20
+- Name: Share Theme
+- Description: Page for sharing customized theme
+
+---
+- Page Group: THEME
+- Page ID: 21
+- Name: Public Themes
+- Description: Shows a list of all public themes with search
+
+---
+- Page Group: THEME
+- Page ID: 22
+- Name: Theme Details
+- Description: Detail page of a public theme (Admin can delete a theme)
+
+---
 - Page Group: ADMIN
 - Page ID: 15
 - Name: System
@@ -304,6 +330,11 @@ The following points describe the different components of the source I developed
 - Name: USR_BATTLE
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr_battle.sql
 - Description: Table that holds information about game battles between users
+
+---
+- Name: PUB_THEMES
+- Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) pub_themes.sql
+- Description: Table that holds information about public themes (colors, etc.)
 
 ---
 - Name: SYSTEM
@@ -382,6 +413,11 @@ plsqldoc for all package units can be found under [../doc/plsqldoc/](https://git
 - Name: API_UTILS
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_utils.spc / api_utils.bdy
 - Description: Package for general use of often used functions, like encryption etc.
+
+---
+- Name: API_PUB_THEMES
+- Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_pub_themes.spc / api_pub_themes.bdy
+- Description: Package for public themes table and functions
 
 ###Sequences
 - Name: SEQ_PK

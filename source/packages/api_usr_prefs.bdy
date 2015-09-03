@@ -272,6 +272,38 @@ CREATE OR REPLACE PACKAGE BODY api_usr_prefs IS
       RAISE;
   END get_id_usr_prefs;
   --
+  /****************************************************************************
+  * Purpose:  Get usr_prefs.id_usr_prefs of usr_prefs from id_usr
+  * Author:   Daniel Hochleitner
+  * Created:  02.09.15
+  * Changed:
+  ****************************************************************************/
+  FUNCTION get_id_usr_prefs(i_id_usr IN usr_prefs.id_usr%TYPE)
+    RETURN usr_prefs.id_usr_prefs%TYPE IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'get_id_usr_prefs';
+    --
+    l_retval usr_prefs.id_usr_prefs%TYPE;
+    CURSOR l_cur_usr_prefs IS
+      SELECT usr_prefs.id_usr_prefs
+        FROM usr_prefs
+       WHERE usr_prefs.id_usr = i_id_usr;
+  BEGIN
+    --
+    OPEN l_cur_usr_prefs;
+    FETCH l_cur_usr_prefs
+      INTO l_retval;
+    CLOSE l_cur_usr_prefs;
+    --
+    RETURN l_retval;
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END get_id_usr_prefs;
+  --
 
   /****************************************************************************
   * Purpose:  Get usr_prefs.id_usr of usr_prefs
@@ -657,7 +689,6 @@ CREATE OR REPLACE PACKAGE BODY api_usr_prefs IS
       RAISE;
   END do_merge_usr_prefs;
   --
-
 --
 END api_usr_prefs;
 /

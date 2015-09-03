@@ -2,10 +2,10 @@
 <HTML>
  <HEAD>
  <LINK REL="STYLESHEET" TYPE="text/css" HREF="plsqldoc.css">
- <TITLE>Package api_usr_prefs</TITLE>
+ <TITLE>Package api_pub_themes</TITLE>
  <META name="object" content="PACKAGE">
- <META name="name" content="api_usr_prefs">
- <META name="description" content="API-Package for table usr_prefs">
+ <META name="name" content="api_pub_themes">
+ <META name="description" content="API-Package for table pub_themes">
 </HEAD>
 <BODY>
 <TABLE WIDTH="100%"><TR>
@@ -13,8 +13,8 @@
 <TD><P ALIGN="RIGHT"><STRONG><SMALL><A HREF="index.html">index</A></SMALL></STRONG></TD>
 </TR></TABLE>
 <TABLE CLASS="MAIN_TABLE"><TR><TD CLASS="DESC_TEXT">
-<P CLASS="MAIN_TITLE">Package api_usr_prefs</P>
-API-Package for table usr_prefs<br>
+<P CLASS="MAIN_TITLE">Package api_pub_themes</P>
+API-Package for table pub_themes<br>
 
 <BR>
 </TD></TR></TABLE>
@@ -25,94 +25,99 @@ Program units
 </TD></TR></TABLE>
 <TABLE CLASS="SUB_TABLE">
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#ins_usr_prefs">ins_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#ins_pub_themes">ins_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Inserts dataset in usr_prefs
+Inserts dataset in pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#upd_usr_prefs">upd_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#upd_pub_themes">upd_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Updates datset of table usr_prefs
+Updates datset of table pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#del_usr_prefs">del_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#del_pub_themes">del_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Deletes dataset of table usr_prefs
+Deletes dataset of table pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#get_rec_usr_prefs">get_rec_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#get_rec_pub_themes">get_rec_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get record of table usr_prefs
+Get record of table pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#get_md5_usr_prefs">get_md5_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#get_md5_pub_themes">get_md5_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Generates md5 checksum for usr_prefs
+Generates md5 checksum for pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#do_check_md5_usr_prefs">do_check_md5_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#do_check_md5_pub_themes">do_check_md5_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Compares (Before/After) md5 checksum for usr_prefs
+Compares (Before/After) md5 checksum for pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#get_id_usr_prefs">get_id_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#get_id_pub_themes">get_id_pub_themes</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get id_usr_prefs of usr_prefs
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#get_id_usr_prefs2">get_id_usr_prefs</A>&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get usr_prefs.id_usr_prefs of usr_prefs from id_usr
+Get id_pub_themes of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get id_usr of usr_prefs
+Get id_usr of pub_themes
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_theme_name">get_theme_name</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get theme_name of pub_themes
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_preview_img">get_preview_img</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Get preview_img of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_daymode">get_game_daymode</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_daymode of usr_prefs
+Get game_daymode of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_bird_color">get_game_bird_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_bird_color of usr_prefs
+Get game_bird_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_treetop_color">get_game_treetop_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_treetop_color of usr_prefs
+Get game_treetop_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_treetrunk_color">get_game_treetrunk_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_treetrunk_color of usr_prefs
+Get game_treetrunk_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_bottom_color">get_game_bottom_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_bottom_color of usr_prefs
+Get game_bottom_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_grass_color">get_game_grass_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_grass_color of usr_prefs
+Get game_grass_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_game_bar_color">get_game_bar_color</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Get game_bar_color of usr_prefs
+Get game_bar_color of pub_themes
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#do_fill_usr_prefs">do_fill_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#do_insert_pub_theme">do_insert_pub_theme</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Fills page items on user prefs (customize) page
+Insert public theme from usr and return Goto URL
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#do_merge_usr_prefs">do_merge_usr_prefs</A>&nbsp;&nbsp;
+<A HREF="#set_pub_theme_current">set_pub_theme_current</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Merge Insert/Update Functions to save values
+Set public theme as current usr theme
 </TD></TR>
 </TABLE>
 <BR>
@@ -122,46 +127,48 @@ Types
 </TD></TR></TABLE>
 <TABLE CLASS="SUB_TABLE">
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
-<A HREF="#pub_rec_usr_prefs_type">pub_rec_usr_prefs_type</A>&nbsp;&nbsp;
+<A HREF="#pub_rec_pub_themes_type">pub_rec_pub_themes_type</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Record for usr_prefs
+Record for pub_themes
 </TD></TR>
 </TABLE>
 <BR>
 <HR>
-<A NAME="pub_rec_usr_prefs_type"></A>
+<A NAME="pub_rec_pub_themes_type"></A>
 <P CLASS="TYPE_TITLE">
-pub_rec_usr_prefs_type
+pub_rec_pub_themes_type
 </P>
 <PRE CLASS="DECL_TEXT">
-TYPE pub_rec_usr_prefs_type IS RECORD(
-  id_usr_prefs         usr_prefs.id_usr_prefs%TYPE,
-  id_usr               usr_prefs.id_usr%TYPE,
-  game_daymode         usr_prefs.game_daymode%TYPE,
-  game_bird_color      usr_prefs.game_bird_color%TYPE,
-  game_treetop_color   usr_prefs.game_treetop_color%TYPE,
-  game_treetrunk_color usr_prefs.game_treetrunk_color%TYPE,
-  game_bottom_color    usr_prefs.game_bottom_color%TYPE,
-  game_grass_color     usr_prefs.game_grass_color%TYPE,
-  game_bar_color       usr_prefs.game_bar_color%TYPE);
+TYPE pub_rec_pub_themes_type IS RECORD(
+  id_pub_themes        pub_themes.id_pub_themes%TYPE,
+  id_usr               pub_themes.id_usr%TYPE,
+  theme_name           pub_themes.theme_name%TYPE,
+  preview_img          pub_themes.preview_img%TYPE,
+  game_daymode         pub_themes.game_daymode%TYPE,
+  game_bird_color      pub_themes.game_bird_color%TYPE,
+  game_treetop_color   pub_themes.game_treetop_color%TYPE,
+  game_treetrunk_color pub_themes.game_treetrunk_color%TYPE,
+  game_bottom_color    pub_themes.game_bottom_color%TYPE,
+  game_grass_color     pub_themes.game_grass_color%TYPE,
+  game_bar_color       pub_themes.game_bar_color%TYPE);
 </PRE>
 <P CLASS="DESC_TEXT">
-Record for usr_prefs<br>
+Record for pub_themes<br>
 
 <BR>
 </P>
 <HR>
-<A NAME="ins_usr_prefs"></A>
+<A NAME="ins_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-ins_usr_prefs
+ins_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#ins_usr_prefs">ins_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
-  RETURN usr_prefs.id_usr_prefs%TYPE
+FUNCTION ins_pub_themes(i_rec_pub_themes IN <A HREF=#pub_rec_pub_themes_type>pub_rec_pub_themes_type</A>)
+  RETURN pub_themes.id_pub_themes%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Inserts dataset in usr_prefs<br>
+Inserts dataset in pub_themes<br>
 
 <BR>
 </P>
@@ -172,7 +179,7 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_rec_usr_prefs&nbsp;&nbsp;
+i_rec_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Record-Type of table<br>
 
@@ -192,17 +199,17 @@ ID (PK of dataset)<br>
 </TABLE>
 <BR>
 <HR>
-<A NAME="upd_usr_prefs"></A>
+<A NAME="upd_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-upd_usr_prefs
+upd_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_prefs.body.html#upd_usr_prefs">upd_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>,
-                        i_checksum      IN VARCHAR2 := NULL)
+PROCEDURE upd_pub_themes(i_rec_pub_themes IN <A HREF=#pub_rec_pub_themes_type>pub_rec_pub_themes_type</A>,
+                         i_checksum       IN VARCHAR2 := NULL)
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Updates datset of table usr_prefs<br>
+Updates datset of table pub_themes<br>
 
 <BR>
 </P>
@@ -213,9 +220,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_rec_usr_prefs&nbsp;&nbsp;
+i_rec_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Record-Type of usr_prefs<br>
+Record-Type of pub_themes<br>
 
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
@@ -228,16 +235,16 @@ Checksumme md5 before<br>
 </TABLE>
 <BR>
 <HR>
-<A NAME="del_usr_prefs"></A>
+<A NAME="del_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-del_usr_prefs
+del_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_prefs.body.html#del_usr_prefs">del_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+PROCEDURE del_pub_themes(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Deletes dataset of table usr_prefs<br>
+Deletes dataset of table pub_themes<br>
 
 <BR>
 </P>
@@ -248,25 +255,25 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-PK-ID of usr_prefs<br>
+PK-ID of pub_themes<br>
 
 </TD></TR>
 </TABLE>
 <BR>
 <HR>
-<A NAME="get_rec_usr_prefs"></A>
+<A NAME="get_rec_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-get_rec_usr_prefs
+get_rec_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_rec_usr_prefs">get_rec_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>
+FUNCTION get_rec_pub_themes(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN <A HREF=#pub_rec_pub_themes_type>pub_rec_pub_themes_type</A>
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get record of table usr_prefs<br>
+Get record of table pub_themes<br>
 
 <BR>
 </P>
@@ -277,9 +284,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-ID aus usr_prefs<br>
+ID aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -291,23 +298,23 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Record-Type for usr_prefs<br>
+Record-Type for pub_themes<br>
 
 </TD></TR>
 </TABLE>
 <BR>
 <HR>
-<A NAME="get_md5_usr_prefs"></A>
+<A NAME="get_md5_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-get_md5_usr_prefs
+get_md5_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_md5_usr_prefs">get_md5_usr_prefs</A>(i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+FUNCTION get_md5_pub_themes(i_rec_pub_themes IN <A HREF=#pub_rec_pub_themes_type>pub_rec_pub_themes_type</A>)
   RETURN VARCHAR2
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Generates md5 checksum for usr_prefs<br>
+Generates md5 checksum for pub_themes<br>
 
 <BR>
 </P>
@@ -318,7 +325,7 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_rec_usr_prefs&nbsp;&nbsp;
+i_rec_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Record-Type of table<br>
 
@@ -338,18 +345,18 @@ md5 Checksum in Varchar2<br>
 </TABLE>
 <BR>
 <HR>
-<A NAME="do_check_md5_usr_prefs"></A>
+<A NAME="do_check_md5_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-do_check_md5_usr_prefs
+do_check_md5_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#do_check_md5_usr_prefs">do_check_md5_usr_prefs</A>(i_checksum      IN VARCHAR2,
-                                i_rec_usr_prefs IN <A HREF=#pub_rec_usr_prefs_type>pub_rec_usr_prefs_type</A>)
+FUNCTION do_check_md5_pub_themes(i_checksum       IN VARCHAR2,
+                                 i_rec_pub_themes IN <A HREF=#pub_rec_pub_themes_type>pub_rec_pub_themes_type</A>)
   RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Compares (Before/After) md5 checksum for usr_prefs<br>
+Compares (Before/After) md5 checksum for pub_themes<br>
 
 <BR>
 </P>
@@ -367,7 +374,7 @@ checksum before<br>
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_rec_usr_prefs&nbsp;&nbsp;
+i_rec_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Record-Type of table<br>
 
@@ -387,17 +394,17 @@ Boolean value<br>
 </TABLE>
 <BR>
 <HR>
-<A NAME="get_id_usr_prefs"></A>
+<A NAME="get_id_pub_themes"></A>
 <P CLASS="TYPE_TITLE">
-get_id_usr_prefs
+get_id_pub_themes
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_id_usr_prefs">get_id_usr_prefs</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.id_usr_prefs%TYPE
+FUNCTION get_id_pub_themes(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.id_pub_themes%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get id_usr_prefs of usr_prefs<br>
+Get id_pub_themes of pub_themes<br>
 
 <BR>
 </P>
@@ -408,9 +415,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -422,47 +429,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-id_usr_prefs aus usr_prefs<br>
-
-</TD></TR>
-</TABLE>
-<BR>
-<HR>
-<A NAME="get_id_usr_prefs2"></A>
-<P CLASS="TYPE_TITLE">
-get_id_usr_prefs
-</P>
-<PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_id_usr_prefs">get_id_usr_prefs</A>(i_id_usr IN usr_prefs.id_usr%TYPE)
-  RETURN usr_prefs.id_usr_prefs%TYPE
-
-</PRE>
-<P CLASS="DESC_TEXT">
-Get usr_prefs.id_usr_prefs of usr_prefs from id_usr<br>
-
-<BR>
-</P>
-<A NAME="Parameters"></A>
-<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
-Parameters
-</TD></TR></TABLE>
-<TABLE CLASS="LIST_TABLE">
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-</TABLE>
-<BR>
-<A NAME="Returns"></A>
-<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
-Returns
-</TD></TR></TABLE>
-<TABLE CLASS="LIST_TABLE">
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-id_usr_prefs from usr_prefs<br>
+id_pub_themes aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -473,12 +440,12 @@ id_usr_prefs from usr_prefs<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_token.html#get_id_usr">get_id_usr</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.id_usr%TYPE
+FUNCTION <A HREF="api_usr.html#get_id_usr">get_id_usr</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.id_usr%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get id_usr of usr_prefs<br>
+Get id_usr of pub_themes<br>
 
 <BR>
 </P>
@@ -489,9 +456,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -503,7 +470,89 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-id_usr aus usr_prefs<br>
+id_usr aus pub_themes<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_theme_name"></A>
+<P CLASS="TYPE_TITLE">
+get_theme_name
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_theme_name(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.theme_name%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get theme_name of pub_themes<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_pub_themes&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der pub_themes<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+theme_name aus pub_themes<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<A NAME="get_preview_img"></A>
+<P CLASS="TYPE_TITLE">
+get_preview_img
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION get_preview_img(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.preview_img%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Get preview_img of pub_themes<br>
+
+<BR>
+</P>
+<A NAME="Parameters"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Parameters
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+i_id_pub_themes&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Id der pub_themes<br>
+
+</TD></TR>
+</TABLE>
+<BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+preview_img aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -514,12 +563,12 @@ id_usr aus usr_prefs<br>
 get_game_daymode
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_daymode">get_game_daymode</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_daymode%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_daymode">get_game_daymode</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_daymode%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_daymode of usr_prefs<br>
+Get game_daymode of pub_themes<br>
 
 <BR>
 </P>
@@ -530,9 +579,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -544,7 +593,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_daymode aus usr_prefs<br>
+game_daymode aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -555,12 +604,12 @@ game_daymode aus usr_prefs<br>
 get_game_bird_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bird_color">get_game_bird_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_bird_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_bird_color">get_game_bird_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_bird_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_bird_color of usr_prefs<br>
+Get game_bird_color of pub_themes<br>
 
 <BR>
 </P>
@@ -571,9 +620,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -585,7 +634,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_bird_color aus usr_prefs<br>
+game_bird_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -596,12 +645,12 @@ game_bird_color aus usr_prefs<br>
 get_game_treetop_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_treetop_color">get_game_treetop_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_treetop_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_treetop_color">get_game_treetop_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_treetop_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_treetop_color of usr_prefs<br>
+Get game_treetop_color of pub_themes<br>
 
 <BR>
 </P>
@@ -612,9 +661,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -626,7 +675,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_treetop_color aus usr_prefs<br>
+game_treetop_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -637,12 +686,12 @@ game_treetop_color aus usr_prefs<br>
 get_game_treetrunk_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_treetrunk_color">get_game_treetrunk_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_treetrunk_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_treetrunk_color">get_game_treetrunk_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_treetrunk_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_treetrunk_color of usr_prefs<br>
+Get game_treetrunk_color of pub_themes<br>
 
 <BR>
 </P>
@@ -653,9 +702,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -667,7 +716,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_treetrunk_color aus usr_prefs<br>
+game_treetrunk_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -678,12 +727,12 @@ game_treetrunk_color aus usr_prefs<br>
 get_game_bottom_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bottom_color">get_game_bottom_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_bottom_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_bottom_color">get_game_bottom_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_bottom_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_bottom_color of usr_prefs<br>
+Get game_bottom_color of pub_themes<br>
 
 <BR>
 </P>
@@ -694,9 +743,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -708,7 +757,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_bottom_color aus usr_prefs<br>
+game_bottom_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -719,12 +768,12 @@ game_bottom_color aus usr_prefs<br>
 get_game_grass_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_grass_color">get_game_grass_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_grass_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_grass_color">get_game_grass_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_grass_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_grass_color of usr_prefs<br>
+Get game_grass_color of pub_themes<br>
 
 <BR>
 </P>
@@ -735,9 +784,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -749,7 +798,7 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_grass_color aus usr_prefs<br>
+game_grass_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -760,12 +809,12 @@ game_grass_color aus usr_prefs<br>
 get_game_bar_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.body.html#get_game_bar_color">get_game_bar_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
-  RETURN usr_prefs.game_bar_color%TYPE
+FUNCTION <A HREF="api_usr_prefs.html#get_game_bar_color">get_game_bar_color</A>(i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
+  RETURN pub_themes.game_bar_color%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Get game_bar_color of usr_prefs<br>
+Get game_bar_color of pub_themes<br>
 
 <BR>
 </P>
@@ -776,9 +825,9 @@ Parameters
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-Id der usr_prefs<br>
+Id der pub_themes<br>
 
 </TD></TR>
 </TABLE>
@@ -790,30 +839,25 @@ Returns
 <TABLE CLASS="LIST_TABLE">
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-game_bar_color aus usr_prefs<br>
+game_bar_color aus pub_themes<br>
 
 </TD></TR>
 </TABLE>
 <BR>
 <HR>
-<A NAME="do_fill_usr_prefs"></A>
+<A NAME="do_insert_pub_theme"></A>
 <P CLASS="TYPE_TITLE">
-do_fill_usr_prefs
+do_insert_pub_theme
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_prefs.body.html#do_fill_usr_prefs">do_fill_usr_prefs</A>(i_id_usr               IN usr_prefs.id_usr%TYPE,
-                            o_id_usr_prefs         OUT usr_prefs.id_usr_prefs%TYPE,
-                            o_game_daymode         OUT usr_prefs.game_daymode%TYPE,
-                            o_game_bird_color      OUT usr_prefs.game_bird_color%TYPE,
-                            o_game_treetop_color   OUT usr_prefs.game_treetop_color%TYPE,
-                            o_game_treetrunk_color OUT usr_prefs.game_treetrunk_color%TYPE,
-                            o_game_bottom_color    OUT usr_prefs.game_bottom_color%TYPE,
-                            o_game_grass_color     OUT usr_prefs.game_grass_color%TYPE,
-                            o_game_bar_color       OUT usr_prefs.game_bar_color%TYPE)
+FUNCTION do_insert_pub_theme(i_id_usr      IN pub_themes.id_usr%TYPE,
+                             i_theme_name  pub_themes.theme_name%TYPE,
+                             i_preview_img pub_themes.preview_img%TYPE)
+  RETURN VARCHAR2
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Fills page items on user prefs (customize) page<br>
+Insert public theme from usr and return Goto URL<br>
 
 <BR>
 </P>
@@ -830,73 +874,42 @@ i_id_usr&nbsp;&nbsp;
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_id_usr_prefs&nbsp;&nbsp;
+i_theme_name&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_daymode&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_bird_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_treetop_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_treetrunk_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_bottom_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_grass_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-o_game_bar_color&nbsp;&nbsp;
+i_preview_img&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 
 </TD></TR>
 </TABLE>
 <BR>
+<A NAME="Returns"></A>
+<TABLE CLASS="LIST_TABLE"><TR><TD CLASS="LIST_TITLE">
+Returns
+</TD></TR></TABLE>
+<TABLE CLASS="LIST_TABLE">
+<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+URL as varchar2<br>
+
+</TD></TR>
+</TABLE>
+<BR>
 <HR>
-<A NAME="do_merge_usr_prefs"></A>
+<A NAME="set_pub_theme_current"></A>
 <P CLASS="TYPE_TITLE">
-do_merge_usr_prefs
+set_pub_theme_current
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_prefs.body.html#do_merge_usr_prefs">do_merge_usr_prefs</A>(i_id_usr               IN usr_prefs.id_usr%TYPE,
-                             i_id_usr_prefs         IN usr_prefs.id_usr_prefs%TYPE,
-                             i_game_daymode         IN usr_prefs.game_daymode%TYPE,
-                             i_game_bird_color      IN usr_prefs.game_bird_color%TYPE,
-                             i_game_treetop_color   IN usr_prefs.game_treetop_color%TYPE,
-                             i_game_treetrunk_color IN usr_prefs.game_treetrunk_color%TYPE,
-                             i_game_bottom_color    IN usr_prefs.game_bottom_color%TYPE,
-                             i_game_grass_color     IN usr_prefs.game_grass_color%TYPE,
-                             i_game_bar_color       IN usr_prefs.game_bar_color%TYPE)
+PROCEDURE set_pub_theme_current(i_id_usr        IN pub_themes.id_usr%TYPE,
+                                i_id_pub_themes IN pub_themes.id_pub_themes%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
-Merge Insert/Update Functions to save values<br>
+Set public theme as current usr theme<br>
 
 <BR>
 </P>
@@ -913,49 +926,7 @@ i_id_usr&nbsp;&nbsp;
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
 </TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_id_usr_prefs&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_daymode&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_bird_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_treetop_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_treetrunk_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_bottom_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_grass_color&nbsp;&nbsp;
-</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
-
-</TD></TR>
-<TR><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-</TD><TD VALIGN="TOP" CLASS="LIST_ITEM" WIDTH=1%>
-i_game_bar_color&nbsp;&nbsp;
+i_id_pub_themes&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 
 </TD></TR>

@@ -14,4 +14,5 @@ prompt Install tables
 @@../tables/usr_prefs.sql
 @@../tables/usr_token.sql
 @@../tables/usr_tw_friends.sql
+@@../tables/pub_themes.sql
 @@../tables/table_constraints.sql

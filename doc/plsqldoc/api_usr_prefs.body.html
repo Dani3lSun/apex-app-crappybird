@@ -59,6 +59,11 @@ Purpose:&nbsp; Compares (Before/After) md5 checksum of usr_prefs Author:&nbsp;&n
 Purpose:&nbsp; Get usr_prefs.id_usr_prefs of usr_prefs Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:
 </TD></TR>
 <TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#get_id_usr_prefs2">get_id_usr_prefs</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Get usr_prefs.id_usr_prefs of usr_prefs from id_usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 02.09.15 Changed:
+</TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
 <A HREF="#get_id_usr">get_id_usr</A>&nbsp;&nbsp;
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Purpose:&nbsp; Get usr_prefs.id_usr of usr_prefs Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.15 Changed:
@@ -237,6 +242,21 @@ Purpose:&nbsp; Get usr_prefs.id_usr_prefs of usr_prefs Author:&nbsp;&nbsp; Danie
 <BR>
 </P>
 <HR>
+<A NAME="get_id_usr_prefs2"></A>
+<P CLASS="TYPE_TITLE">
+get_id_usr_prefs
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr_prefs.html#get_id_usr_prefs">get_id_usr_prefs</A>(i_id_usr IN usr_prefs.id_usr%TYPE)
+  RETURN usr_prefs.id_usr_prefs%TYPE
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Get usr_prefs.id_usr_prefs of usr_prefs from id_usr Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 02.09.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
 <A NAME="get_id_usr"></A>
 <P CLASS="TYPE_TITLE">
 get_id_usr
@@ -257,7 +277,7 @@ Purpose:&nbsp; Get usr_prefs.id_usr of usr_prefs Author:&nbsp;&nbsp; Daniel Hoch
 get_game_daymode
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_daymode">get_game_daymode</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_daymode">get_game_daymode</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_daymode%TYPE
 
 </PRE>
@@ -272,7 +292,7 @@ Purpose:&nbsp; Get usr_prefs.game_daymode of usr_prefs Author:&nbsp;&nbsp; Danie
 get_game_bird_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_bird_color">get_game_bird_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_bird_color">get_game_bird_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bird_color%TYPE
 
 </PRE>
@@ -287,7 +307,7 @@ Purpose:&nbsp; Get usr_prefs.game_bird_color of usr_prefs Author:&nbsp;&nbsp; Da
 get_game_treetop_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_treetop_color">get_game_treetop_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_treetop_color">get_game_treetop_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_treetop_color%TYPE
 
 </PRE>
@@ -302,7 +322,7 @@ Purpose:&nbsp; Get usr_prefs.game_treetop_color of usr_prefs Author:&nbsp;&nbsp;
 get_game_treetrunk_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_treetrunk_color">get_game_treetrunk_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_treetrunk_color">get_game_treetrunk_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_treetrunk_color%TYPE
 
 </PRE>
@@ -317,7 +337,7 @@ Purpose:&nbsp; Get usr_prefs.game_treetrunk_color of usr_prefs Author:&nbsp;&nbs
 get_game_bottom_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_bottom_color">get_game_bottom_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_bottom_color">get_game_bottom_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bottom_color%TYPE
 
 </PRE>
@@ -332,7 +352,7 @@ Purpose:&nbsp; Get usr_prefs.game_bottom_color of usr_prefs Author:&nbsp;&nbsp; 
 get_game_grass_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_grass_color">get_game_grass_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_grass_color">get_game_grass_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_grass_color%TYPE
 
 </PRE>
@@ -347,7 +367,7 @@ Purpose:&nbsp; Get usr_prefs.game_grass_color of usr_prefs Author:&nbsp;&nbsp; D
 get_game_bar_color
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_prefs.html#get_game_bar_color">get_game_bar_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
+FUNCTION <A HREF="api_pub_themes.html#get_game_bar_color">get_game_bar_color</A>(i_id_usr_prefs IN usr_prefs.id_usr_prefs%TYPE)
   RETURN usr_prefs.game_bar_color%TYPE
 
 </PRE>
