@@ -27,8 +27,8 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   10:25 Thursday September 3, 2015
---   Exported By:     ADMIN
+--   Date and Time:   11:33 Thursday September 3, 2015
+--   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         5.0.1.00.06
@@ -123,8 +123,8 @@ wwv_flow_api.create_flow(
 ,p_substitution_value_03=>'<link rel="icon" sizes="64x64" href="&CRAPPY_HOME.img/appicons/favicon.png">'
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
-,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20150903102548'
+,p_last_updated_by=>'DH'
+,p_last_upd_yyyymmddhh24miss=>'20150903113319'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -6484,7 +6484,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150902205931'
+,p_last_upd_yyyymmddhh24miss=>'20150903113024'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26229260765501714)
@@ -6645,9 +6645,8 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(77389617922098347)
 ,p_button_image_alt=>'Show on Map'
 ,p_button_position=>'REGION_TEMPLATE_CREATE2'
-,p_button_redirect_url=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.:RP,14:P14_DISTANCE,P14_PAGE_FROM:&P5_DISTANCE.,5'
+,p_button_redirect_url=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.:RP,14:P14_PAGE_FROM:5'
 ,p_icon_css_classes=>'map'
-,p_grid_new_grid=>false
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26233205948501716)
@@ -6734,7 +6733,7 @@ wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(26911386705213719)
 ,p_event_id=>wwv_flow_api.id(26911230260213718)
 ,p_event_result=>'TRUE'
-,p_action_sequence=>10
+,p_action_sequence=>20
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
@@ -9140,7 +9139,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150830204736'
+,p_last_upd_yyyymmddhh24miss=>'20150903113223'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26857045280304046)
@@ -9200,7 +9199,12 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P14_DISTANCE'
 ,p_item_sequence=>50
 ,p_item_plug_id=>wwv_flow_api.id(26857045280304046)
-,p_item_default=>'200'
+,p_item_default=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  return nvl(apex_util.get_session_state(''P5_DISTANCE''),',
+'             200);',
+'END;'))
+,p_item_default_type=>'PLSQL_FUNCTION_BODY'
 ,p_prompt=>'Distance'
 ,p_display_as=>'NATIVE_SELECT_LIST'
 ,p_lov=>'STATIC2:50 Miles;50,100 Miles;100,200 Miles;200,300 Miles;300,500 Miles;500,1000 Miles;1000'
