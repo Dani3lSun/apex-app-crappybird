@@ -495,6 +495,7 @@ This software is under **MIT License**.
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_05.png)
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_06.png)
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_07.png)
+![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_08.png)
 
 ---
 
