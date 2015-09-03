@@ -27,8 +27,8 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   10:15 Thursday September 3, 2015
---   Exported By:     DH
+--   Date and Time:   10:25 Thursday September 3, 2015
+--   Exported By:     ADMIN
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         5.0.1.00.06
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_logo_image=>'TEXT:CrappyBird'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=> nvl(wwv_flow_application_install.get_proxy,'')
-,p_flow_version=>'1.2'
+,p_flow_version=>'1.3'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -123,8 +123,8 @@ wwv_flow_api.create_flow(
 ,p_substitution_value_03=>'<link rel="icon" sizes="64x64" href="&CRAPPY_HOME.img/appicons/favicon.png">'
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
-,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903101506'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20150903102548'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
