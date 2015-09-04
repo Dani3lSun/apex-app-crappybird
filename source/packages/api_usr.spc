@@ -312,5 +312,9 @@ CREATE OR REPLACE PACKAGE api_usr IS
                                   i_usr_email     IN usr.usr_email%TYPE,
                                   i_usr_pwd       IN usr.usr_pwd%TYPE);
   --
+  -- Count all registered Users
+  -- #return number
+  FUNCTION count_all_usr RETURN NUMBER;
+  --
 END api_usr;
 /

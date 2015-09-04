@@ -1593,5 +1593,39 @@ CREATE OR REPLACE PACKAGE BODY api_usr IS
       RAISE;
   END do_insert_admin_setup;
   --
+  /****************************************************************************
+  * Purpose:  Count all registered Users
+  * Author:   Daniel Hochleitner
+  * Created:  04.09.15
+  * Changed:
+  ****************************************************************************/
+  FUNCTION count_all_usr RETURN NUMBER IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'count_all_usr';
+    --
+    l_count NUMBER;
+    CURSOR l_cur_usr IS
+      SELECT COUNT(usr.id_usr)
+        FROM usr
+       WHERE usr.id_usr != api_usr.getc_admin_pk;
+    --
+  BEGIN
+    -- fetch usr count in var
+    OPEN l_cur_usr;
+    FETCH l_cur_usr
+      INTO l_count;
+    CLOSE l_cur_usr;
+    --
+    RETURN nvl(l_count,
+               0);
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END count_all_usr;
+  --
 END api_usr;
 /
