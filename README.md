@@ -52,6 +52,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.4 - Complete review of App / Security improvements (SSP / Escape special characters) / UI improvements / Admin page improvements
 ####1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
 ####1.2 - Added google maps page to display users nearby / some smaller UI fixes
 ####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
