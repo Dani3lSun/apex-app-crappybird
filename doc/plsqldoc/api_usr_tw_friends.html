@@ -116,7 +116,7 @@ Record for usr_tw_friends<br>
 ins_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#ins_usr_tw_friends">ins_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
+FUNCTION ins_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
   RETURN usr_tw_friends.id_usr_tw_friends%TYPE
 
 </PRE>
@@ -157,7 +157,7 @@ ID (PK of dataset)<br>
 upd_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_tw_friends.body.html#upd_usr_tw_friends">upd_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>,
+PROCEDURE upd_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>,
                              i_checksum           IN VARCHAR2 := NULL)
 
 </PRE>
@@ -193,7 +193,7 @@ Checksumme md5 before<br>
 del_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_tw_friends.body.html#del_usr_tw_friends">del_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+PROCEDURE del_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -221,7 +221,7 @@ PK-ID of usr_tw_friends<br>
 del_usr_tw_friends_per_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_tw_friends.body.html#del_usr_tw_friends_per_usr">del_usr_tw_friends_per_usr</A>(i_id_usr IN usr_tw_friends.id_usr%TYPE)
+PROCEDURE del_usr_tw_friends_per_usr(i_id_usr IN usr_tw_friends.id_usr%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -248,7 +248,7 @@ i_id_usr&nbsp;&nbsp;
 get_rec_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#get_rec_usr_tw_friends">get_rec_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+FUNCTION get_rec_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
   RETURN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>
 
 </PRE>
@@ -289,7 +289,7 @@ Record-Type for usr_tw_friends<br>
 get_md5_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#get_md5_usr_tw_friends">get_md5_usr_tw_friends</A>(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
+FUNCTION get_md5_usr_tw_friends(i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -330,7 +330,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#do_check_md5_usr_tw_friends">do_check_md5_usr_tw_friends</A>(i_checksum           IN VARCHAR2,
+FUNCTION do_check_md5_usr_tw_friends(i_checksum           IN VARCHAR2,
                                      i_rec_usr_tw_friends IN <A HREF=#pub_rec_usr_tw_friends_type>pub_rec_usr_tw_friends_type</A>)
   RETURN BOOLEAN
 
@@ -379,7 +379,7 @@ Boolean value<br>
 get_id_usr_tw_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#get_id_usr_tw_friends">get_id_usr_tw_friends</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+FUNCTION get_id_usr_tw_friends(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
   RETURN usr_tw_friends.id_usr_tw_friends%TYPE
 
 </PRE>
@@ -420,7 +420,7 @@ id_usr_tw_friends aus usr_tw_friends<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.body.html#get_id_usr">get_id_usr</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
   RETURN usr_tw_friends.id_usr%TYPE
 
 </PRE>
@@ -461,7 +461,7 @@ id_usr aus usr_tw_friends<br>
 get_id_usr_friend
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#get_id_usr_friend">get_id_usr_friend</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+FUNCTION get_id_usr_friend(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
   RETURN usr_tw_friends.id_usr_friend%TYPE
 
 </PRE>
@@ -502,7 +502,7 @@ id_usr_friend aus usr_tw_friends<br>
 get_usr_friend_twitter_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_tw_friends.body.html#get_usr_friend_twitter_id">get_usr_friend_twitter_id</A>(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
+FUNCTION get_usr_friend_twitter_id(i_id_usr_tw_friends IN usr_tw_friends.id_usr_tw_friends%TYPE)
   RETURN usr_tw_friends.usr_friend_twitter_id%TYPE
 
 </PRE>

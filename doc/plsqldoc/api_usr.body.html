@@ -233,6 +233,11 @@ Purpose:&nbsp; Get username from Brwoser LocalStorage and sets Page item with va
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Purpose:&nbsp; Creates admin user for setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
 </TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#count_all_usr">count_all_usr</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Count all registered Users Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 04.09.15 Changed:
+</TD></TR>
 </TABLE>
 <BR>
 <A NAME="Constants"></A>
@@ -253,7 +258,7 @@ Constants
 priv_package
 </P>
 <PRE CLASS="DECL_TEXT">
-<A HREF="api_usr_battle.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr';
+<A HREF="api_auth.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr';
 </PRE>
 
 <HR>
@@ -362,7 +367,7 @@ Purpose:&nbsp; Compares (Before/After) md5 checksum of usr Author:&nbsp;&nbsp; D
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_location.body.html#get_id_usr">get_id_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.id_usr%TYPE
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.id_usr%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -376,7 +381,7 @@ Purpose:&nbsp; Get usr.id_usr of usr Author:&nbsp;&nbsp; Daniel Hochleitner Crea
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_location.body.html#get_id_usr">get_id_usr</A>(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN usr.id_usr%TYPE
 
 </PRE>
@@ -391,7 +396,7 @@ Purpose:&nbsp; Get usr.id_usr of usr from twitter_id Author:&nbsp;&nbsp; Daniel 
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_location.body.html#get_id_usr">get_id_usr</A>(i_usr_email IN usr.usr_email%TYPE)
+FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_usr_email IN usr.usr_email%TYPE)
   RETURN usr.id_usr%TYPE
 
 </PRE>
@@ -754,7 +759,7 @@ Purpose:&nbsp; Changes the User password Author:&nbsp;&nbsp; Daniel Hochleitner 
 do_set_usr_highscore
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_battle.body.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN usr.id_usr%TYPE,
                                i_usr_highscore IN usr.usr_highscore%TYPE)
 
 </PRE>
@@ -890,6 +895,20 @@ PROCEDURE <A HREF="api_usr.html#do_insert_admin_setup">do_insert_admin_setup</A>
 </PRE>
 <P CLASS="DESC_TEXT">
 Purpose:&nbsp; Creates admin user for setup script Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="count_all_usr"></A>
+<P CLASS="TYPE_TITLE">
+count_all_usr
+</P>
+<PRE CLASS="DECL_TEXT">
+FUNCTION <A HREF="api_usr.html#count_all_usr">count_all_usr</A> RETURN NUMBER
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Count all registered Users Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 04.09.15 Changed:<br>
 
 <BR>
 </P>

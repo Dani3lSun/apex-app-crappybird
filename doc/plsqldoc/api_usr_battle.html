@@ -152,7 +152,7 @@ Record for usr_battle<br>
 ins_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#ins_usr_battle">ins_usr_battle</A>(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
+FUNCTION ins_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
   RETURN usr_battle.id_usr_battle%TYPE
 
 </PRE>
@@ -193,7 +193,7 @@ ID (PK of dataset)<br>
 upd_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_battle.body.html#upd_usr_battle">upd_usr_battle</A>(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>,
+PROCEDURE upd_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>,
                          i_checksum       IN VARCHAR2 := NULL)
 
 </PRE>
@@ -229,7 +229,7 @@ Checksumme md5 before<br>
 del_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_battle.body.html#del_usr_battle">del_usr_battle</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+PROCEDURE del_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -257,7 +257,7 @@ PK-ID of usr_battle<br>
 get_rec_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_rec_usr_battle">get_rec_usr_battle</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_rec_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>
 
 </PRE>
@@ -298,7 +298,7 @@ Record-Type for usr_battle<br>
 get_md5_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_md5_usr_battle">get_md5_usr_battle</A>(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
+FUNCTION get_md5_usr_battle(i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
   RETURN VARCHAR2
 
 </PRE>
@@ -339,7 +339,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#do_check_md5_usr_battle">do_check_md5_usr_battle</A>(i_checksum       IN VARCHAR2,
+FUNCTION do_check_md5_usr_battle(i_checksum       IN VARCHAR2,
                                  i_rec_usr_battle IN <A HREF=#pub_rec_usr_battle_type>pub_rec_usr_battle_type</A>)
   RETURN BOOLEAN
 
@@ -388,7 +388,7 @@ Boolean value<br>
 get_id_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_id_usr_battle">get_id_usr_battle</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_id_usr_battle(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN usr_battle.id_usr_battle%TYPE
 
 </PRE>
@@ -429,7 +429,7 @@ id_usr_battle aus usr_battle<br>
 get_id_usr_challenger
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_id_usr_challenger">get_id_usr_challenger</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_id_usr_challenger(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN usr_battle.id_usr_challenger%TYPE
 
 </PRE>
@@ -470,7 +470,7 @@ id_usr_challenger aus usr_battle<br>
 get_id_usr_receiver
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_id_usr_receiver">get_id_usr_receiver</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_id_usr_receiver(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN usr_battle.id_usr_receiver%TYPE
 
 </PRE>
@@ -511,7 +511,7 @@ id_usr_receiver aus usr_battle<br>
 get_highscore_challenger
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_highscore_challenger">get_highscore_challenger</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_highscore_challenger(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN usr_battle.highscore_challenger%TYPE
 
 </PRE>
@@ -552,7 +552,7 @@ highscore_challenger aus usr_battle<br>
 get_highscore_receiver
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_highscore_receiver">get_highscore_receiver</A>(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
+FUNCTION get_highscore_receiver(i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN usr_battle.highscore_receiver%TYPE
 
 </PRE>
@@ -593,7 +593,7 @@ highscore_receiver aus usr_battle<br>
 get_id_usr_battle_users
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#get_id_usr_battle_users">get_id_usr_battle_users</A>(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+FUNCTION get_id_usr_battle_users(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
                                  i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE)
   RETURN usr_battle.id_usr_battle%TYPE
 
@@ -640,7 +640,7 @@ id_usr_battle<br>
 do_insert_usr_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#do_insert_usr_battle">do_insert_usr_battle</A>(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+FUNCTION do_insert_usr_battle(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
                               i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE)
   RETURN usr_battle.id_usr_battle%TYPE
 
@@ -687,7 +687,7 @@ id_usr_battle<br>
 check_challenger_receiver
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#check_challenger_receiver">check_challenger_receiver</A>(i_id_usr        IN NUMBER,
+FUNCTION check_challenger_receiver(i_id_usr        IN NUMBER,
                                    i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN VARCHAR2
 
@@ -723,7 +723,7 @@ return VARCHAR2 (C = challenger / R = receiver)<br>
 check_better_highscore
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#check_better_highscore">check_better_highscore</A>(i_id_usr        IN NUMBER,
+FUNCTION check_better_highscore(i_id_usr        IN NUMBER,
                                 i_id_usr_battle IN usr_battle.id_usr_battle%TYPE)
   RETURN BOOLEAN
 
@@ -759,7 +759,7 @@ return BOOLEAN<br>
 check_open_battle
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_usr_battle.body.html#check_open_battle">check_open_battle</A>(i_id_usr IN NUMBER) RETURN BOOLEAN
+FUNCTION check_open_battle(i_id_usr IN NUMBER) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -798,7 +798,7 @@ BOOLEAN<br>
 do_set_usr_highscore
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr.body.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN NUMBER,
+PROCEDURE <A HREF="api_usr.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN NUMBER,
                                i_id_usr_battle IN usr_battle.id_usr_battle%TYPE,
                                i_highscore     IN NUMBER)
 
@@ -839,7 +839,7 @@ i_highscore&nbsp;&nbsp;
 do_fill_battle_details
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE <A HREF="api_usr_battle.body.html#do_fill_battle_details">do_fill_battle_details</A>(i_id_usr_battle         IN usr_battle.id_usr_battle%TYPE,
+PROCEDURE do_fill_battle_details(i_id_usr_battle         IN usr_battle.id_usr_battle%TYPE,
                                  o_id_usr_challenger     OUT usr_battle.id_usr_challenger%TYPE,
                                  o_id_usr_receiver       OUT usr_battle.id_usr_receiver%TYPE,
                                  o_name_chall            OUT VARCHAR2,
