@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   00:15 Friday September 4, 2015
+--   Date and Time:   22:58 Friday September 4, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -37,12 +37,12 @@ prompt APPLICATION 300 - CrappyBird
 
 -- Application Statistics:
 --   Pages:                     26
---     Items:                  117
+--     Items:                  118
 --     Validations:             30
---     Processes:               42
+--     Processes:               43
 --     Regions:                 75
---     Buttons:                 42
---     Dynamic Actions:         66
+--     Buttons:                 43
+--     Dynamic Actions:         67
 --   Shared Components:
 --     Logic:
 --       Items:                  1
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_logo_image=>'TEXT:CrappyBird'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=> nvl(wwv_flow_application_install.get_proxy,'')
-,p_flow_version=>'1.3'
+,p_flow_version=>'1.4'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -113,6 +113,7 @@ wwv_flow_api.create_flow(
 ,p_browser_frame=>'S'
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
+,p_auto_time_zone=>'N'
 ,p_error_handling_function=>'api_err_log.do_log_apex'
 ,p_default_error_display_loc=>'INLINE_IN_NOTIFICATION'
 ,p_substitution_string_01=>'CRAPPY_HOME'
@@ -124,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904001538'
+,p_last_upd_yyyymmddhh24miss=>'20150904225801'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -4950,7 +4951,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'D'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903233848'
+,p_last_upd_yyyymmddhh24miss=>'20150904214611'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25308936051519347)
@@ -5070,6 +5071,26 @@ wwv_flow_api.create_page_da_action(
 '  apex.item("P0_LONGITUDE").setValue(position.coords.longitude);',
 '});'))
 ,p_stop_execution_on_error=>'Y'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(27092395534101301)
+,p_name=>'CHECK_WEBKIT_BROWSER_ALERT'
+,p_event_sequence=>30
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+,p_display_when_type=>'CURRENT_PAGE_EQUALS_CONDITION'
+,p_display_when_cond=>'101'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(27092469289101302)
+,p_event_id=>wwv_flow_api.id(27092395534101301)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'var is_webkit_browser = navigator.userAgent.indexOf(''AppleWebKit'') > -1;',
+'if (!(is_webkit_browser)) alert(''For best results please use a WebKit Browser like Chrome or Safari!'');'))
 );
 end;
 /
@@ -5774,7 +5795,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903011047'
+,p_last_upd_yyyymmddhh24miss=>'20150904215111'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26152607881666001)
@@ -5809,7 +5830,7 @@ wwv_flow_api.create_report_region(
 '   AND usr.id_usr != api_usr.getc_admin_pk',
 '   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p3_search || ''%'') OR',
 '       upper(usr.usr_lastname) LIKE upper(''%'' || :p3_search || ''%''))',
-' ORDER BY usr_lastname'))
+' ORDER BY upper(usr_lastname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -6130,7 +6151,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903011120'
+,p_last_upd_yyyymmddhh24miss=>'20150904215406'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26219616770476567)
@@ -6162,7 +6183,8 @@ wwv_flow_api.create_report_region(
 '   AND usr.id_usr != :f_id_usr',
 '   AND usr.id_usr != api_usr.getc_admin_pk',
 '   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p4_search || ''%'') OR',
-'       upper(usr.usr_lastname) LIKE upper(''%'' || :p4_search || ''%''))',
+'       upper(usr.usr_lastname) LIKE upper(''%'' || :p4_search || ''%'') OR',
+'       upper(usr.twitter_name) LIKE upper(''%'' || :p4_search || ''%''))',
 '   AND (usr.id_usr IN',
 '       (SELECT usr_tw_friends.id_usr_friend',
 '           FROM usr_tw_friends',
@@ -6171,7 +6193,7 @@ wwv_flow_api.create_report_region(
 '       (SELECT usr_tw_friends.usr_friend_twitter_id',
 '           FROM usr_tw_friends',
 '          WHERE usr_tw_friends.id_usr = :f_id_usr))',
-' ORDER BY usr_lastname'))
+' ORDER BY upper(usr_lastname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -6494,7 +6516,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903113024'
+,p_last_upd_yyyymmddhh24miss=>'20150904222444'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26229260765501714)
@@ -6530,7 +6552,7 @@ wwv_flow_api.create_report_region(
 '                                                 i_id_usr2 => usr.id_usr,',
 '                                                 i_unit    => ''mile'') <',
 '       :p5_distance',
-' ORDER BY usr_lastname'))
+' ORDER BY upper(usr_lastname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -7047,7 +7069,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903234600'
+,p_last_upd_yyyymmddhh24miss=>'20150904221307'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26271013503712715)
@@ -7100,8 +7122,6 @@ wwv_flow_api.create_page_button(
 ,p_button_image_alt=>'Preview'
 ,p_button_position=>'BODY'
 ,p_button_redirect_url=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.:RP,8:P8_PAGE_FROM:7'
-,p_button_condition=>'P7_ID_USR_PREFS'
-,p_button_condition_type=>'ITEM_IS_NOT_NULL'
 ,p_icon_css_classes=>'movie'
 ,p_grid_new_row=>'Y'
 );
@@ -8082,7 +8102,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903130633'
+,p_last_upd_yyyymmddhh24miss=>'20150904215706'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26399576986798203)
@@ -8127,7 +8147,7 @@ wwv_flow_api.create_report_region(
 '                   AND usr.id_usr != api_usr.getc_admin_pk',
 '                 ORDER BY nvl(usr.usr_highscore,',
 '                              0) DESC,',
-'                          usr.usr_lastname) iv_usr) iv_usr2',
+'                          upper(usr.usr_lastname)) iv_usr) iv_usr2',
 ' WHERE (upper(iv_usr2.usr_firstname) LIKE upper(''%'' || :p11_search || ''%'') OR',
 '       upper(iv_usr2.usr_lastname) LIKE upper(''%'' || :p11_search || ''%''))'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
@@ -8422,7 +8442,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150902211344'
+,p_last_upd_yyyymmddhh24miss=>'20150904224850'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26580435253913223)
@@ -8521,7 +8541,7 @@ wwv_flow_api.create_report_region(
 ,p_query_num_rows=>100
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_show_nulls_as=>'-'
-,p_query_no_data_found=>'No Users found.'
+,p_query_no_data_found=>'No Battles found.'
 ,p_query_num_rows_type=>'SEARCH_ENGINE'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -9641,7 +9661,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903011148'
+,p_last_upd_yyyymmddhh24miss=>'20150904224320'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26476208068872155)
@@ -9672,7 +9692,7 @@ wwv_flow_api.create_report_region(
 ' WHERE usr.id_usr != api_usr.getc_admin_pk',
 '   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p17_search || ''%'') OR',
 '       upper(usr.usr_lastname) LIKE upper(''%'' || :p17_search || ''%''))',
-' ORDER BY usr.usr_lastname'))
+' ORDER BY upper(usr.usr_lastname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -9776,7 +9796,7 @@ wwv_flow_api.create_page_plug(
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(26478636959872156)
-,p_button_sequence=>20
+,p_button_sequence=>30
 ,p_button_plug_id=>wwv_flow_api.id(26478212285872156)
 ,p_button_name=>'P17_RESET'
 ,p_button_action=>'DEFINED_BY_DA'
@@ -9787,10 +9807,24 @@ wwv_flow_api.create_page_button(
 ,p_icon_css_classes=>'restore'
 ,p_grid_new_row=>'Y'
 );
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(27092547357101303)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(26478212285872156)
+,p_button_name=>'P17_USR_COUNTER'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#:waves-effect:blue:icon-float-left:btn:waves-light'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'&P17_COUNT_LABEL. total users'
+,p_button_position=>'BODY'
+,p_button_execute_validations=>'N'
+,p_button_css_classes=>'disabled'
+,p_grid_new_row=>'Y'
+);
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(26479065404872156)
 ,p_name=>'P17_SEARCH'
-,p_item_sequence=>10
+,p_item_sequence=>20
 ,p_item_plug_id=>wwv_flow_api.id(26478212285872156)
 ,p_prompt=>'Search'
 ,p_placeholder=>'search'
@@ -9818,6 +9852,16 @@ wwv_flow_api.create_page_item(
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
 ,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(27092651041101304)
+,p_name=>'P17_COUNT_LABEL'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(26478212285872156)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_protection_level=>'S'
+,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
+,p_attribute_01=>'Y'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(26956727632696666)
@@ -9927,6 +9971,18 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
 ,p_attribute_01=>'$("#P17_SEARCH").blur();'
 ,p_da_action_comment=>'Let virtual Keyboard disappear when no submit happens'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(27092756436101305)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'DO_FILL_USR_COUNTER'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  :p17_count_label := api_usr.count_all_usr;',
+'END;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 end;
 /
@@ -11243,7 +11299,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903010636'
+,p_last_upd_yyyymmddhh24miss=>'20150904221857'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -11284,7 +11340,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_new_grid_row=>false
 ,p_plug_new_grid_column=>false
 ,p_plug_display_point=>'BODY'
-,p_plug_source=>'CrappyBird is mobile optimized! Especially for iOS. Just bookmark the page to your homescreen!'
+,p_plug_source=>'CrappyBird is mobile optimized! Especially for iOS and Chrome for Android. Just bookmark the page to your homescreen!'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
