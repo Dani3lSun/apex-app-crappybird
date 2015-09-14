@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   22:58 Friday September 4, 2015
+--   Date and Time:   23:14 Monday September 14, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -37,12 +37,12 @@ prompt APPLICATION 300 - CrappyBird
 
 -- Application Statistics:
 --   Pages:                     26
---     Items:                  118
+--     Items:                  121
 --     Validations:             30
---     Processes:               43
---     Regions:                 75
---     Buttons:                 43
---     Dynamic Actions:         67
+--     Processes:               44
+--     Regions:                 76
+--     Buttons:                 44
+--     Dynamic Actions:         70
 --   Shared Components:
 --     Logic:
 --       Items:                  1
@@ -65,7 +65,7 @@ prompt APPLICATION 300 - CrappyBird
 --         Calendar:             1
 --         Breadcrumb:           1
 --         Button:               1
---         Report:              12
+--         Report:              13
 --       Plug-ins:               1
 --     Globalization:
 --     Reports:
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_logo_image=>'TEXT:CrappyBird'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=> nvl(wwv_flow_application_install.get_proxy,'')
-,p_flow_version=>'1.4'
+,p_flow_version=>'1.5'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904225801'
+,p_last_upd_yyyymmddhh24miss=>'20150914231430'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -487,7 +487,6 @@ wwv_flow_api.create_template(
 '    <link rel="apple-touch-icon" sizes="152x152" href="&CRAPPY_HOME.img/appicons/appicon-76@2x.png?v=#APP_VERSION#" />',
 '    ',
 '    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">',
-'    <script src="&CRAPPY_HOME.js/standalone.js" type="text/javascript" charset="utf-8"></script>',
 '    ',
 '    <!-- Mandatory APEX CSS Stuff -->',
 '    #HEAD#',
@@ -600,7 +599,6 @@ wwv_flow_api.create_template(
 '<div class="col s12 m#COLUMN_SPAN_NUMBER# #CSS_CLASSES#" #ATTRIBUTES#>',
 '    #CONTENT#',
 '</div>'))
-,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
  p_id=>wwv_flow_api.id(26258862897616426)
@@ -660,7 +658,6 @@ wwv_flow_api.create_template(
 '    <meta name="apple-mobile-web-app-capable" content="yes" />',
 '    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />',
 '    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">',
-'    <script src="&CRAPPY_HOME.js/standalone.js" type="text/javascript" charset="utf-8"></script>',
 '    ',
 '    <!-- Mandatory APEX CSS Stuff -->',
 '    #HEAD#',
@@ -742,7 +739,6 @@ wwv_flow_api.create_template(
 ,p_dialog_js_init_code=>'apex.navigation.dialog(#PAGE_URL#,{title:#TITLE#,height:#DIALOG_HEIGHT#,width:#DIALOG_WIDTH#,maxWidth:#DIALOG_MAX_WIDTH#,modal:#IS_MODAL#,dialog:#DIALOG#,#DIALOG_ATTRIBUTES#},#DIALOG_CSS_CLASSES#,#TRIGGERING_ELEMENT#);'
 ,p_dialog_js_close_code=>'apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);'
 ,p_dialog_js_cancel_code=>'apex.navigation.dialog.cancel(#IS_MODAL#);'
-,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
  p_id=>wwv_flow_api.id(77381402607098344)
@@ -770,7 +766,6 @@ wwv_flow_api.create_template(
 '    <meta name="apple-mobile-web-app-capable" content="yes" />',
 '    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />',
 '    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">',
-'    <script src="&CRAPPY_HOME.js/standalone.js" type="text/javascript" charset="utf-8"></script>',
 '    ',
 '    <!-- Mandatory APEX CSS Stuff -->',
 '    #HEAD#',
@@ -865,7 +860,6 @@ wwv_flow_api.create_template(
 ,p_dialog_height=>'500'
 ,p_dialog_width=>'70%'
 ,p_dialog_browser_frame=>'MODAL'
-,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
  p_id=>wwv_flow_api.id(77381653691098344)
@@ -910,7 +904,6 @@ wwv_flow_api.create_template(
 '    <meta name="apple-mobile-web-app-capable" content="yes" />',
 '    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />',
 '    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">',
-'    <script src="&CRAPPY_HOME.js/standalone.js" type="text/javascript" charset="utf-8"></script>',
 '    ',
 '    <!-- Mandatory APEX CSS Stuff -->',
 '    #HEAD#',
@@ -1023,7 +1016,6 @@ wwv_flow_api.create_template(
 '<div class="col s12 m#COLUMN_SPAN_NUMBER# #CSS_CLASSES#" #ATTRIBUTES#>',
 '    #CONTENT#',
 '</div>'))
-,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_page_tmpl_display_point(
  p_id=>wwv_flow_api.id(77382085587098345)
@@ -1446,6 +1438,31 @@ wwv_flow_api.create_row_template(
 ,p_theme_id=>101
 ,p_theme_class_id=>7
 ,p_translate_this_template=>'N'
+);
+wwv_flow_api.create_row_template(
+ p_id=>wwv_flow_api.id(33240388021852770)
+,p_row_template_name=>'Report - Card Image without Action Area'
+,p_row_template1=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'<div class="#COLUMN_CSS_CLASSES#">    ',
+'    <div class="card">',
+'        <div class="card-image">',
+'            #IMG#',
+'            <span class="card-title">#TITLE#</span>',
+'        </div>',
+'        <div class="card-content">',
+'            #CONTENT#',
+'        </div>',
+'    </div>',
+'</div>'))
+,p_row_template_before_rows=>'<div class="row">'
+,p_row_template_after_rows=>'</div>'
+,p_row_template_type=>'NAMED_COLUMNS'
+,p_row_template_display_cond1=>'NOT_CONDITIONAL'
+,p_row_template_display_cond2=>'NOT_CONDITIONAL'
+,p_row_template_display_cond3=>'0'
+,p_row_template_display_cond4=>'NOT_CONDITIONAL'
+,p_theme_id=>101
+,p_theme_class_id=>7
 );
 wwv_flow_api.create_row_template(
  p_id=>wwv_flow_api.id(77386045199098346)
@@ -4922,6 +4939,9 @@ wwv_flow_api.create_user_interface(
 ,p_navigation_list_position=>'SIDE'
 ,p_navigation_list_template_id=>wwv_flow_api.id(77388737096098347)
 ,p_nav_list_template_options=>'#DEFAULT#'
+,p_javascript_file_urls=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'&CRAPPY_HOME.js/standalone.js',
+'&CRAPPY_HOME.js/functions.js'))
 ,p_nav_bar_type=>'LIST'
 ,p_nav_bar_list_id=>wwv_flow_api.id(77418644648147739)
 ,p_nav_bar_list_template_id=>wwv_flow_api.id(77388280297098347)
@@ -4951,7 +4971,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'D'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904214611'
+,p_last_upd_yyyymmddhh24miss=>'20150914135401'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25308936051519347)
@@ -4990,7 +5010,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(25309128695519349)
 ,p_name=>'P0_LONGITUDE'
-,p_item_sequence=>40
+,p_item_sequence=>50
 ,p_item_plug_id=>wwv_flow_api.id(25308936051519347)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
@@ -5015,6 +5035,33 @@ wwv_flow_api.create_page_item(
 ,p_protection_level=>'S'
 ,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
 ,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33214558006594402)
+,p_name=>'P0_HIDE_TOAST_PUBLIC_USERS'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(25308936051519347)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
+,p_attribute_01=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33214823329594405)
+,p_name=>'P0_HIDE_TOAST_TWITTER_USERS'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(25308936051519347)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
+,p_attribute_01=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33214978683594406)
+,p_name=>'P0_HIDE_TOAST_NEARBY_USERS'
+,p_item_sequence=>80
+,p_item_plug_id=>wwv_flow_api.id(25308936051519347)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_restricted_characters=>'NO_SPECIAL_CHAR_NL'
+,p_attribute_01=>'N'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(25309215597519350)
@@ -5065,12 +5112,7 @@ wwv_flow_api.create_page_da_action(
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'navigator.geolocation.getCurrentPosition(function(position) {',
-'  apex.item("P0_LATITUDE").setValue(position.coords.latitude);',
-'  apex.item("P0_LONGITUDE").setValue(position.coords.longitude);',
-'});'))
-,p_stop_execution_on_error=>'Y'
+,p_attribute_01=>'get_location("P0_LATITUDE","P0_LONGITUDE");'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(27092395534101301)
@@ -5088,9 +5130,7 @@ wwv_flow_api.create_page_da_action(
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'var is_webkit_browser = navigator.userAgent.indexOf(''AppleWebKit'') > -1;',
-'if (!(is_webkit_browser)) alert(''For best results please use a WebKit Browser like Chrome or Safari!'');'))
+,p_attribute_01=>'check_webkit_browser();'
 );
 end;
 /
@@ -5110,14 +5150,13 @@ wwv_flow_api.create_page(
 ,p_step_template=>wwv_flow_api.id(77382002662098345)
 ,p_page_template_options=>'#DEFAULT#'
 ,p_required_role=>'MUST_NOT_BE_PUBLIC_USER'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
 ,p_page_is_public_y_n=>'N'
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903234126'
+,p_last_upd_yyyymmddhh24miss=>'20150914004539'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25308899130519346)
@@ -5795,7 +5834,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904215111'
+,p_last_upd_yyyymmddhh24miss=>'20150914001602'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26152607881666001)
@@ -5814,12 +5853,12 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
+'       ''javascript:confirm_battle('''''' ||',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
 '                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:3,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) AS target1,',
+'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
-'                             '':::6:P6_PAGE_FROM,P6_ID_USR:3,'' ||',
-'                             usr.id_usr) AS target2,',
+'                             '':::6:P6_PAGE_FROM,P6_ID_USR:3,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
 '       ''play_arrow'' AS icon_css_classes1,',
 '       ''person_pin'' AS icon_css_classes2',
@@ -5830,7 +5869,8 @@ wwv_flow_api.create_report_region(
 '   AND usr.id_usr != api_usr.getc_admin_pk',
 '   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p3_search || ''%'') OR',
 '       upper(usr.usr_lastname) LIKE upper(''%'' || :p3_search || ''%''))',
-' ORDER BY upper(usr_lastname)'))
+' ORDER BY upper(usr.usr_lastname),',
+'          upper(usr.usr_firstname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -6063,6 +6103,9 @@ wwv_flow_api.create_page_da_event(
 ,p_event_sequence=>30
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_PUBLIC_USERS'
+,p_display_when_cond2=>'1'
 );
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(26153824371666013)
@@ -6126,6 +6169,33 @@ wwv_flow_api.create_page_da_action(
 ,p_stop_execution_on_error=>'Y'
 ,p_wait_for_result=>'Y'
 );
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33214672309594403)
+,p_name=>'SET_SHOW_TOAST_ONCE'
+,p_event_sequence=>60
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_PUBLIC_USERS'
+,p_display_when_cond2=>'1'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33214791310594404)
+,p_event_id=>wwv_flow_api.id(33214672309594403)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  apex_util.set_session_state(''P0_HIDE_TOAST_PUBLIC_USERS'',',
+'                              1);',
+'END;'))
+,p_attribute_03=>'P0_HIDE_TOAST_PUBLIC_USERS'
+,p_attribute_04=>'N'
+,p_stop_execution_on_error=>'Y'
+,p_wait_for_result=>'Y'
+);
 end;
 /
 prompt --application/pages/page_00004
@@ -6151,7 +6221,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904215406'
+,p_last_upd_yyyymmddhh24miss=>'20150914001542'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26219616770476567)
@@ -6170,9 +6240,10 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
+'       ''javascript:confirm_battle('''''' ||',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
 '                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:4,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) AS target1,',
+'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
 '                             '':::6:P6_PAGE_FROM,P6_ID_USR:4,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
@@ -6193,7 +6264,8 @@ wwv_flow_api.create_report_region(
 '       (SELECT usr_tw_friends.usr_friend_twitter_id',
 '           FROM usr_tw_friends',
 '          WHERE usr_tw_friends.id_usr = :f_id_usr))',
-' ORDER BY upper(usr_lastname)'))
+' ORDER BY upper(usr.usr_lastname),',
+'          upper(usr.usr_firstname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -6428,6 +6500,9 @@ wwv_flow_api.create_page_da_event(
 ,p_event_sequence=>30
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_TWITTER_USERS'
+,p_display_when_cond2=>'1'
 );
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(26227176652476586)
@@ -6491,6 +6566,33 @@ wwv_flow_api.create_page_da_action(
 ,p_attribute_01=>'$("#P4_SEARCH").blur();'
 ,p_da_action_comment=>'Let virtual Keyboard disappear when no submit happens'
 );
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33229267836727321)
+,p_name=>'SET_SHOW_TOAST_ONCE'
+,p_event_sequence=>70
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_TWITTER_USERS'
+,p_display_when_cond2=>'1'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33229683463727326)
+,p_event_id=>wwv_flow_api.id(33229267836727321)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  apex_util.set_session_state(''P0_HIDE_TOAST_TWITTER_USERS'',',
+'                              1);',
+'END;'))
+,p_attribute_03=>'P0_HIDE_TOAST_TWITTER_USERS'
+,p_attribute_04=>'N'
+,p_stop_execution_on_error=>'Y'
+,p_wait_for_result=>'Y'
+);
 end;
 /
 prompt --application/pages/page_00005
@@ -6516,7 +6618,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904222444'
+,p_last_upd_yyyymmddhh24miss=>'20150914001527'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26229260765501714)
@@ -6535,9 +6637,10 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
+'       ''javascript:confirm_battle('''''' ||',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
 '                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:5,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) AS target1,',
+'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
 '       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
 '                             '':::6:P6_PAGE_FROM,P6_ID_USR:5,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
@@ -6552,7 +6655,8 @@ wwv_flow_api.create_report_region(
 '                                                 i_id_usr2 => usr.id_usr,',
 '                                                 i_unit    => ''mile'') <',
 '       :p5_distance',
-' ORDER BY upper(usr_lastname)'))
+' ORDER BY upper(usr.usr_lastname),',
+'          upper(usr.usr_firstname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -6741,6 +6845,9 @@ wwv_flow_api.create_page_da_event(
 ,p_event_sequence=>30
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_NEARBY_USERS'
+,p_display_when_cond2=>'1'
 );
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(26235860246501718)
@@ -6770,6 +6877,33 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(26229260765501714)
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33230787867741619)
+,p_name=>'SET_SHOW_TOAST_ONCE'
+,p_event_sequence=>50
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_display_when_cond=>'P0_HIDE_TOAST_NEARBY_USERS'
+,p_display_when_cond2=>'1'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33231135510741620)
+,p_event_id=>wwv_flow_api.id(33230787867741619)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  apex_util.set_session_state(''P0_HIDE_TOAST_NEARBY_USERS'',',
+'                              1);',
+'END;'))
+,p_attribute_03=>'P0_HIDE_TOAST_NEARBY_USERS'
+,p_attribute_04=>'N'
+,p_stop_execution_on_error=>'Y'
+,p_wait_for_result=>'Y'
 );
 end;
 /
@@ -7069,7 +7203,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904221307'
+,p_last_upd_yyyymmddhh24miss=>'20150914001735'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26271013503712715)
@@ -7079,7 +7213,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'BODY'
-,p_plug_source=>'You can customize the default settings of CrappyBird. So the game is looking like you love it!'
+,p_plug_source=>'You can customize & share CrappyBird themes you created. Don´t forget to save before you preview!'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
@@ -7669,7 +7803,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903234751'
+,p_last_upd_yyyymmddhh24miss=>'20150914231328'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26395682643788579)
@@ -7792,8 +7926,29 @@ wwv_flow_api.create_page_da_action(
 ,p_wait_for_result=>'Y'
 );
 wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(26552882379516310)
+ p_id=>wwv_flow_api.id(33215364667594410)
 ,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'SEND_NOTIFICATION_EMAIL'
+,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'BEGIN',
+'  api_usr_battle.do_send_new_battle_mail(i_id_usr_challenger => :f_id_usr,',
+'                                         i_id_usr_receiver   => :p9_id_usr_receiver,',
+'                                         i_software_url      => :software_url);',
+'-- no error raise',
+'EXCEPTION',
+'  WHEN OTHERS THEN',
+'    NULL;',
+'END;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'P9_ID_USR_CHALLENGER'
+,p_process_when_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_process_when2=>'&F_ID_USR.'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(26552882379516310)
+,p_process_sequence=>20
 ,p_process_point=>'BEFORE_HEADER'
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'INSERT_USR_BATTLE'
@@ -7808,7 +7963,7 @@ wwv_flow_api.create_page_process(
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(26397238118788589)
-,p_process_sequence=>20
+,p_process_sequence=>30
 ,p_process_point=>'BEFORE_HEADER'
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'SET_INIT_HIGHSCORE_COOKIE'
@@ -9661,7 +9816,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904224320'
+,p_last_upd_yyyymmddhh24miss=>'20150913235823'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26476208068872155)
@@ -9692,7 +9847,8 @@ wwv_flow_api.create_report_region(
 ' WHERE usr.id_usr != api_usr.getc_admin_pk',
 '   AND (upper(usr.usr_firstname) LIKE upper(''%'' || :p17_search || ''%'') OR',
 '       upper(usr.usr_lastname) LIKE upper(''%'' || :p17_search || ''%''))',
-' ORDER BY upper(usr.usr_lastname)'))
+' ORDER BY upper(usr.usr_lastname),',
+'          upper(usr.usr_firstname)'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_header=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 '<style>',
@@ -10349,7 +10505,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150904000525'
+,p_last_upd_yyyymmddhh24miss=>'20150914134314'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26961030275792100)
@@ -10479,20 +10635,7 @@ wwv_flow_api.create_page_da_action(
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
-'function take_screenshot() {',
-'  var canvas = document.getElementById("crappy_canvas");',
-'  var img    = canvas.toDataURL("image/png");',
-'  apex.item("P19_PREVIEW_IMAGE").setValue(img);',
-'}',
-'',
-'function wait_take_screenshot(time) {',
-'  setTimeout(function() {',
-'   take_screenshot()',
-'   }, time);',
-'}',
-'',
-'wait_take_screenshot(12000);'))
+,p_attribute_01=>'wait_take_screenshot(12000,"P19_PREVIEW_IMAGE","crappy_canvas");'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(26913366993213739)
@@ -11060,7 +11203,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150903235609'
+,p_last_upd_yyyymmddhh24miss=>'20150914003047'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26914074126213746)
@@ -11076,16 +11219,12 @@ wwv_flow_api.create_report_region(
 '       ''<img src="'' || pub_themes.preview_img || ''">'' AS img,',
 '       pub_themes.theme_name AS title,',
 '       ''Created by '' || api_usr.get_usr_firstname(pub_themes.id_usr) || '' '' ||',
-'       api_usr.get_usr_lastname(pub_themes.id_usr) AS content,',
-'       ''javascript:apex.submit(''''SAVE_THEME'''');'' AS btn_link_1,',
-'       ''Set this theme as current'' btn_label_1,',
-'       ''#'' btn_link_2,',
-'       NULL btn_label_2',
+'       api_usr.get_usr_lastname(pub_themes.id_usr) AS content',
 '  FROM pub_themes',
 ' WHERE pub_themes.id_pub_themes = :p22_id_pub_themes'))
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_ajax_enabled=>'Y'
-,p_query_row_template=>wwv_flow_api.id(77386094770098346)
+,p_query_row_template=>wwv_flow_api.id(33240388021852770)
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_show_nulls_as=>'-'
@@ -11127,38 +11266,6 @@ wwv_flow_api.create_report_columns(
 ,p_hidden_column=>'Y'
 ,p_derived_column=>'N'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(27008985288748301)
-,p_query_column_id=>5
-,p_column_alias=>'BTN_LINK_1'
-,p_column_display_sequence=>5
-,p_hidden_column=>'Y'
-,p_derived_column=>'N'
-);
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(27009068902748302)
-,p_query_column_id=>6
-,p_column_alias=>'BTN_LABEL_1'
-,p_column_display_sequence=>6
-,p_hidden_column=>'Y'
-,p_derived_column=>'N'
-);
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(27009176841748303)
-,p_query_column_id=>7
-,p_column_alias=>'BTN_LINK_2'
-,p_column_display_sequence=>7
-,p_hidden_column=>'Y'
-,p_derived_column=>'N'
-);
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(27009264397748304)
-,p_query_column_id=>8
-,p_column_alias=>'BTN_LABEL_2'
-,p_column_display_sequence=>8
-,p_hidden_column=>'Y'
-,p_derived_column=>'N'
-);
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(27009728807748309)
 ,p_plug_name=>'(Delete Button)'
@@ -11169,6 +11276,18 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_required_role=>wwv_flow_api.id(26449655403829591)
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(33215120951594408)
+,p_plug_name=>'(Buttons)'
+,p_region_template_options=>'#DEFAULT#:center-align:hide-title'
+,p_plug_template=>wwv_flow_api.id(77384709376098346)
+,p_plug_display_sequence=>21
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -11187,14 +11306,26 @@ wwv_flow_api.create_page_button(
 ,p_icon_css_classes=>'delete'
 ,p_grid_new_row=>'Y'
 );
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(33215006378594407)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(26914074126213746)
+,p_button_name=>'P18_SAVE_THEME'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:waves-effect:green:icon-float-left:btn:waves-light'
+,p_button_template_id=>wwv_flow_api.id(77389617922098347)
+,p_button_image_alt=>'Set Theme as default'
+,p_button_position=>'REGION_TEMPLATE_CREATE2'
+,p_icon_css_classes=>'save'
+);
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(27009692816748308)
+,p_branch_name=>'Go To Page 1'
 ,p_branch_action=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.:RP::&success_msg=#SUCCESS_MSG#'
 ,p_branch_point=>'AFTER_PROCESSING'
 ,p_branch_type=>'REDIRECT_URL'
+,p_branch_when_button_id=>wwv_flow_api.id(33215006378594407)
 ,p_branch_sequence=>10
-,p_branch_condition_type=>'REQUEST_EQUALS_CONDITION'
-,p_branch_condition=>'SAVE_THEME'
 );
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(27009950593748311)
@@ -11230,7 +11361,7 @@ wwv_flow_api.create_page_process(
 ,p_process_sequence=>10
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'SET_CURRENT_THEME'
+,p_process_name=>'SET_DEFAULT_THEME'
 ,p_process_sql_clob=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
 'BEGIN',
 '  api_pub_themes.set_pub_theme_current(i_id_usr        => :f_id_usr,',
@@ -11240,8 +11371,7 @@ wwv_flow_api.create_page_process(
 'Error while setting theme.',
 '#SQLERRM#'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when=>'SAVE_THEME'
-,p_process_when_type=>'REQUEST_EQUALS_CONDITION'
+,p_process_when_button_id=>wwv_flow_api.id(33215006378594407)
 ,p_process_success_message=>'Successfully updated your theme. Free play to check it out.'
 );
 wwv_flow_api.create_page_process(

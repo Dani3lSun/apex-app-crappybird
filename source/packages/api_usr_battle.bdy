@@ -721,5 +721,56 @@ CREATE OR REPLACE PACKAGE BODY api_usr_battle IS
       RAISE;
   END do_fill_battle_details;
   --
+  /****************************************************************************
+  * Purpose:  Send email when Challenger-User starts a new Battle with Receiver
+  * Author:   Daniel Hochleitner
+  * Created:  14.09.15
+  * Changed:
+  ****************************************************************************/
+  PROCEDURE do_send_new_battle_mail(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+                                    i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE,
+                                    i_software_url      IN VARCHAR2) IS
+    --
+    l_function CONSTANT VARCHAR2(30) := 'do_send_new_battle_mail';
+    --
+    PRAGMA AUTONOMOUS_TRANSACTION;
+    --
+    l_name_challenger usr.usr_firstname%TYPE;
+    l_email_receiver  usr.usr_email%TYPE;
+    l_id_usr_battle   usr_battle.id_usr_battle%TYPE;
+    --
+    l_id_mail NUMBER;
+    --
+  BEGIN
+    --
+    -- get vars
+    l_name_challenger := api_usr.get_usr_firstname(i_id_usr => i_id_usr_challenger) || ' ' ||
+                         api_usr.get_usr_lastname(i_id_usr => i_id_usr_challenger);
+    l_email_receiver  := api_usr.get_usr_email(i_id_usr => i_id_usr_receiver);
+    l_id_usr_battle   := api_usr_battle.get_id_usr_battle_users(i_id_usr_challenger => i_id_usr_challenger,
+                                                                i_id_usr_receiver   => i_id_usr_receiver);
+    --
+    -- send email to receiver (only if no battle before)
+    IF l_id_usr_battle IS NULL THEN
+      l_id_mail := api_mail.send_mail(i_from    => api_system.get_email_from(i_id_system => api_system.pubc_system_pk),
+                                      i_to      => l_email_receiver,
+                                      i_subject => 'New CrappyBird Battle',
+                                      i_body    => 'User ' ||
+                                                   l_name_challenger ||
+                                                   ' has just started a new battle with you!' ||
+                                                   chr(10) ||
+                                                   'Fight back and click the Link ' ||
+                                                   i_software_url ||
+                                                   ' or open CrappyBird from your Homescreen!');
+    END IF;
+    --
+  EXCEPTION
+    WHEN OTHERS THEN
+      api_err_log.do_log(i_log_function => priv_package || '.' ||
+                                           l_function,
+                         i_log_text     => SQLERRM);
+      RAISE;
+  END do_send_new_battle_mail;
+  --
 END api_usr_battle;
 /

@@ -113,6 +113,11 @@ Purpose:&nbsp; Set Highscore of user battle per user Author:&nbsp;&nbsp; Daniel 
 </TD><TD CLASS="DESC_TEXT" WIDTH=95%>
 Purpose:&nbsp; Fill items on battle details page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:
 </TD></TR>
+<TR><TD VALIGN="TOP" CLASS="TYPE_ITEM">
+<A HREF="#do_send_new_battle_mail">do_send_new_battle_mail</A>&nbsp;&nbsp;
+</TD><TD CLASS="DESC_TEXT" WIDTH=95%>
+Purpose:&nbsp; Send email when Challenger-User starts a new Battle with Receiver Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.09.15 Changed:
+</TD></TR>
 </TABLE>
 <BR>
 <A NAME="Constants"></A>
@@ -133,7 +138,7 @@ Constants
 priv_package
 </P>
 <PRE CLASS="DECL_TEXT">
-<A HREF="api_auth.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr_battle';
+<A HREF="api_usr_location.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_usr_battle';
 </PRE>
 
 <HR>
@@ -416,6 +421,22 @@ PROCEDURE <A HREF="api_usr_battle.html#do_fill_battle_details">do_fill_battle_de
 </PRE>
 <P CLASS="DESC_TEXT">
 Purpose:&nbsp; Fill items on battle details page Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 23.08.15 Changed:<br>
+
+<BR>
+</P>
+<HR>
+<A NAME="do_send_new_battle_mail"></A>
+<P CLASS="TYPE_TITLE">
+do_send_new_battle_mail
+</P>
+<PRE CLASS="DECL_TEXT">
+PROCEDURE <A HREF="api_usr_battle.html#do_send_new_battle_mail">do_send_new_battle_mail</A>(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+                                  i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE,
+                                  i_software_url      IN VARCHAR2)
+
+</PRE>
+<P CLASS="DESC_TEXT">
+Purpose:&nbsp; Send email when Challenger-User starts a new Battle with Receiver Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 14.09.15 Changed:<br>
 
 <BR>
 </P>

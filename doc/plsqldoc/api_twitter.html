@@ -137,7 +137,7 @@ Exceptions for Twitter<br>
 check_error_http_status
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE check_error_http_status
+PROCEDURE <A HREF="api_twitter.body.html#check_error_http_status">check_error_http_status</A>
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -198,7 +198,7 @@ base64 string<br>
 get_twitter_bearer_token
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_bearer_token(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE := NULL,
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_bearer_token">get_twitter_bearer_token</A>(i_twitter_consumer_key    IN system.twitter_consumer_key%TYPE := NULL,
                                   i_twitter_consumer_secret IN system.twitter_consumer_secret%TYPE := NULL)
   RETURN system.twitter_api_bearer%TYPE
 
@@ -233,7 +233,7 @@ i_twitter_consumer_secret&nbsp;&nbsp;
 invalidate_bearer_token
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE invalidate_bearer_token
+PROCEDURE <A HREF="api_twitter.body.html#invalidate_bearer_token">invalidate_bearer_token</A>
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -247,7 +247,7 @@ Invalidate Twitter bearer (auth token) + remove from system table<br>
 reset_twitter_bearer_token
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE reset_twitter_bearer_token
+PROCEDURE <A HREF="api_twitter.body.html#reset_twitter_bearer_token">reset_twitter_bearer_token</A>
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -261,7 +261,7 @@ Resets twitter bearer token to a new one (invalidate + get new)<br>
 set_http_headers
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE set_http_headers(i_bearer_token IN system.twitter_api_bearer%TYPE)
+PROCEDURE <A HREF="api_twitter.body.html#set_http_headers">set_http_headers</A>(i_bearer_token IN system.twitter_api_bearer%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -288,7 +288,7 @@ i_bearer_token&nbsp;&nbsp;
 get_api_test_url_result
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_api_test_url_result(i_url IN VARCHAR2) RETURN CLOB
+FUNCTION <A HREF="api_twitter.body.html#get_api_test_url_result">get_api_test_url_result</A>(i_url IN VARCHAR2) RETURN CLOB
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -327,7 +327,7 @@ clob json string<br>
 get_twitter_rate_limit_status
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_rate_limit_status(o_users_lookup_limit      OUT NUMBER,
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_rate_limit_status">get_twitter_rate_limit_status</A>(o_users_lookup_limit      OUT NUMBER,
                                        o_users_lookup_remaining  OUT NUMBER,
                                        o_friends_ids_limit       OUT NUMBER,
                                        o_friends_ids_remaining   OUT NUMBER,
@@ -416,7 +416,7 @@ clob json string<br>
 check_twitter_api_limits
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_twitter_api_limits(i_api_type IN VARCHAR2) RETURN BOOLEAN
+FUNCTION <A HREF="api_twitter.body.html#check_twitter_api_limits">check_twitter_api_limits</A>(i_api_type IN VARCHAR2) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -444,7 +444,7 @@ i_api_type&nbsp;&nbsp;
 get_twitter_followers
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_followers(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_followers">get_twitter_followers</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN CLOB
 
 </PRE>
@@ -484,7 +484,7 @@ clob json string<br>
 get_twitter_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_friends(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_friends">get_twitter_friends</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN CLOB
 
 </PRE>
@@ -524,7 +524,7 @@ clob json string<br>
 ins_twitter_friends
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE ins_twitter_friends(i_id_usr IN usr.id_usr%TYPE)
+PROCEDURE <A HREF="api_twitter.body.html#ins_twitter_friends">ins_twitter_friends</A>(i_id_usr IN usr.id_usr%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -551,7 +551,7 @@ i_id_usr&nbsp;&nbsp;
 get_twitter_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_id(i_twitter_name IN usr.twitter_name%TYPE)
+FUNCTION <A HREF="api_usr.html#get_twitter_id">get_twitter_id</A>(i_twitter_name IN usr.twitter_name%TYPE)
   RETURN usr.twitter_id%TYPE
 
 </PRE>
@@ -591,7 +591,7 @@ twitter_id<br>
 get_twitter_name
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_name(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_usr.html#get_twitter_name">get_twitter_name</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN usr.twitter_name%TYPE
 
 </PRE>
@@ -631,7 +631,7 @@ twitter_name<br>
 get_twitter_profile_pic_url
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_twitter_profile_pic_url(i_twitter_id IN usr.twitter_id%TYPE,
+FUNCTION <A HREF="api_usr.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_twitter_id IN usr.twitter_id%TYPE,
                                      i_ssl        IN NUMBER := 1)
   RETURN usr.twitter_profile_pic_url%TYPE
 
@@ -679,7 +679,7 @@ profile-pic url<br>
 get_search_results
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_search_results(i_search_string IN VARCHAR2,
+FUNCTION <A HREF="api_twitter.body.html#get_search_results">get_search_results</A>(i_search_string IN VARCHAR2,
                             i_count         IN NUMBER := 20) RETURN CLOB
 
 </PRE>

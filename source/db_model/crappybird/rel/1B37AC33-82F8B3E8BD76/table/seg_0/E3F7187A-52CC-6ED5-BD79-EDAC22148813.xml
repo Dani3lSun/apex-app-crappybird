@@ -30,6 +30,9 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60B3ADE7-028D-3260-17E2-5CD11B7CB12E" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
 </Column>
 <Column name="ID_USR_RECEIVER" id="3BCB9C04-87F3-F418-FFAE-978F636C8CED">
 <createdBy>daniel</createdBy>
@@ -41,6 +44,9 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DA510647-540C-368D-C1CA-7CB37C003181" referredColumn="E2207534-C822-16AA-6E6E-C5E5F70D46A6"/>
+</associations>
 </Column>
 <Column name="HIGHSCORE_CHALLENGER" id="5FAD4438-70E2-903D-CFB1-800DD209B234">
 <createdBy>daniel</createdBy>
@@ -95,6 +101,26 @@
 <createdTime>2015-08-13 08:24:50 UTC</createdTime>
 <generatorID>Benutzergeneriert</generatorID>
 <ownerDesignName>crappybird</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BCB9C04-87F3-F418-FFAE-978F636C8CED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A68C18FD-A2AC-8C84-0B9F-4E2FA0CC1A7B" name="FK_USR_BATTLE_ID_USR_CHALL">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-14 21:09:00 UTC</createdTime>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C90BC75B-E89B-9225-AA4F-568FDD60F47E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9CF3895-C06E-B634-89FC-B420B3AFAFC1" name="FK_USR_BATTLE_ID_USR_REC">
+<createdBy>daniel</createdBy>
+<createdTime>2015-09-14 21:09:17 UTC</createdTime>
+<ownerDesignName>crappybird</ownerDesignName>
+<indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="3BCB9C04-87F3-F418-FFAE-978F636C8CED"/>

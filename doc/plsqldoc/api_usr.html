@@ -308,7 +308,7 @@ Record for usr<br>
 getc_admin_pk
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION getc_admin_pk RETURN NUMBER
+FUNCTION <A HREF="api_usr.body.html#getc_admin_pk">getc_admin_pk</A> RETURN NUMBER
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -322,7 +322,7 @@ Functions for constants<br>
 ins_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION ins_usr(i_rec_usr IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>) RETURN usr.id_usr%TYPE
+FUNCTION <A HREF="api_usr.body.html#ins_usr">ins_usr</A>(i_rec_usr IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>) RETURN usr.id_usr%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -362,7 +362,7 @@ ID (PK of dataset)<br>
 upd_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE upd_usr(i_rec_usr  IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>,
+PROCEDURE <A HREF="api_usr.body.html#upd_usr">upd_usr</A>(i_rec_usr  IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>,
                   i_checksum IN VARCHAR2 := NULL)
 
 </PRE>
@@ -398,7 +398,7 @@ Checksumme md5 before<br>
 del_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE del_usr(i_id_usr IN usr.id_usr%TYPE)
+PROCEDURE <A HREF="api_usr.body.html#del_usr">del_usr</A>(i_id_usr IN usr.id_usr%TYPE)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -426,7 +426,7 @@ PK-ID of usr<br>
 get_rec_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_rec_usr(i_id_usr IN usr.id_usr%TYPE) RETURN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>
+FUNCTION <A HREF="api_usr.body.html#get_rec_usr">get_rec_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -466,7 +466,7 @@ Record-Type for usr<br>
 get_md5_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_md5_usr(i_rec_usr IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>) RETURN VARCHAR2
+FUNCTION <A HREF="api_usr.body.html#get_md5_usr">get_md5_usr</A>(i_rec_usr IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>) RETURN VARCHAR2
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -506,7 +506,7 @@ md5 Checksum in Varchar2<br>
 do_check_md5_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION do_check_md5_usr(i_checksum IN VARCHAR2,
+FUNCTION <A HREF="api_usr.body.html#do_check_md5_usr">do_check_md5_usr</A>(i_checksum IN VARCHAR2,
                           i_rec_usr  IN <A HREF=#pub_rec_usr_type>pub_rec_usr_type</A>) RETURN BOOLEAN
 
 </PRE>
@@ -554,7 +554,7 @@ Boolean value<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.id_usr%TYPE
+FUNCTION <A HREF="api_usr_location.html#get_id_usr">get_id_usr</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.id_usr%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -594,7 +594,7 @@ id_usr aus usr<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_usr_location.html#get_id_usr">get_id_usr</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN usr.id_usr%TYPE
 
 </PRE>
@@ -634,7 +634,7 @@ id_usr aus usr<br>
 get_id_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_err_log.html#get_id_usr">get_id_usr</A>(i_usr_email IN usr.usr_email%TYPE)
+FUNCTION <A HREF="api_usr_location.html#get_id_usr">get_id_usr</A>(i_usr_email IN usr.usr_email%TYPE)
   RETURN usr.id_usr%TYPE
 
 </PRE>
@@ -674,7 +674,7 @@ id_usr aus usr<br>
 get_usr_email
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_usr_email(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_usr_email">get_usr_email</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.usr_email%TYPE
 
 </PRE>
@@ -715,7 +715,7 @@ usr_email aus usr<br>
 get_usr_pwd
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_usr_pwd(i_id_usr IN usr.id_usr%TYPE) RETURN usr.usr_pwd%TYPE
+FUNCTION <A HREF="api_usr.body.html#get_usr_pwd">get_usr_pwd</A>(i_id_usr IN usr.id_usr%TYPE) RETURN usr.usr_pwd%TYPE
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -755,7 +755,7 @@ usr_pwd aus usr<br>
 get_usr_firstname
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_usr_firstname(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_usr_firstname">get_usr_firstname</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.usr_firstname%TYPE
 
 </PRE>
@@ -796,7 +796,7 @@ usr_firstname aus usr<br>
 get_usr_lastname
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_usr_lastname(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_usr_lastname">get_usr_lastname</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.usr_lastname%TYPE
 
 </PRE>
@@ -837,7 +837,7 @@ usr_lastname aus usr<br>
 get_twitter_name
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_name">get_twitter_name</A>(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_name">get_twitter_name</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.twitter_name%TYPE
 
 </PRE>
@@ -878,7 +878,7 @@ twitter_name aus usr<br>
 get_twitter_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_id">get_twitter_id</A>(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_id">get_twitter_id</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.twitter_id%TYPE
 
 </PRE>
@@ -919,7 +919,7 @@ twitter_id aus usr<br>
 get_twitter_profile_pic_url
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_twitter.body.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.twitter_profile_pic_url%TYPE
 
 </PRE>
@@ -960,7 +960,7 @@ twitter_profile_pic_url aus usr<br>
 get_show_acc_public
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_show_acc_public(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_show_acc_public">get_show_acc_public</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.show_acc_public%TYPE
 
 </PRE>
@@ -1001,7 +1001,7 @@ show_acc_public aus usr<br>
 get_acc_active
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_acc_active(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_acc_active">get_acc_active</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.acc_active%TYPE
 
 </PRE>
@@ -1042,7 +1042,7 @@ acc_active aus usr<br>
 get_usr_highscore
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION get_usr_highscore(i_id_usr IN usr.id_usr%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_usr_highscore">get_usr_highscore</A>(i_id_usr IN usr.id_usr%TYPE)
   RETURN usr.usr_highscore%TYPE
 
 </PRE>
@@ -1083,7 +1083,7 @@ usr_highscore aus usr<br>
 do_register_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_register_usr(i_usr_firstname IN usr.usr_firstname%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_register_usr">do_register_usr</A>(i_usr_firstname IN usr.usr_firstname%TYPE,
                           i_usr_lastname  IN usr.usr_lastname%TYPE,
                           i_usr_email     IN usr.usr_email%TYPE,
                           i_software_url  IN VARCHAR2)
@@ -1131,7 +1131,7 @@ i_software_url&nbsp;&nbsp;
 do_finish_register_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_finish_register_usr(i_id_usr_crypt IN VARCHAR2,
+PROCEDURE <A HREF="api_usr.body.html#do_finish_register_usr">do_finish_register_usr</A>(i_id_usr_crypt IN VARCHAR2,
                                  i_token        IN usr_token.token%TYPE,
                                  i_usr_pwd      IN usr.usr_pwd%TYPE)
 
@@ -1172,7 +1172,7 @@ i_usr_pwd&nbsp;&nbsp;
 do_send_pwd_lost_mail
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_send_pwd_lost_mail(i_usr_email    IN usr.usr_email%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_send_pwd_lost_mail">do_send_pwd_lost_mail</A>(i_usr_email    IN usr.usr_email%TYPE,
                                 i_software_url IN VARCHAR2)
 
 </PRE>
@@ -1206,7 +1206,7 @@ i_software_url&nbsp;&nbsp;
 do_finish_password_lost
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_finish_password_lost(i_id_usr_crypt IN VARCHAR2,
+PROCEDURE <A HREF="api_usr.body.html#do_finish_password_lost">do_finish_password_lost</A>(i_id_usr_crypt IN VARCHAR2,
                                   i_token        IN usr_token.token%TYPE,
                                   i_usr_pwd      IN usr.usr_pwd%TYPE)
 
@@ -1247,7 +1247,7 @@ i_usr_pwd&nbsp;&nbsp;
 do_gen_new_reg_email
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_gen_new_reg_email(i_id_usr_crypt IN VARCHAR2,
+PROCEDURE <A HREF="api_usr.body.html#do_gen_new_reg_email">do_gen_new_reg_email</A>(i_id_usr_crypt IN VARCHAR2,
                                i_software_url IN VARCHAR2)
 
 </PRE>
@@ -1281,7 +1281,7 @@ i_software_url&nbsp;&nbsp;
 check_usr_email_unique
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_email_unique(i_usr_email IN usr.usr_email%TYPE,
+FUNCTION <A HREF="api_usr.body.html#check_usr_email_unique">check_usr_email_unique</A>(i_usr_email IN usr.usr_email%TYPE,
                                 i_id_usr    IN usr.id_usr%TYPE := NULL)
   RETURN BOOLEAN
 
@@ -1328,7 +1328,7 @@ BOOLEAN<br>
 check_usr_pwd_correct
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_pwd_correct(i_id_usr  IN usr.id_usr%TYPE,
+FUNCTION <A HREF="api_usr.body.html#check_usr_pwd_correct">check_usr_pwd_correct</A>(i_id_usr  IN usr.id_usr%TYPE,
                                i_usr_pwd IN usr.usr_pwd%TYPE)
   RETURN BOOLEAN
 
@@ -1375,7 +1375,7 @@ BOOLEAN<br>
 check_usr_twitter_name_unique
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_twitter_name_unique(i_twitter_name IN usr.twitter_name%TYPE,
+FUNCTION <A HREF="api_usr.body.html#check_usr_twitter_name_unique">check_usr_twitter_name_unique</A>(i_twitter_name IN usr.twitter_name%TYPE,
                                        i_id_usr       IN usr.id_usr%TYPE := NULL)
   RETURN BOOLEAN
 
@@ -1422,7 +1422,7 @@ BOOLEAN<br>
 do_fill_usr_profile
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_fill_usr_profile(i_id_usr                  IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_fill_usr_profile">do_fill_usr_profile</A>(i_id_usr                  IN usr.id_usr%TYPE,
                               o_usr_email               OUT usr.usr_email%TYPE,
                               o_usr_name                OUT VARCHAR2,
                               o_twitter_name            OUT usr.twitter_name%TYPE,
@@ -1484,7 +1484,7 @@ o_twitter_profile_pic_url&nbsp;&nbsp;
 do_fill_usr_edit_profile
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_fill_usr_edit_profile(i_id_usr          IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_fill_usr_edit_profile">do_fill_usr_edit_profile</A>(i_id_usr          IN usr.id_usr%TYPE,
                                    o_usr_email       OUT usr.usr_email%TYPE,
                                    o_usr_firstname   OUT usr.usr_firstname%TYPE,
                                    o_usr_lastname    OUT usr.usr_lastname%TYPE,
@@ -1546,7 +1546,7 @@ o_show_acc_public&nbsp;&nbsp;
 do_update_usr_edit_profile
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_update_usr_edit_profile(i_id_usr          IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_update_usr_edit_profile">do_update_usr_edit_profile</A>(i_id_usr          IN usr.id_usr%TYPE,
                                      i_usr_email       IN usr.usr_email%TYPE,
                                      i_usr_firstname   IN usr.usr_firstname%TYPE,
                                      i_usr_lastname    IN usr.usr_lastname%TYPE,
@@ -1608,7 +1608,7 @@ i_show_acc_public&nbsp;&nbsp;
 do_update_usr_pwd
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_update_usr_pwd(i_id_usr  IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_update_usr_pwd">do_update_usr_pwd</A>(i_id_usr  IN usr.id_usr%TYPE,
                             i_usr_pwd IN usr.usr_pwd%TYPE)
 
 </PRE>
@@ -1642,7 +1642,7 @@ i_usr_pwd&nbsp;&nbsp;
 do_set_usr_highscore
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_set_usr_highscore(i_id_usr        IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr_battle.html#do_set_usr_highscore">do_set_usr_highscore</A>(i_id_usr        IN usr.id_usr%TYPE,
                                i_usr_highscore IN usr.usr_highscore%TYPE)
 
 </PRE>
@@ -1676,7 +1676,7 @@ i_usr_highscore&nbsp;&nbsp;
 check_usr_admin
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_admin(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+FUNCTION <A HREF="api_usr.body.html#check_usr_admin">check_usr_admin</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1703,7 +1703,7 @@ i_id_usr&nbsp;&nbsp;
 check_usr_public
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_public(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+FUNCTION <A HREF="api_usr.body.html#check_usr_public">check_usr_public</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1730,7 +1730,7 @@ i_id_usr&nbsp;&nbsp;
 check_usr_twitter
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_twitter(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+FUNCTION <A HREF="api_usr.body.html#check_usr_twitter">check_usr_twitter</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1757,7 +1757,7 @@ i_id_usr&nbsp;&nbsp;
 check_usr_active
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_active(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+FUNCTION <A HREF="api_usr.body.html#check_usr_active">check_usr_active</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1784,7 +1784,7 @@ i_id_usr&nbsp;&nbsp;
 check_usr_inactive
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION check_usr_inactive(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
+FUNCTION <A HREF="api_usr.body.html#check_usr_inactive">check_usr_inactive</A>(i_id_usr IN usr.id_usr%TYPE) RETURN BOOLEAN
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1811,7 +1811,7 @@ i_id_usr&nbsp;&nbsp;
 do_change_usr_acc_status
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_change_usr_acc_status(i_id_usr     IN usr.id_usr%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_change_usr_acc_status">do_change_usr_acc_status</A>(i_id_usr     IN usr.id_usr%TYPE,
                                    i_acc_active IN usr.acc_active%TYPE)
 
 </PRE>
@@ -1845,7 +1845,7 @@ i_acc_active&nbsp;&nbsp;
 set_username_localstorage
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE set_username_localstorage(i_user_name IN VARCHAR2)
+PROCEDURE <A HREF="api_usr.body.html#set_username_localstorage">set_username_localstorage</A>(i_user_name IN VARCHAR2)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1872,7 +1872,7 @@ i_user_name&nbsp;&nbsp;
 get_username_localstorage
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE get_username_localstorage(i_item_name IN VARCHAR2)
+PROCEDURE <A HREF="api_usr.body.html#get_username_localstorage">get_username_localstorage</A>(i_item_name IN VARCHAR2)
 
 </PRE>
 <P CLASS="DESC_TEXT">
@@ -1899,7 +1899,7 @@ i_item_name&nbsp;&nbsp;
 do_insert_admin_setup
 </P>
 <PRE CLASS="DECL_TEXT">
-PROCEDURE do_insert_admin_setup(i_usr_firstname IN usr.usr_firstname%TYPE,
+PROCEDURE <A HREF="api_usr.body.html#do_insert_admin_setup">do_insert_admin_setup</A>(i_usr_firstname IN usr.usr_firstname%TYPE,
                                 i_usr_lastname  IN usr.usr_lastname%TYPE,
                                 i_usr_email     IN usr.usr_email%TYPE,
                                 i_usr_pwd       IN usr.usr_pwd%TYPE)
@@ -1947,7 +1947,7 @@ i_usr_pwd&nbsp;&nbsp;
 count_all_usr
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION count_all_usr RETURN NUMBER
+FUNCTION <A HREF="api_usr.body.html#count_all_usr">count_all_usr</A> RETURN NUMBER
 
 </PRE>
 <P CLASS="DESC_TEXT">

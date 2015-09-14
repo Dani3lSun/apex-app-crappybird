@@ -162,5 +162,13 @@ CREATE OR REPLACE PACKAGE api_usr_battle IS
                                    o_highscore_challenger  OUT usr_battle.highscore_challenger%TYPE,
                                    o_highscore_receiver    OUT usr_battle.highscore_receiver%TYPE);
   --
+  -- Send email when Challenger-User starts a new Battle with Receiver
+  -- #param i_id_usr_challenger
+  -- #param i_id_usr_receiver
+  -- #param i_software_url
+  PROCEDURE do_send_new_battle_mail(i_id_usr_challenger IN usr_battle.id_usr_challenger%TYPE,
+                                    i_id_usr_receiver   IN usr_battle.id_usr_receiver%TYPE,
+                                    i_software_url      IN VARCHAR2);
+  --
 END api_usr_battle;
 /

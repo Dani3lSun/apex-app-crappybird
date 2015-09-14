@@ -12,6 +12,9 @@
    <object objectType="Table" objectID="2D2EF2F9-4BE2-B459-6ACD-FC22F9BDDC91" name="USR_R_TRIUMPH" seqName="seg_0"/>
    <object objectType="Table" objectID="F1F5954B-A451-C55F-9148-09FBE784DBA4" name="USR_TOKEN" seqName="seg_0"/>
    <object objectType="Table" objectID="254E2544-E367-3226-58C2-52F2F6C8FC8B" name="USR_TW_FRIENDS" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="DA510647-540C-368D-C1CA-7CB37C003181" name="FK_USR_BATTLE_ID_USR_REC" seqName="seg_0" containerID="E3F7187A-52CC-6ED5-BD79-EDAC22148813" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="ACDFCD30-99C0-4938-F24B-9EF7E78D5029" name="FK_PUB_THEMES_ID_USR" seqName="seg_0" containerID="94953D72-A290-87A8-E2AE-BCB0B06755F4" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
+   <object objectType="FKIndexAssociation" objectID="60B3ADE7-028D-3260-17E2-5CD11B7CB12E" name="FK_USR_BATTLE_ID_USR_CHALL" seqName="seg_0" containerID="E3F7187A-52CC-6ED5-BD79-EDAC22148813" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
    <object objectType="FKIndexAssociation" objectID="17220F74-848F-2073-2877-83CE5DFD2CB5" name="FK_USR_LOCATION_ID_USR" seqName="seg_0" containerID="AF097670-8F6A-A68E-0C7D-3724985541E1" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
    <object objectType="FKIndexAssociation" objectID="CF2AC338-A677-B788-15B1-AE6923778B15" name="FK_USR_PIC_ID_USR" seqName="seg_0" containerID="98524D62-106C-1BE1-A887-EFC1A5C46B3E" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
    <object objectType="FKIndexAssociation" objectID="A8532848-8850-DEDF-F7D2-063CDBD585CA" name="FK_USR_PREFS_ID_USR" seqName="seg_0" containerID="F13C5440-CF76-7CA5-FABA-434D18F594BC" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
@@ -19,5 +22,4 @@
    <object objectType="FKIndexAssociation" objectID="91BA5FEE-8870-AD1E-43FF-1920B438C771" name="FK_USR_R_TRIUMPH_ID_USR" seqName="seg_0" containerID="2D2EF2F9-4BE2-B459-6ACD-FC22F9BDDC91" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
    <object objectType="FKIndexAssociation" objectID="A9250A9F-D129-15A6-0C73-85F2D7B8F5C1" name="FK_USR_TOKEN_ID_USR" seqName="seg_0" containerID="F1F5954B-A451-C55F-9148-09FBE784DBA4" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
    <object objectType="FKIndexAssociation" objectID="19A44818-AE0D-2CC7-414E-27F68F823DBA" name="FK_USR_TW_FRIENDS_ID_USR" seqName="seg_0" containerID="254E2544-E367-3226-58C2-52F2F6C8FC8B" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
-   <object objectType="FKIndexAssociation" objectID="ACDFCD30-99C0-4938-F24B-9EF7E78D5029" name="FK_PUB_THEMES_ID_USR" seqName="seg_0" containerID="94953D72-A290-87A8-E2AE-BCB0B06755F4" refContainerID="5B2352FA-6E6F-D85A-C024-242ED44DE545"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

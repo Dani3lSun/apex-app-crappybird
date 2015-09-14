@@ -123,7 +123,7 @@ Constants
 priv_package
 </P>
 <PRE CLASS="DECL_TEXT">
-<A HREF="api_auth.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_twitter';
+<A HREF="api_usr.body.html#priv_package">priv_package</A> CONSTANT VARCHAR2(30) := 'api_twitter';
 </PRE>
 
 <HR>
@@ -316,7 +316,7 @@ Author:&nbsp;&nbsp; Daniel Hochleitner Created:&nbsp; 16.08.2015 Changed:<br>
 get_twitter_id
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_id">get_twitter_id</A>(i_twitter_name IN usr.twitter_name%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_twitter_id">get_twitter_id</A>(i_twitter_name IN usr.twitter_name%TYPE)
   RETURN usr.twitter_id%TYPE
 
 </PRE>
@@ -331,7 +331,7 @@ Purpose:&nbsp; Find the Twitter User ID for an twitter name Author:&nbsp;&nbsp; 
 get_twitter_name
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_name">get_twitter_name</A>(i_twitter_id IN usr.twitter_id%TYPE)
+FUNCTION <A HREF="api_usr.body.html#get_twitter_name">get_twitter_name</A>(i_twitter_id IN usr.twitter_id%TYPE)
   RETURN usr.twitter_name%TYPE
 
 </PRE>
@@ -346,7 +346,7 @@ Purpose:&nbsp; Find the Twitter User name for an twitter ID Author:&nbsp;&nbsp; 
 get_twitter_profile_pic_url
 </P>
 <PRE CLASS="DECL_TEXT">
-FUNCTION <A HREF="api_twitter.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_twitter_id IN usr.twitter_id%TYPE,
+FUNCTION <A HREF="api_usr.body.html#get_twitter_profile_pic_url">get_twitter_profile_pic_url</A>(i_twitter_id IN usr.twitter_id%TYPE,
                                      i_ssl        IN NUMBER := 1)
   RETURN usr.twitter_profile_pic_url%TYPE
 
