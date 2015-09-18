@@ -601,7 +601,7 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
     l_gmap_string := l_gmap_string ||
                      '  map_div.style.width = width + "px";' || chr(10);
     l_gmap_string := l_gmap_string ||
-                     '  map_div.style.height = (height - 115) + "px";' ||
+                     '  map_div.style.height = (height - 92) + "px";' ||
                      chr(10);
     -- Gmap
     OPEN l_cur_usr_location;
