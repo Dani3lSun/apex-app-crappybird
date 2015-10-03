@@ -52,6 +52,7 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.6 - UI changes especially for iOS 9 release. Modified startpage, resized game views and map view
 ####1.5 - Added email notifications for new battles / toasts would only display on first page visit / some JS outsourced to [functions.js](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/js/functions.js) / UI improvements
 ####1.4 - Complete review of App / Security improvements (SSP / Escape special characters) / UI improvements / Admin page improvements
 ####1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
