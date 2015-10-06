@@ -69,7 +69,7 @@ Also you must create a Twitter App under [https://apps.twitter.com/](https://app
 Create a readonly App named for example "CrappyBird Apex" and note down the 2 tokens (Consumer Key / Consumer Secret). These keys are needed later.
 
 ####Oracle SSL Wallet
-To comunicate with the Twitter API (api.twitter.com) over HTTPS, a SSL Wallet is needed for database which contains the 2 CA certificates from api.twitter.com.
+To communicate with the Twitter API (api.twitter.com) over HTTPS, a SSL Wallet is needed for database which contains the 2 CA certificates from api.twitter.com.
 A ready to go wallet is included in the source directory under [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets).
 The password of the wallet is "Twitter2015". The wallet must be deployed on the database server.
 
@@ -81,7 +81,7 @@ The password of the wallet is "Twitter2015". The wallet must be deployed on the 
 Application should run on all versions of Oracle Database > 11gR2 (Developed on 11gR2 XE).
 
 ####User with sysdba permissions
-Some features require sysdba rights. Please run following commands before running the setup!
+Some features require rights to SYS owned packages. Please run following commands before running the setup!
 
 - Grant to dbms_crypto (needed for password encryption/decryption of the app)
 
@@ -93,22 +93,24 @@ grant execute on sys.dbms_crypto to APP_SCHEMA;
 
 ```language-sql
 BEGIN
-  -- add privilege to user
-  dbms_network_acl_admin.add_privilege(acl        => 'twitter_acl_file.xml',
-                                       principal  => 'APP_SCHEMA',
-                                       is_grant   => FALSE,
-                                       privilege  => 'connect',
-                                       position   => NULL,
-                                       start_date => NULL,
-                                       end_date   => NULL);
-
+  -- create acl with connect privilege to user
+  dbms_network_acl_admin.create_acl(acl         => 'twitter_acl_file.xml',
+                                    description => 'Network-Connects to Twitter REST API',
+                                    principal   => 'APP_SCHEMA',
+                                    is_grant    => TRUE,
+                                    privilege   => 'connect');
+  COMMIT;
+  -- add resolve privilege to user
+  dbms_network_acl_admin.add_privilege(acl       => 'twitter_acl_file.xml',
+                                       principal => 'APP_SCHEMA',
+                                       is_grant  => TRUE,
+                                       privilege => 'resolve');
   COMMIT;
   -- assign_acl to api.twitter.com
   dbms_network_acl_admin.assign_acl(acl        => 'twitter_acl_file.xml',
                                     host       => 'api.twitter.com',
                                     lower_port => 443,
-                                    upper_port => NULL);
-
+                                    upper_port => 443);
   COMMIT;
 END;
 /
