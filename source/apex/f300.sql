@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   15:34 Wednesday October 14, 2015
+--   Date and Time:   16:29 Wednesday October 14, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151014153350'
+,p_last_upd_yyyymmddhh24miss=>'20151014162842'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -6036,7 +6036,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111715'
+,p_last_upd_yyyymmddhh24miss=>'20151014160624'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26152607881666001)
@@ -6056,11 +6056,17 @@ wwv_flow_api.create_report_region(
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
 '       ''javascript:confirm_battle('''''' ||',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
-'                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:3,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
-'                             '':::6:P6_PAGE_FROM,P6_ID_USR:3,'' || usr.id_usr) AS target2,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 9,',
+'                         p_clear_cache => 9,',
+'                         p_items       => ''P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER'',',
+'                         p_values      => ''3,'' || :f_id_usr || '','' ||',
+'                                          usr.id_usr) || '''''');'' AS target1,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 6,',
+'                         p_clear_cache => 6,',
+'                         p_items       => ''P6_PAGE_FROM,P6_ID_USR'',',
+'                         p_values      => ''3,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
 '       ''play_arrow'' AS icon_css_classes1,',
 '       ''person_pin'' AS icon_css_classes2',
@@ -6429,7 +6435,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111727'
+,p_last_upd_yyyymmddhh24miss=>'20151014160826'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26219616770476567)
@@ -6449,11 +6455,17 @@ wwv_flow_api.create_report_region(
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
 '       ''javascript:confirm_battle('''''' ||',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
-'                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:4,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
-'                             '':::6:P6_PAGE_FROM,P6_ID_USR:4,'' || usr.id_usr) AS target2,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 9,',
+'                         p_clear_cache => 9,',
+'                         p_items       => ''P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER'',',
+'                         p_values      => ''4,'' || :f_id_usr || '','' ||',
+'                                          usr.id_usr) || '''''');'' AS target1,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 6,',
+'                         p_clear_cache => 6,',
+'                         p_items       => ''P6_PAGE_FROM,P6_ID_USR'',',
+'                         p_values      => ''4,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
 '       ''play_arrow'' AS icon_css_classes1,',
 '       ''person_pin'' AS icon_css_classes2',
@@ -6830,7 +6842,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111742'
+,p_last_upd_yyyymmddhh24miss=>'20151014160948'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26229260765501714)
@@ -6850,11 +6862,17 @@ wwv_flow_api.create_report_region(
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
 '       ''javascript:confirm_battle('''''' ||',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':9:'' || :app_session ||',
-'                             '':::9:P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER:5,'' ||',
-'                             :f_id_usr || '','' || usr.id_usr) || '''''');'' AS target1,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':6:'' || :app_session ||',
-'                             '':::6:P6_PAGE_FROM,P6_ID_USR:5,'' || usr.id_usr) AS target2,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 9,',
+'                         p_clear_cache => 9,',
+'                         p_items       => ''P9_PAGE_FROM,P9_ID_USR_CHALLENGER,P9_ID_USR_RECEIVER'',',
+'                         p_values      => ''5,'' || :f_id_usr || '','' ||',
+'                                          usr.id_usr) || '''''');'' AS target1,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 6,',
+'                         p_clear_cache => 6,',
+'                         p_items       => ''P6_PAGE_FROM,P6_ID_USR'',',
+'                         p_values      => ''5,'' || usr.id_usr) AS target2,',
 '       NULL AS button_css_classes,',
 '       ''play_arrow'' AS icon_css_classes1,',
 '       ''person_pin'' AS icon_css_classes2',
@@ -8456,7 +8474,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111755'
+,p_last_upd_yyyymmddhh24miss=>'20151014161208'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26399576986798203)
@@ -8481,10 +8499,11 @@ wwv_flow_api.create_report_region(
 '                   ''&CRAPPY_HOME.img/avatar-placeholder.png'') ||',
 '               ''"><span>&nbsp;'' || rownum || '' - '' || iv_usr.usr_firstname || '' '' ||',
 '               iv_usr.usr_lastname || ''</span>'' AS display,',
-'               apex_util.prepare_url(''f?p='' || :app_id || '':6:'' ||',
-'                                     :app_session ||',
-'                                     '':::6:P6_PAGE_FROM,P6_ID_USR:11,'' ||',
-'                                     iv_usr.id_usr) AS target,',
+'               apex_page.get_url(p_application => :app_id,',
+'                                 p_page        => 6,',
+'                                 p_clear_cache => 6,',
+'                                 p_items       => ''P6_PAGE_FROM,P6_ID_USR'',',
+'                                 p_values      => ''11,'' || iv_usr.id_usr) AS target,',
 '               iv_usr.usr_highscore AS badge,',
 '               ''Y'' AS new_badge,',
 '               iv_usr.usr_firstname,',
@@ -8800,7 +8819,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111809'
+,p_last_upd_yyyymmddhh24miss=>'20151014161906'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26580435253913223)
@@ -8820,9 +8839,11 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':13:'' || :app_session ||',
-'                             '':::13:P13_PAGE_FROM,P13_ID_USR_BATTLE:12,'' ||',
-'                             usr_battle.id_usr_battle) AS target,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 13,',
+'                         p_clear_cache => 13,',
+'                         p_items       => ''P13_PAGE_FROM,P13_ID_USR_BATTLE'',',
+'                         p_values      => ''12,'' || usr_battle.id_usr_battle) AS target,',
 '       CASE',
 '         WHEN usr_battle.highscore_receiver IS NULL THEN',
 '          to_char(usr_battle.highscore_challenger)',
@@ -8850,9 +8871,11 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':13:'' || :app_session ||',
-'                             '':::13:P13_PAGE_FROM,P13_ID_USR_BATTLE:12,'' ||',
-'                             usr_battle.id_usr_battle) AS target,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 13,',
+'                         p_clear_cache => 13,',
+'                         p_items       => ''P13_PAGE_FROM,P13_ID_USR_BATTLE'',',
+'                         p_values      => ''12,'' || usr_battle.id_usr_battle) AS target,',
 '       CASE',
 '         WHEN usr_battle.highscore_receiver IS NULL THEN',
 '          to_char(usr_battle.highscore_challenger)',
@@ -10007,7 +10030,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151013111829'
+,p_last_upd_yyyymmddhh24miss=>'20151014161347'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26476208068872155)
@@ -10026,9 +10049,11 @@ wwv_flow_api.create_report_region(
 '       nvl(usr.twitter_profile_pic_url,',
 '           ''&CRAPPY_HOME.img/avatar-placeholder.png'') || ''"><span>&nbsp;'' ||',
 '       usr.usr_firstname || '' '' || usr.usr_lastname || ''</span>'' AS display,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':18:'' || :app_session ||',
-'                             '':::18:P18_ID_USR:'' ||',
-'                             usr.id_usr) AS target,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 18,',
+'                         p_clear_cache => 18,',
+'                         p_items       => ''P18_ID_USR'',',
+'                         p_values      => usr.id_usr) AS target,',
 '       decode(usr.acc_active,',
 '              1,',
 '              ''active'',',
@@ -11066,7 +11091,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150916234330'
+,p_last_upd_yyyymmddhh24miss=>'20151014161710'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26992294133592003)
@@ -11095,9 +11120,11 @@ wwv_flow_api.create_report_region(
 '       ''<img class="initialized materialboxed responsive-img" src="'' ||',
 '       pub_themes.preview_img || ''"><span>&nbsp;'' || pub_themes.theme_name ||',
 '       ''</span>'' AS display,',
-'       apex_util.prepare_url(''f?p='' || :app_id || '':22:'' || :app_session ||',
-'                             '':::22:P22_PAGE_FROM,P22_ID_PUB_THEMES:21,'' ||',
-'                             pub_themes.id_pub_themes) AS target,',
+'       apex_page.get_url(p_application => :app_id,',
+'                         p_page        => 22,',
+'                         p_clear_cache => 22,',
+'                         p_items       => ''P22_PAGE_FROM,P22_ID_PUB_THEMES'',',
+'                         p_values      => ''21,'' || pub_themes.id_pub_themes) AS target,',
 '       NULL AS button_css_classes,',
 '       ''play_arrow'' AS icon_css_classes',
 '  FROM pub_themes',

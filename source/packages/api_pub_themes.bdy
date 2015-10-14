@@ -654,10 +654,11 @@ CREATE OR REPLACE PACKAGE BODY api_pub_themes IS
     l_id_pub_themes := api_pub_themes.ins_pub_themes(i_rec_pub_themes => l_rec_pub_themes);
     --
     -- build return url to theme page
-    l_url := apex_util.prepare_url('f?p=' || v('APP_ID') || ':22:' ||
-                                   v('APP_SESSION') ||
-                                   '::NO:22:P22_ID_PUB_THEMES:' ||
-                                   l_id_pub_themes);
+    l_url := apex_page.get_url(p_application => v('APP_ID'),
+                               p_page        => 22,
+                               p_clear_cache => 22,
+                               p_items       => 'P22_ID_PUB_THEMES',
+                               p_values      => l_id_pub_themes);
     --
     RETURN l_url;
   EXCEPTION

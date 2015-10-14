@@ -541,10 +541,11 @@ CREATE OR REPLACE PACKAGE BODY api_usr_location IS
              usr.usr_firstname || ' ' || usr.usr_lastname AS usr_name,
              nvl(usr.twitter_profile_pic_url,
                  l_crappy_home_path || 'img/avatar-placeholder.png') AS profile_pic_url,
-             apex_util.prepare_url('f?p=' || v('APP_ID') || ':6:' ||
-                                   v('APP_SESSION') ||
-                                   ':::6:P6_PAGE_FROM,P6_ID_USR:14,' ||
-                                   usr.id_usr) AS profile_url,
+             apex_page.get_url(p_application => v('APP_ID'),
+                               p_page        => 6,
+                               p_clear_cache => 6,
+                               p_items       => 'P6_PAGE_FROM,P6_ID_USR',
+                               p_values      => '14,' || usr.id_usr) AS profile_url,
              usr_location.geo_latitude,
              usr_location.geo_longitude
         FROM usr,
