@@ -14,6 +14,7 @@
 			- [APP_SCHEMA user](#app_schema-user)
 		- [Webserver](#webserver)
 		- [Oracle Apex App Settings](#oracle-apex-app-settings)
+		- [Security](#security)
 	- [Source Description](#source-description)
 		- [Application](#application)
 		- [Pages](#pages)
@@ -135,6 +136,18 @@ Now you are ready to go, and people can use the game and can register on first p
 
 The admin login is already activated. Use this account to manage users (set them active/inactive or delete them), edit system parameters or show the error log.
 
+###Security
+This step is optional.
+To improve security of application you can add the following entries to "Edit Application Definition" --> "Security" --> "HTTP Response Headers":
+
+```
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.google.com https://*.googleapis.com
+```
+
+This strongly improves security and makes XSS attacks more difficult.
+Content-Security-Policy only allows javascripts of same host and inline scripts. The rest is needed to let Google Maps work correctly.
 
 ##Source Description
 
