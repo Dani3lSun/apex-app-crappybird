@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   16:29 Wednesday October 14, 2015
+--   Date and Time:   13:49 Thursday October 15, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -110,7 +110,7 @@ wwv_flow_api.create_flow(
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
 ,p_browser_cache=>'N'
-,p_browser_frame=>'S'
+,p_browser_frame=>'D'
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151014162842'
+,p_last_upd_yyyymmddhh24miss=>'20151015134841'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -12360,7 +12360,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150916234008'
+,p_last_upd_yyyymmddhh24miss=>'20151014223131'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(52187307686545960)
@@ -12475,6 +12475,7 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>50
 ,p_item_plug_id=>wwv_flow_api.id(52187307686545960)
 ,p_prompt=>'Password'
+,p_placeholder=>'At least 8 characters'
 ,p_display_as=>'NATIVE_PASSWORD'
 ,p_cSize=>30
 ,p_field_template=>wwv_flow_api.id(77389129397098347)
@@ -12653,7 +12654,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20150916234027'
+,p_last_upd_yyyymmddhh24miss=>'20151014223015'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26641454467233096)
@@ -12756,6 +12757,7 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>40
 ,p_item_plug_id=>wwv_flow_api.id(26641454467233096)
 ,p_prompt=>'Password'
+,p_placeholder=>'At least 8 characters'
 ,p_display_as=>'NATIVE_PASSWORD'
 ,p_cSize=>30
 ,p_field_template=>wwv_flow_api.id(77389129397098347)

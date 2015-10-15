@@ -15,6 +15,8 @@
 		- [Webserver](#webserver)
 		- [Oracle Apex App Settings](#oracle-apex-app-settings)
 		- [Security](#security)
+			- [HTTP Response Headers](#http-response-headers)
+			- [Secure Session Cookie](#secure-session-cookie)
 	- [Source Description](#source-description)
 		- [Application](#application)
 		- [Pages](#pages)
@@ -30,8 +32,8 @@
 	
 #CrappyBird
 ##Description
-CrappyBird is a game made with Oracle Apex. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant. Aim of CrappyBird is to drive the bird through the landscape without hitting the tubes and to mess your performance with other people.
-The game was extended to fit in the Oracle Apex environment and for better customization. Also a complete social component was added, so you can play against people or friends. Therefore a login with your email is needed.
+CrappyBird is a game made with Oracle APEX. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant. Aim of CrappyBird is to drive the bird through the landscape without hitting the tubes and to mess your performance with other people.
+The game was extended to fit in the Oracle APEX environment and for better customization. Also a complete social component was added, so you can play against people or friends. Therefore a login with your email is needed.
 
 For example you can:
 - Choose the bird color
@@ -45,7 +47,7 @@ For example you can:
 
 The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobile optimized and best results can be achieved with iOS Safari and newer Google Chrome versions on Android. On these devices the application runs completely in fullscreen mode (WebApp). Just bookmark the page to your homescreen.**
 
-This game was designed and built to be part of the [ODTUG Apex Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
+This game was designed and built to be part of the [ODTUG APEX Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
 
 ##Demo
 A demo application is available under
@@ -67,16 +69,16 @@ Create a login and the fun can begin.
 ####Twitter API
 The game uses the [Twitter REST API (Application-only Authentication)](https://dev.twitter.com/rest/public) to display info from twitter. Because of that, you must create a twitter developer account.
 Also you must create a Twitter App under [https://apps.twitter.com/](https://apps.twitter.com/) to get the authentication tokens.
-Create a readonly App named for example "CrappyBird Apex" and note down the 2 tokens (Consumer Key / Consumer Secret). These keys are needed later.
+Create a readonly App named for example "CrappyBird APEX" and note down the 2 tokens (Consumer Key / Consumer Secret). These keys are needed later.
 
 ####Oracle SSL Wallet
 To communicate with the Twitter API (api.twitter.com) over HTTPS, a SSL Wallet is needed for database which contains the 2 CA certificates from api.twitter.com.
 A ready to go wallet is included in the source directory under [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets).
 The password of the wallet is "Twitter2015". The wallet must be deployed on the database server.
 
-####Oracle Apex
+####Oracle APEX
 - Create a new empty Workspace and Schema on DB.
-- In Apex Administration add valid email settings. APEX_MAIL is used to send emails.
+- In APEX Administration add valid email settings. APEX_MAIL is used to send emails.
 
 ###Database
 Application should run on all versions of Oracle Database > 11gR2 (Developed on 11gR2 XE).
@@ -125,9 +127,9 @@ END;
 - Run **system.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for both Twitter API Keys from Preparations step before, the standard email sender address of the app and location/password of the Oracle SSL Wallet. This step is important, as it is needed!
 
 ###Webserver
-- Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your Apex Webserver under the image directory.
+- Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your APEX Webserver under the image directory.
 
-###Oracle Apex App Settings
+###Oracle APEX App Settings
 - Import the **300.sql** file located in [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) into your newly created Workspace.
 - Under App Settings / Substitution Strings: Change the string **CRAPPY_HOME** to the actual location of the server folder on your webserver.
 - Under App Settings / Substitution Strings: Change the string **SOFTWARE_URL** to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
@@ -137,7 +139,9 @@ Now you are ready to go, and people can use the game and can register on first p
 The admin login is already activated. Use this account to manage users (set them active/inactive or delete them), edit system parameters or show the error log.
 
 ###Security
-This step is optional.
+These steps are **optional**.
+
+####HTTP Response Headers
 To improve security of application you can add the following entries to "Edit Application Definition" --> "Security" --> "HTTP Response Headers":
 
 ```
@@ -147,7 +151,13 @@ Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https:/
 ```
 
 This strongly improves security and makes XSS attacks more difficult.
+
 Content-Security-Policy only allows javascripts of same host and inline scripts. The rest is needed to let Google Maps work correctly.
+
+####Secure Session Cookie
+When using a secure SSL (HTTPS) connection to your APEX instance it would be good to set the value of application session cookie to secure. This preference can be found under:
+
+"Shared Components" --> "Authentication Schemes" --> "USR Table (Custom)" Edit --> "Session Cookie Attributes": Secure to Yes
 
 ##Source Description
 
@@ -156,7 +166,7 @@ The following points describe the different components of the source I developed
 ###Application
 - Name: CrappyBird
 - Files: [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) f300.sql
-- Description: The complete Oracle Apex Application for the game
+- Description: The complete Oracle APEX Application for the game
 
 ###Pages
 - Page Group: Not assigned
@@ -469,7 +479,7 @@ Several parts of the application uses 3party code that is listed here:
 - Link: https://github.com/varunpant/CrappyBird
 - License: MIT
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_game.spc / api_game.bdy
-- Modifications: Some CSS changes / changed canvas object / JS changes to write highscore in apex item / theming engine from DB / added images
+- Modifications: Some CSS changes / changed canvas object / JS changes to write highscore in APEX item / theming engine from DB / added images
 
 ---
 - Part: Color Picker
@@ -516,4 +526,4 @@ This software is under **MIT License**.
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_08.png)
 
 ---
-
+Comment: The App was developed with Oracle APEX 5.0.1 on Oracle Database 11g XE
