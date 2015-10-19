@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   13:51 Monday October 19, 2015
+--   Date and Time:   14:08 Monday October 19, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151019135126'
+,p_last_upd_yyyymmddhh24miss=>'20151019140750'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -8551,7 +8551,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151019133813'
+,p_last_upd_yyyymmddhh24miss=>'20151019140250'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26399576986798203)
@@ -8575,7 +8575,8 @@ wwv_flow_api.create_report_region(
 '  FROM (SELECT iv_usr.id_usr,',
 '               nvl(iv_usr.twitter_profile_pic_url,',
 '                   ''&CRAPPY_HOME.img/avatar-placeholder.png'') AS profile_pic_url,',
-'               iv_usr.usr_firstname || '' '' || iv_usr.usr_lastname AS usr_fullname,',
+'               rownum || '' - '' || iv_usr.usr_firstname || '' '' ||',
+'               iv_usr.usr_lastname AS usr_fullname,',
 '               apex_page.get_url(p_application => :app_id,',
 '                                 p_page        => 6,',
 '                                 p_clear_cache => 6,',
@@ -8649,7 +8650,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>2
 ,p_use_as_row_header=>'N'
 ,p_column_html_expression=>'<img class="initialized materialboxed responsive-img" src="#PROFILE_PIC_URL#"><span>&nbsp;#USR_FULLNAME#</span>'
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -11574,7 +11574,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151019131323'
+,p_last_upd_yyyymmddhh24miss=>'20151019140633'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(26914074126213746)
@@ -11619,7 +11619,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>2
 ,p_use_as_row_header=>'N'
 ,p_column_html_expression=>'<img src="#IMG#">'
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
