@@ -526,4 +526,4 @@ This software is under **MIT License**.
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_08.png)
 
 ---
-Comment: The App was developed with Oracle APEX 5.0.1 on Oracle Database 11g XE
+Comment: The App was developed with Oracle APEX 5.0.1 on Oracle Database 11g XE (tested with APEX 5.0.1 / 5.0.2)
