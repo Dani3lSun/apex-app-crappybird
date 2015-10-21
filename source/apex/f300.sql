@@ -13,7 +13,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2013.01.01'
-,p_release=>'5.0.1.00.06'
+,p_release=>'5.0.2.00.07'
 ,p_default_workspace_id=>25109139251478639
 ,p_default_application_id=>300
 ,p_default_owner=>'CRAPPYBIRD'
@@ -27,11 +27,11 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   14:08 Monday October 19, 2015
+--   Date and Time:   00:19 Wednesday October 21, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
---   Version:         5.0.1.00.06
+--   Version:         5.0.2.00.07
 --   Instance ID:     61915694930844
 --
 
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151019140750'
+,p_last_upd_yyyymmddhh24miss=>'20151021001859'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
