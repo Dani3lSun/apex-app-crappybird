@@ -55,14 +55,24 @@ https://apex.danielh.de/ords/f?p=CB
 Create a login and the fun can begin. 
 
 ##Changelog
+####1.7 - Docs: better installation guide / security fixes and advices / UI: fixed image circle in list views when image is not in square format / General: replaced apex_util.prepare_url by apex_page.get_url, replaced HTML in SQL of Reports by column html expression, APEX 5.0.2 ready
+
 ####1.6 - UI changes especially for iOS 9 release. Modified startpage, resized game views and map view
+
 ####1.5 - Added email notifications for new battles / toasts would only display on first page visit / some JS outsourced to [functions.js](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/js/functions.js) / UI improvements
+
 ####1.4 - Complete review of App / Security improvements (SSP / Escape special characters) / UI improvements / Admin page improvements
+
 ####1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
+
 ####1.2 - Added google maps page to display users nearby / some smaller UI fixes
+
 ####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
+
 ####1.0 - Initial Release
+
 ####0.8 - Beta Testing
+
 
 ##Installation
 ###Preparations
