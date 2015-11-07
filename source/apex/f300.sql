@@ -27,7 +27,7 @@ prompt APPLICATION 300 - CrappyBird
 -- Application Export:
 --   Application:     300
 --   Name:            CrappyBird
---   Date and Time:   00:19 Wednesday October 21, 2015
+--   Date and Time:   22:25 Saturday November 7, 2015
 --   Exported By:     DH
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'SOFTWARE_URL'
 ,p_substitution_value_04=>'https://apex.danielh.de/ords/f?p=&APP_ID.'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151021001859'
+,p_last_upd_yyyymmddhh24miss=>'20151107222454'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -1287,7 +1287,7 @@ wwv_flow_api.create_plug_template(
 '    <div class="container">',
 '        <div class="row">',
 '            <div class="col m6 s12">',
-'                <p class="white-text">This App was built using <a class="grey-text text-lighten-2" href="http://www.oracle.com/technetwork/developer-tools/apex/overview/index.html" target="_blank">Oracle Apex 5</a></p>',
+'                <p class="white-text">This App was built using <a class="grey-text text-lighten-2" href="http://www.oracle.com/technetwork/developer-tools/apex/overview/index.html" target="_blank">Oracle APEX 5</a></p>',
 '            </div>',
 '            <div class="col m4 offset-m2 s12">',
 '                <h5 class="white-text">Where to find me?</h5>',
@@ -1311,7 +1311,6 @@ wwv_flow_api.create_plug_template(
 ,p_theme_class_id=>21
 ,p_default_label_alignment=>'RIGHT'
 ,p_default_field_alignment=>'LEFT'
-,p_translate_this_template=>'N'
 );
 wwv_flow_api.create_plug_template(
  p_id=>wwv_flow_api.id(77383982196098345)
@@ -11808,7 +11807,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'DH'
-,p_last_upd_yyyymmddhh24miss=>'20151003112415'
+,p_last_upd_yyyymmddhh24miss=>'20151107222316'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(26386421878692008)
@@ -11943,7 +11942,7 @@ wwv_flow_api.create_page_plug(
 '<p>Customization + Social + CrappyBird = CrappyBird on steroids!</p>',
 '<p>Fly the bird as far as you can...</p>',
 '',
-'<p>This game was designed and built to be part of the <a href="http://competition.odtug.com/pls/apex/f?p=AGC2015" target="_blank">ODTUG Apex Gaming Competition 2015</a>.</p>',
+'<p>This game was designed and built to be part of the <a href="http://competition.odtug.com/pls/apex/f?p=AGC2015" target="_blank">ODTUG APEX Gaming Competition 2015</a>.</p>',
 '<img src="&CRAPPY_HOME.img/ODTUG-logo.png" alt="ODTUG Logo" style="max-width:250px;" />'))
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
