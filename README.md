@@ -29,9 +29,9 @@
 		- [3Party Components](#3party-components)
 	- [License](#license)
 	- [Preview](#preview)
-	
-#CrappyBird
-##Description
+
+# CrappyBird
+## Description
 CrappyBird is a game made with Oracle APEX. The game view itself is inspired from the [Open Source JS/HTML5 Game CrappyBird](https://github.com/varunpant/CrappyBird) from varunpant. Aim of CrappyBird is to drive the bird through the landscape without hitting the tubes and to mess your performance with other people.
 The game was extended to fit in the Oracle APEX environment and for better customization. Also a complete social component was added, so you can play against people or friends. Therefore a login with your email is needed.
 
@@ -49,51 +49,51 @@ The game runs best in WebKit browsers like Safari or Google Chrome. **It is mobi
 
 This game was designed and built to be part of the [ODTUG APEX Gaming Competition 2015](http://competition.odtug.com/pls/apex/f?p=AGC2015).
 
-##Demo
+## Demo
 A demo application is available under
 https://apex.danielh.de/ords/f?p=CB
-Create a login and the fun can begin. 
+Create a login and the fun can begin.
 
-##Changelog
-####1.7 - Docs: better installation guide / security fixes and advices / UI: fixed image circle in list views when image is not in square format / General: replaced apex_util.prepare_url by apex_page.get_url, replaced HTML in SQL of Reports by column html expression, APEX 5.0.2 ready
+## Changelog
+#### 1.7 - Docs: better installation guide / security fixes and advices / UI: fixed image circle in list views when image is not in square format / General: replaced apex_util.prepare_url by apex_page.get_url, replaced HTML in SQL of Reports by column html expression, APEX 5.0.2 ready
 
-####1.6 - UI changes especially for iOS 9 release. Modified startpage, resized game views and map view
+#### 1.6 - UI changes especially for iOS 9 release. Modified startpage, resized game views and map view
 
-####1.5 - Added email notifications for new battles / toasts would only display on first page visit / some JS outsourced to [functions.js](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/js/functions.js) / UI improvements
+#### 1.5 - Added email notifications for new battles / toasts would only display on first page visit / some JS outsourced to [functions.js](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server/js/functions.js) / UI improvements
 
-####1.4 - Complete review of App / Security improvements (SSP / Escape special characters) / UI improvements / Admin page improvements
+#### 1.4 - Complete review of App / Security improvements (SSP / Escape special characters) / UI improvements / Admin page improvements
 
-####1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
+#### 1.3 - New: Public Themes! Share your customized themes + List views without page submits + smaller bugfixes
 
-####1.2 - Added google maps page to display users nearby / some smaller UI fixes
+#### 1.2 - Added google maps page to display users nearby / some smaller UI fixes
 
-####1.1 - Added ranking list numbers, reset twitter auth token function on admin page
+#### 1.1 - Added ranking list numbers, reset twitter auth token function on admin page
 
-####1.0 - Initial Release
+#### 1.0 - Initial Release
 
-####0.8 - Beta Testing
+#### 0.8 - Beta Testing
 
 
-##Installation
-###Preparations
-####Twitter API
+## Installation
+### Preparations
+#### Twitter API
 The game uses the [Twitter REST API (Application-only Authentication)](https://dev.twitter.com/rest/public) to display info from twitter. Because of that, you must create a twitter developer account.
 Also you must create a Twitter App under [https://apps.twitter.com/](https://apps.twitter.com/) to get the authentication tokens.
 Create a readonly App named for example "CrappyBird APEX" and note down the 2 tokens (Consumer Key / Consumer Secret). These keys are needed later.
 
-####Oracle SSL Wallet
+#### Oracle SSL Wallet
 To communicate with the Twitter API (api.twitter.com) over HTTPS, a SSL Wallet is needed for database which contains the 2 CA certificates from api.twitter.com.
 A ready to go wallet is included in the source directory under [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets).
 The password of the wallet is "Twitter2015". The wallet must be deployed on the database server.
 
-####Oracle APEX
+#### Oracle APEX
 - Create a new empty Workspace and Schema on DB.
 - In APEX Administration add valid email settings. APEX_MAIL is used to send emails.
 
-###Database
+### Database
 Application should run on all versions of Oracle Database > 11gR2 (Developed on 11gR2 XE).
 
-####User with sysdba permissions
+#### User with sysdba permissions
 Some features require rights to SYS owned packages. Please run following commands before running the setup!
 
 - Grant to dbms_crypto (needed for password encryption/decryption of the app)
@@ -129,17 +129,17 @@ END;
 /
 ```
 
-####APP_SCHEMA user
+#### APP_SCHEMA user
 - Connect with SQLPlus as the APP_SCHEMA User
 - Run **setup.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). This will install all the database objects needed to run CrappyBird App.
 - Check for invalid objects! If so recompile them!
 - Run **admin.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for a name, email address and password. This will create the admin user to login within the app.
 - Run **system.sql** file located in [../source/setup/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/setup). You will be prompted for both Twitter API Keys from Preparations step before, the standard email sender address of the app and location/password of the Oracle SSL Wallet. This step is important, as it is needed!
 
-###Webserver
+### Webserver
 - Deploy all files and subfolders from [../server directory](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/server) on your APEX Webserver under the image directory.
 
-###Oracle APEX App Settings
+### Oracle APEX App Settings
 - Import the **300.sql** file located in [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) into your newly created Workspace.
 - Under App Settings / Substitution Strings: Change the string **CRAPPY_HOME** to the actual location of the server folder on your webserver.
 - Under App Settings / Substitution Strings: Change the string **SOFTWARE_URL** to the actual URL of the app. For example: https://apex.danielh.de/ords/f?p=&APP_ID.
@@ -148,10 +148,10 @@ Now you are ready to go, and people can use the game and can register on first p
 
 The admin login is already activated. Use this account to manage users (set them active/inactive or delete them), edit system parameters or show the error log.
 
-###Security
+### Security
 These steps are **optional**.
 
-####HTTP Response Headers
+#### HTTP Response Headers
 To improve security of application you can add the following entries to "Edit Application Definition" --> "Security" --> "HTTP Response Headers":
 
 ```
@@ -164,21 +164,21 @@ This strongly improves security and makes XSS attacks more difficult.
 
 Content-Security-Policy only allows javascripts of same host and inline scripts. The rest is needed to let Google Maps work correctly.
 
-####Secure Session Cookie
+#### Secure Session Cookie
 When using a secure SSL (HTTPS) connection to your APEX instance it would be good to set the value of application session cookie to secure. This preference can be found under:
 
 "Shared Components" --> "Authentication Schemes" --> "USR Table (Custom)" Edit --> "Session Cookie Attributes": Secure to Yes
 
-##Source Description
+## Source Description
 
 The following points describe the different components of the source I developed.
 
-###Application
+### Application
 - Name: CrappyBird
 - Files: [../source/apex/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex) f300.sql
 - Description: The complete Oracle APEX Application for the game
 
-###Pages
+### Pages
 - Page Group: Not assigned
 - Page ID: 0
 - Name: Global Page
@@ -334,12 +334,12 @@ The following points describe the different components of the source I developed
 - Name: User Profile (Admin)
 - Description: Admin page to show info about selected user with user specific functions
 
-###Plugins
+### Plugins
 - Name: Add2Home
 - Files: [../source/apex/plugins](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/apex/plugins) dynamic_action_plugin_com_apex-evangelists_add2home.sql
 - Description: Plugin from Roel Hartman to display a Add2Home Popup on login screen for iOS devices
 
-###Tables
+### Tables
 - Name: USR
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) usr.sql
 - Description: Table that holds user information, like email/password etc.
@@ -384,7 +384,7 @@ The following points describe the different components of the source I developed
 - Files: [../source/tables/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/tables) err_log.sql
 - Description: Table that is used for error logging functions.
 
-###Packages
+### Packages
 
 plsqldoc for all package units can be found under [../doc/plsqldoc/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/doc/plsqldoc).
 
@@ -457,22 +457,22 @@ plsqldoc for all package units can be found under [../doc/plsqldoc/](https://git
 - Files: [../source/packages/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/packages) api_pub_themes.spc / api_pub_themes.bdy
 - Description: Package for public themes table and functions
 
-###Sequences
+### Sequences
 - Name: SEQ_PK
 - Files: [../source/sequence/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/sequence) seq_pk.sql
 - Description: Sequence for Primary Keys of tables
 
-###Data Model
+### Data Model
 - Name: crappybird
 - Files: [../source/db_model/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/db_model) crappybird.dmd and folder
 - Description: Complete DB Model of CrappyBird game designed with Oracle DataModeler 4.1
 
-###SSL Wallet
+### SSL Wallet
 - Name: twitter_wallet
 - Files: [../source/wallets/](https://github.com/Dani3lSun/apex-app-crappybird/tree/master/source/wallets) twitter_wallet.zip
 - Description: Oracle SSL Wallet that contains the 2 CA certificates of api.twitter.com / Password: Twitter2015
 
-###3Party Components
+### 3Party Components
 Several parts of the application uses 3party code that is listed here:
 - Part: Theme
 - Name: material-apex
@@ -520,12 +520,12 @@ Several parts of the application uses 3party code that is listed here:
 
 **Thanks to all of you to make such amazing code public!**
 
-##License
+## License
 This software is under **MIT License**.
 
 [LICENSE](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/LICENSE)
 
-##Preview
+## Preview
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_01.png)
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_02.png)
 ![](https://github.com/Dani3lSun/apex-app-crappybird/blob/master/preview/preview_03.png)
